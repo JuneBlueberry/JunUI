@@ -1,0 +1,89 @@
+.jun-input-div{
+  position: relative;
+  display: inline-block;
+
+  &:hover{
+    // 输入是否可以清空
+    .i-clearable.is-clearable{
+      display: block;
+    }
+  }
+
+  .i-clearable{
+    display: none;
+    right: 0px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+
+    &::before{
+      content: "\2716";
+      font-size: 16px;
+    }
+  }
+
+  .jun-input{
+    height: 28px;
+    padding: 0 30px 0 10px;
+    display: inline-block;
+    border: 1px solid #d7d8d9;
+  
+    &:hover{
+      border: 1px solid #00c1de;
+    }
+    &:focus{
+      border: 1px solid #00c1de;
+    }
+  }
+  
+  // 输入Input尺寸
+  .jun-input-size-default{
+    height: 28px;
+  }
+  .jun-input-size-big{
+    height: 32px;
+  }
+  .jun-input-size-small{
+    height: 24px;
+  }
+  .jun-input-size-mini{
+    height: 20px;
+  }
+  
+  // 输入Input是否可以禁用
+  .jun-input.is-disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: #f7f7f7;
+  
+    &:hover{
+      border: 1px solid #d7d8d9;
+    }
+  }
+
+  // 输入清空图标尺寸
+  .i-size-default{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .i-size-big{
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+  }
+  .i-size-small{
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+  }
+  .i-size-mini{
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+  }
+
+
+}
+

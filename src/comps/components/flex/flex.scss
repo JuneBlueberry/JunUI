@@ -5,4 +5,13 @@
   display: -ms-flexbox;  /*WP IE 10*/
   display: -moz-box;
   display: flex;          /*android 4.4*/
+
+  >.jun-flex-col{
+    &:first-child{
+      padding-left: 0 !important;
+    }
+    &:last-child{
+      padding-right: 0 !important;
+    }
+  }
 }

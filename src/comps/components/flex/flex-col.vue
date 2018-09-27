@@ -2,25 +2,58 @@
 <template>
   <div
     class="jun-flex-col"
-    :style="{width:  (100*span/24)+'%'}">
+    :style="styles">
     <slot></slot>
   </div>
 </template>
 
 <script>
+import { findComponentUpward } from '../../../utils/assist';
+
 export default {
-  name: 'jun-flex-col',
+  name: "jun-flex-col",
   props: {
     span: {
       type: Number,
       default: 24
     }
   },
-  data () {
+  data() {
     return {
+      gutter: 0
     };
   },
 
-  methods: {}
-}
+  computed: {
+    styles: function() {
+      let style = {};
+      if(this.span > 0 && this.span <= 24){
+        style.width = (100*this.span/24)+'%'
+      }else{
+        style.width = '100%'
+      }
+      if (this.gutter !== 0) {
+        style.paddingLeft = this.gutter / 2 + "px"
+        style.paddingRight = this.gutter / 2 + "px"
+      }
+      return style;
+    }
+  },
+
+  methods: {
+    updateGutter() {
+      const Row = findComponentUpward(this, "jun-flex-row")
+      if (Row) {
+        Row.updateGutter(Row.gutter);
+      }
+    }
+  },
+
+  mounted() {
+    this.updateGutter();
+  },
+  beforeDestroy() {
+    this.updateGutter();
+  }
+};
 </script>

@@ -1,18 +1,18 @@
 <!-- JunChen 2018-09-25 栅格布局行 -->
 <template>
   <div 
-    class="jun-flex-row" :style="styles">
+    class="jun-flex-row">
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { findComponentsDownward } from '../../utils/assist';
+import { findComponentsDownward } from '../../../utils/assist';
 
 export default {
   name: "jun-flex-row",
   props: {
-    getter: {
+    gutter: {
       type: Number,
       default: 0
     }
@@ -34,15 +34,19 @@ export default {
     }
   },
 
+  mounted: function(){
+    this.updateGutter(this.gutter)
+  },
+
   methods: {
     updateGutter: function(val) {
-      const Cols = findComponentsDownward(this, "junFlexCol");
+      const Cols = findComponentsDownward(this, "jun-flex-col")
       if (Cols.length) {
         Cols.forEach(child => {
           if (val !== 0) {
             child.gutter = val;
           }
-        });
+        })
       }
     }
   },
