@@ -10,3 +10,7 @@ input, button{
 i{
   font-style: normal;
 }
+
+*, :after, :before{
+  box-sizing: border-box;
+}

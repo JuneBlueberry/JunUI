@@ -88,24 +88,62 @@
         </jun-flex-row>
       </div>
     </div> -->
-    <div>
-      <jun-input clearable type="number"></jun-input>
-      <jun-input clearable></jun-input>
-      <jun-flex-row>
+    <div style="width: 70%">
+      <jun-input class="mar-row-top" prepend append @on-prepend="prependClick">
+        <template slot="prepend">
+          <i>帐号</i>
+        </template>
+        <template slot="append">搜索</template>
+      </jun-input>
+      <jun-input class="mar-row-top" clearable></jun-input>
+      <jun-flex-row class="mar-row-top" :gutter="30">
         <jun-flex-col>
           <jun-input size="big"></jun-input>
         </jun-flex-col>
         <jun-flex-col>
-          <jun-input size="default"></jun-input>
+          <jun-input size="default" iappend clearable></jun-input>
         </jun-flex-col>
         <jun-flex-col>
-          <jun-input size="small"></jun-input>
+          <jun-input size="default" prepend>
+            <template slot="prepend">
+              <jun-icon type="icon-addpeople_fill" :size="24"></jun-icon>
+            </template>
+          </jun-input>
         </jun-flex-col>
         <jun-flex-col>
           <jun-input size="mini"></jun-input>
         </jun-flex-col>
       </jun-flex-row>
-      <jun-input placeholder="haha" @change="changeVal" disabled></jun-input>
+      <jun-input class="mar-row-top" placeholder="haha" @change="changeVal" disabled></jun-input>
+    </div>
+    <div>
+      <div>
+        <jun-icon type="icon-accessory"></jun-icon>
+        <jun-icon type="icon-activity"></jun-icon>
+        <jun-icon type="icon-activity_fill"></jun-icon>
+        <jun-icon type="icon-add"></jun-icon>
+        <jun-icon type="icon-addition_fill"></jun-icon>
+        <jun-icon type="icon-addition"></jun-icon>
+        <jun-icon type="icon-addpeople_fill"></jun-icon>
+      </div>
+      <div>
+        <jun-icon type="icon-addpeople" size="48px"></jun-icon>
+        <jun-icon type="icon-addressbook_fill" size="44px"></jun-icon>
+        <jun-icon type="icon-addressbook" size="40px"></jun-icon>
+        <jun-icon type="icon-barrage_fill" size="36px"></jun-icon>
+        <jun-icon type="icon-barrage" size="32px"></jun-icon>
+        <jun-icon type="icon-browse_fill" size="28px"></jun-icon>
+        <jun-icon type="icon-browse" size="24px"></jun-icon>
+      </div>
+      <div>
+        <jun-icon type="icon-accessory" color="#333333"></jun-icon>
+        <jun-icon type="icon-activity" color="#444444"></jun-icon>
+        <jun-icon type="icon-activity_fill" color="#555555"></jun-icon>
+        <jun-icon type="icon-add" color="#666666"></jun-icon>
+        <jun-icon type="icon-addition_fill" color="#777777"></jun-icon>
+        <jun-icon type="icon-addition" color="#888888"></jun-icon>
+        <jun-icon type="icon-addpeople_fill" color="#999999"></jun-icon>
+      </div>
     </div>
   </div>
 </template>
@@ -117,6 +155,9 @@ export default {
       console.log(event)
     },
     changeVal: function(val){
+      console.log(val)
+    },
+    prependClick: function(val){
       console.log(val)
     }
   }

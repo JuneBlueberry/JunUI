@@ -3,12 +3,14 @@ import './styles/index.scss'
 import { Button } from './components/button/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
+import { Icon } from './components/icon/index'
 
 const components = {
   Button,
   FlexRow,
   FlexCol,
-  Input
+  Input,
+  Icon
 }
 
 const install = function (Vue) {
