@@ -4,13 +4,16 @@ import { Button } from './components/button/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
+import { RadioGroup, Radio } from './components/radio/index'
 
 const components = {
   Button,
   FlexRow,
   FlexCol,
   Input,
-  Icon
+  Icon,
+  RadioGroup,
+  Radio
 }
 
 const install = function (Vue) {

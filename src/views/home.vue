@@ -88,7 +88,7 @@
         </jun-flex-row>
       </div>
     </div> -->
-    <div style="width: 70%">
+    <!-- <div style="width: 70%">
       <jun-input class="mar-row-top" prepend append @on-prepend="prependClick">
         <template slot="prepend">
           <i>帐号</i>
@@ -115,8 +115,8 @@
         </jun-flex-col>
       </jun-flex-row>
       <jun-input class="mar-row-top" placeholder="haha" @change="changeVal" disabled></jun-input>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <div>
         <jun-icon type="icon-accessory"></jun-icon>
         <jun-icon type="icon-activity"></jun-icon>
@@ -144,12 +144,33 @@
         <jun-icon type="icon-addition" color="#888888"></jun-icon>
         <jun-icon type="icon-addpeople_fill" color="#999999"></jun-icon>
       </div>
+    </div> -->
+    <!-- <div>
+      <jun-radio size="small">前端工程师</jun-radio>
+      <jun-radio>后端工程师</jun-radio>
+      <jun-radio disabled>算法工程师</jun-radio>
+      <jun-radio color="red">算法工程师</jun-radio>
+      <jun-radio color="green">算法工程师</jun-radio>
+      <jun-radio color="yellow">算法工程师</jun-radio>
+      <jun-radio size="big">全栈工程师</jun-radio>
+    </div> -->
+    <div>
+      <jun-radio-group v-model="selectVal">
+        <jun-radio label="前端工程师">前端工程师</jun-radio>
+        <jun-radio label="后端工程师">后端工程师</jun-radio>
+        <jun-radio label="全栈工程师">全栈工程师</jun-radio>
+      </jun-radio-group>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data: function(){
+    return {
+      selectVal: '111'
+    }
+  },
   methods: {
     clickPrimary: function(event){
       console.log(event)

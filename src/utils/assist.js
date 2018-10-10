@@ -1,5 +1,15 @@
 // Abner 2018-09-26 帮助通用类
 
+// 判断参数是否是其中之一
+export function oneOf (value, validList) {
+  for (let i = 0; i < validList.length; i++) {
+    if (value === validList[i]) {
+      return true
+    }
+  }
+  return false
+}
+
 // Find components downward
 function findComponentsDownward (context, componentName, components = []) {
   const childrens = context.$children
