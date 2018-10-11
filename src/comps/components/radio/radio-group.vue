@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { findComponentsDownward } from '../../../utils/assist';
+import { findComponentsDownward } from '../../../utils/assist'
 
 export default {
   name: 'jun-radio-group',
@@ -17,12 +17,9 @@ export default {
       default: ''
     }
   },
-  model: {
-      prop: 'value',
-      event: 'radioVal'
-  },
   data () {
     return {
+      currentValue: this.value
     };
   },
 
@@ -36,14 +33,22 @@ export default {
 
   methods: {
     updateValue: function(){
-      let value = this.value
+      let value = this.currentValue
       const Radios = findComponentsDownward(this, 'jun-radio')
       if(Radios.length > 0){
         Radios.forEach(radio => {
-          console.log(radio.label)
           radio.currentValue = value == radio.label
+          radio.group = true
+          radio.name = "radio"
         })
       }
+    },
+
+    change: function(data){
+      this.currentValue = data.label
+      this.updateValue()
+      this.$emit('input', data.label)
+      this.$emit('change', data.label)
     }
   },
 

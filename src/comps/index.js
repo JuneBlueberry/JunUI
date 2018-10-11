@@ -5,6 +5,7 @@ import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { RadioGroup, Radio } from './components/radio/index'
+import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
 
 const components = {
   Button,
@@ -13,7 +14,9 @@ const components = {
   Input,
   Icon,
   RadioGroup,
-  Radio
+  Radio,
+  CheckBoxGroup,
+  CheckBox
 }
 
 const install = function (Vue) {

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { oneOf } from '../../../utils/assist';
+import { oneOf,findComponentUpward } from '../../../utils/assist';
 
 export default {
   name: 'jun-radio',
@@ -23,20 +23,20 @@ export default {
       type: [String, Number, Boolean],
       default: false
     },
-    name: {
-      type: String,
-      default: 'radio'
-    },
     label: {
       type: String,
       default: ''
     },
-    size: String,
+    size: {
+      type: String,
+      default: ''
+    },
     color: {
       type: String,
       validator (value) {
-        return oneOf(value, ['blue','green','red','yellow']);
-      }
+        return oneOf(value, ['blue','green','red','yellow'])
+      },
+      default: 'blue'
     },
     disabled: {
       type: Boolean,
@@ -46,7 +46,10 @@ export default {
   data () {
     return {
       currentValue: this.value,
-      isChecked: this.checked
+      isChecked: this.checked,
+      group: false,
+      name: '',
+      parent: findComponentUpward(this, 'jun-radio-group')
     };
   },
 
@@ -57,7 +60,6 @@ export default {
   },
 
   mounted: function(){
-    console.log(this.currentValue)
     this.updateValue(this.currentValue)
   },
 
@@ -66,20 +68,27 @@ export default {
       if(this.disabled == true){
         return false
       }
+      
       let checked = event.target.checked
-      console.log(checked)
-      this.$emit('change', checked)
+      this.currentValue = checked
+
+      if(this.group){
+        this.parent.change({
+          label: this.label,
+          value: checked
+        })
+      }else{
+        this.$emit('input', checked)
+        this.$emit('change', checked)
+      }
     },
     updateValue: function(){
-      this.currentValue = this.value
+      //this.currentValue = this.value
     }
   },
 
   watch: {
-    currentValue: function(val){
-      console.log(val)
-      this.updateValue(val)
-    }
+
   }
 }
 </script>

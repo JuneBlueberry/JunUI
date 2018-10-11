@@ -89,7 +89,7 @@
       </div>
     </div> -->
     <!-- <div style="width: 70%">
-      <jun-input class="mar-row-top" prepend append @on-prepend="prependClick">
+      <jun-input class="mar-row-top" v-model="selectVal" prepend append @on-prepend="prependClick">
         <template slot="prepend">
           <i>帐号</i>
         </template>
@@ -160,6 +160,15 @@
         <jun-radio label="后端工程师">后端工程师</jun-radio>
         <jun-radio label="全栈工程师">全栈工程师</jun-radio>
       </jun-radio-group>
+      <jun-radio >全栈工程师</jun-radio>
+    </div>
+    <div>
+      <jun-checkbox v-model="selectVal2">前端工程师</jun-checkbox>
+      <jun-checkbox-group v-model="selectVal3">
+        <jun-checkbox label="前端工程师" color="green"></jun-checkbox>
+        <jun-checkbox label="后端工程师" color="red"></jun-checkbox>
+        <jun-checkbox label="全栈工程师" color="yellow"></jun-checkbox>
+      </jun-checkbox-group>
     </div>
   </div>
 </template>
@@ -168,7 +177,9 @@
 export default {
   data: function(){
     return {
-      selectVal: '111'
+      selectVal: '111',
+      selectVal2: true,
+      selectVal3: ['前端工程师']
     }
   },
   methods: {
@@ -179,6 +190,17 @@ export default {
       console.log(val)
     },
     prependClick: function(val){
+      console.log(val)
+    }
+  },
+  watch: {
+    selectVal: function(val){
+      console.log(val)
+    },
+    selectVal2: function(val){
+      console.log(val)
+    },
+    selectVal3: function(val){
       console.log(val)
     }
   }

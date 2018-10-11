@@ -105,6 +105,7 @@ export default {
       this.currentValue = val
     },
     currentValue: function(val){
+      this.$emit('input', val)
       this.$emit('change', val)
     }
   }
