@@ -75,6 +75,7 @@ export default {
         })
       }else{
         this.$emit('input', checked)
+        this.$emit('change', checked)
       }
     },
   },

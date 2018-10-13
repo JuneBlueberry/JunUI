@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import { findComponentsDownward } from '../../../utils/assist'
+import { findComponentsDownward } from "../../../utils/assist";
 
 export default {
-  name: 'jun-checkbox-group',
+  name: "jun-checkbox-group",
   props: {
-    value: Array,
+    value: Array
   },
-  data () {
+  data() {
     return {
       currentModel: this.value
     };
@@ -22,35 +22,42 @@ export default {
 
   computed: {},
 
-  mounted: function(){
-    this.updateValue()
+  mounted: function() {
+    this.updateValue();
   },
 
   methods: {
-    updateValue: function(){
-      const CheckBoxs = findComponentsDownward(this, 'jun-checkbox')
+    updateValue: function() {
+      const CheckBoxs = findComponentsDownward(this, "jun-checkbox");
       CheckBoxs.forEach(checkbox => {
-        checkbox.group = true
-        checkbox.currentModel = this.value
-        if(this.currentModel.length > 0){
-          if(this.currentModel.indexOf(checkbox.label) >= 0){
-            checkbox.currentValue = true
+        checkbox.group = true;
+        checkbox.currentModel = this.value;
+        if (this.currentModel.length > 0) {
+          if (this.currentModel.indexOf(checkbox.label) >= 0) {
+            checkbox.currentValue = true;
           }
         }
-      })
+      });
     },
-    change: function(data){
-      if(data.checked){
-        this.currentModel.push(data.label)
-        this.$emit('input', this.currentModel)
+    change: function(data) {
+      if (data.checked) {
+        if (this.currentModel.indexOf(data.label) < 0) {
+          this.currentModel.push(data.label);
+        }
+      } else {
+        if (this.currentModel.indexOf(data.label) >= 0) {
+          this.currentModel.splice(this.currentModel.indexOf(data.label), 1);
+        }
       }
+      this.$emit("input", this.currentModel);
+      this.$emit("change", this.currentModel);
     }
   },
 
   watch: {
-    currentModel: function(){
-      this.updateValue()
+    currentModel: function() {
+      this.updateValue();
     }
   }
-}
+};
 </script>
