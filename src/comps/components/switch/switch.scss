@@ -1,0 +1,134 @@
+.jun-switch{
+    display: inline-block;
+    font-size: 24px;
+
+    input[type=checkbox] {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+.jun-switch-1{
+    label {
+        width: 2em;
+        height: 1em;
+        position: relative;
+        cursor: pointer;
+        display: block;
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 2em;
+            height: 1em;
+            left: 0;
+            transition: background 0.1s 0.1s ease;
+            background: #757575;
+            box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: 0;
+            transition: all 0.2s ease;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+            background: #fcfff4;
+            z-index: 2;
+        }
+    }
+
+    .isChecked[type=checkbox] + label:before {
+        background: #333;
+    }
+
+    .isChecked[type=checkbox] + label:after {
+        left: 1.1em;
+    }
+}
+
+.jun-switch-2{
+    label {
+        width: 2em;
+        height: 1em;
+        position: relative;
+        cursor: pointer;
+        display: block;
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 2em;
+            height: 1em;
+            left: 0;
+            transition: background 0.1s 0.1s ease;
+            background: #4d4d4d;
+            box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: .6em;
+            height: .6em;
+            left: .2em;
+            top: .2em;
+            transition: all 0.2s ease;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+            background: #fcfff4;
+            z-index: 2;
+        }
+    }
+
+    .isChecked[type=checkbox] + label:before {
+        background: #333;
+    }
+
+    .isChecked[type=checkbox] + label:after {
+        left: 1.1em;
+    }
+}
+
+.jun-switch-3{
+    label {
+        width: 2em;
+        height: 1em;
+        position: relative;
+        cursor: pointer;
+        display: block;
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 2em;
+            height: .5em;
+            left: 0.1em;
+            top: .25em;
+            transition: background 0.1s 0.1s ease;
+            background: #4d4d4d;
+            box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: 0;
+            transition: all 0.2s ease;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+            background: #fcfff4;
+            z-index: 2;
+        }
+    }
+
+    .isChecked[type=checkbox] + label:before {
+        background: #333;
+    }
+
+    .isChecked[type=checkbox] + label:after {
+        left: 1.1em;
+    }
+}

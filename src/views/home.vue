@@ -154,7 +154,7 @@
       <jun-radio color="yellow">算法工程师</jun-radio>
       <jun-radio size="big">全栈工程师</jun-radio>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-radio-group v-model="selectVal">
         <jun-radio label="前端工程师">前端工程师</jun-radio>
         <jun-radio label="后端工程师">后端工程师</jun-radio>
@@ -169,6 +169,16 @@
         <jun-checkbox label="后端工程师" color="red"></jun-checkbox>
         <jun-checkbox label="全栈工程师" color="yellow"></jun-checkbox>
       </jun-checkbox-group>
+    </div> -->
+    <div>
+      <jun-switch></jun-switch>
+      <jun-switch checked></jun-switch>
+      <br/><br/>
+      <jun-switch :type="2"></jun-switch>
+      <jun-switch :type="2" checked></jun-switch>
+      <br/><br/>
+      <jun-switch :type="3"></jun-switch>
+      <jun-switch :type="3" checked></jun-switch>
     </div>
   </div>
 </template>
