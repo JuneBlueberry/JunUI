@@ -7,6 +7,7 @@ import { Icon } from './components/icon/index'
 import { RadioGroup, Radio } from './components/radio/index'
 import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
 import { Switch } from './components/switch/index'
+import { Select } from './components/select/index'
 
 const components = {
   Button,
@@ -18,7 +19,8 @@ const components = {
   Radio,
   CheckBoxGroup,
   CheckBox,
-  Switch
+  Switch,
+  Select
 }
 
 const install = function (Vue) {
