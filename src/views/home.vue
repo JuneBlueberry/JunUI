@@ -170,7 +170,7 @@
         <jun-checkbox label="全栈工程师" color="yellow"></jun-checkbox>
       </jun-checkbox-group>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-switch></jun-switch>
       <jun-switch checked></jun-switch>
       <br/><br/>
@@ -179,6 +179,9 @@
       <br/><br/>
       <jun-switch :type="3"></jun-switch>
       <jun-switch :type="3" checked></jun-switch>
+    </div> -->
+    <div>
+      <jun-select></jun-select>
     </div>
   </div>
 </template>
