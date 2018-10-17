@@ -77,6 +77,11 @@
       transition: background 0.35s;
       border: none;
 
+      .select-remark{
+        float: right;
+        color: #999999;
+      }
+
       &:before {
         content: '';
         position: absolute;
@@ -97,7 +102,7 @@
       }
     }
 
-    .select-label {
+    .select-group {
       display: block;
       padding: .6em 1em;
       cursor: default;
@@ -112,7 +117,7 @@
   }
 
   .selectDiv-enter-active, .selectDiv-leave-active {
-    transition: opacity 1s, margin-top 1s;
+    transition: opacity .5s, margin-top .5s;
   }
 
   .selectDiv-enter, .selectDiv-leave-to {
