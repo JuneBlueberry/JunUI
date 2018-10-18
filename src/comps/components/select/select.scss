@@ -2,16 +2,18 @@
   text-align: left;
   position: relative;
   z-index: 5;
-  width: 100%;
-  max-width: 400px;
+  display: inline-block;
+  min-width: 240px;
   margin: 0 auto;
 
   .select-title{
     position: relative;
     z-index: 2;
     display: block;
-    padding: .6em 2.5em 0.6em 1em;
+    padding: .6em 2.5em .6em 1em;
+    font-size: 12px;
     cursor: pointer;
+    //border: 1px solid #d7d8d9;
     background-image: linear-gradient(#a872ff, #72B6FF);
     transition: background 0.35s;
     white-space: nowrap;
@@ -20,6 +22,7 @@
 
     &:hover:before {
       opacity: .8;
+      //border: 1px solid #00c1de;
     }
 
     &:after {
@@ -95,11 +98,20 @@
         opacity: 0;
         transition: transform 0.35s, opacity 0.35s;
       }
+    }
 
+    .select-option.select-option-abled{
       &:hover:before {
         transform: translateZ(0) scale(1);
         opacity: .17;
       }
+    }
+
+    .select-option.select-option-disabled{
+      background: #d7d8d9;
+      opacity: 0.6;
+      cursor: not-allowed;
+      color: #888888;
     }
 
     .select-group {
@@ -114,6 +126,16 @@
         padding-left: 2em;
       }
     }
+  }
+
+  .is-disabled{
+    width: 100%;
+    height: 100%;
+    background-color: #d7d8d9;
+    position: absolute;
+    z-index: 9999;
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   .selectDiv-enter-active, .selectDiv-leave-active {
