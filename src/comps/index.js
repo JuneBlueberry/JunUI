@@ -1,5 +1,6 @@
 import './styles/index.scss'
 
+import { Alert } from './components/alert/index'
 import { Button } from './components/button/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
@@ -10,6 +11,7 @@ import { Switch } from './components/switch/index'
 import { Select } from './components/select/index'
 
 const components = {
+  Alert,
   Button,
   FlexRow,
   FlexCol,

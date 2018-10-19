@@ -180,8 +180,19 @@
       <jun-switch :type="3"></jun-switch>
       <jun-switch :type="3" checked></jun-switch>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-select></jun-select>
+    </div> -->
+    <div>
+      <jun-alert class="mar-row-top" leftBorder>asdasdasd</jun-alert>
+      <jun-alert class="mar-row-top" type="success" leftBorder>asdasdasd</jun-alert>
+      <jun-alert class="mar-row-top" type="info" border leftBorder>asdasdasd</jun-alert>
+      <jun-alert class="mar-row-top" type="warning" border leftBorder>
+        <p>1121212</p>
+        <p>asdasdasdasdasdas</p>
+        <p>千万人空间哦通过豆腐干士大夫</p>
+      </jun-alert>
+      <jun-alert class="mar-row-top" type="danger" leftBorder>asdasdasd</jun-alert>
     </div>
   </div>
 </template>
