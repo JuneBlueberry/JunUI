@@ -184,7 +184,7 @@
       <jun-select></jun-select>
     </div> -->
     <div>
-      <jun-alert class="mar-row-top" leftBorder>asdasdasd</jun-alert>
+      <jun-alert class="mar-row-top" leftBorder clearable>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="success" leftBorder>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="info" border leftBorder>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="warning" border leftBorder>

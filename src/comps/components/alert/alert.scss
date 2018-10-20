@@ -15,6 +15,12 @@
     bottom: 0;
     right: 10px;
     margin: auto;
+
+    &:hover{
+      .jun-icon{
+        transform: scale(1.3);
+      }
+    }
   }
 }
 

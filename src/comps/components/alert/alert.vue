@@ -1,12 +1,13 @@
 <!-- JunChen 2018-10-19 提醒块Alert组件 -->
 <template>
-  <div 
+  <div
     :class="['jun-alert-div', 'jun-alert-type-'+type,
-      {'is-border': border, 'is-left-border': leftBorder}]">
-      <slot></slot>
-      <div class="jun-alert-close">
-        <jun-icon  type="icon-close" size="16px"></jun-icon>
-      </div>
+      {'is-border': border, 'is-left-border': leftBorder}]"
+    v-if="isShow">
+    <slot></slot>
+    <div class="jun-alert-close" v-if="clearable" @click="clear">
+      <jun-icon  type="icon-close" size="16px"></jun-icon>
+    </div>
   </div>
 </template>
 
@@ -30,10 +31,15 @@ export default {
     leftBorder: {
       type: Boolean,
       default: false
+    },
+    clearable: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
+      isShow: true
     };
   },
 
@@ -41,6 +47,10 @@ export default {
 
   computed: {},
 
-  methods: {}
+  methods: {
+    clear: function(){
+      this.isShow = false
+    }
+  }
 }
 </script>
