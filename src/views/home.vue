@@ -195,7 +195,7 @@
       <jun-alert class="mar-row-top" type="danger" leftBorder>asdasdasd</jun-alert>
     </div> -->
     <div>
-      <jun-rate></jun-rate>
+      <jun-rate v-model="selectVal4"></jun-rate>
     </div>
   </div>
 </template>
@@ -206,7 +206,8 @@ export default {
     return {
       selectVal: '111',
       selectVal2: true,
-      selectVal3: ['前端工程师']
+      selectVal3: ['前端工程师'],
+      selectVal4: 2
     }
   },
   methods: {
@@ -231,6 +232,9 @@ export default {
       console.log(val)
     },
     selectVal3: function(val){
+      console.log(val)
+    },
+    selectVal4: function(val){
       console.log(val)
     }
   }
