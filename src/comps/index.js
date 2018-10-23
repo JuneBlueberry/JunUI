@@ -2,25 +2,27 @@ import './styles/index.scss'
 
 import { Alert } from './components/alert/index'
 import { Button } from './components/button/index'
+import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { RadioGroup, Radio } from './components/radio/index'
-import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
+import { Rate } from './components/rate/index'
 import { Switch } from './components/switch/index'
 import { Select } from './components/select/index'
 
 const components = {
   Alert,
   Button,
+  CheckBoxGroup,
+  CheckBox,
   FlexRow,
   FlexCol,
   Input,
   Icon,
   RadioGroup,
   Radio,
-  CheckBoxGroup,
-  CheckBox,
+  Rate,
   Switch,
   Select
 }

@@ -183,7 +183,7 @@
     <!-- <div>
       <jun-select></jun-select>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-alert class="mar-row-top" leftBorder clearable>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="success" leftBorder>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="info" border leftBorder>asdasdasd</jun-alert>
@@ -193,6 +193,9 @@
         <p>千万人空间哦通过豆腐干士大夫</p>
       </jun-alert>
       <jun-alert class="mar-row-top" type="danger" leftBorder>asdasdasd</jun-alert>
+    </div> -->
+    <div>
+      <jun-rate></jun-rate>
     </div>
   </div>
 </template>
@@ -215,6 +218,9 @@ export default {
     },
     prependClick: function(val){
       console.log(val)
+    },
+    selectItem: function(){
+      console.log(222)
     }
   },
   watch: {
