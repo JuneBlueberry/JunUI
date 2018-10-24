@@ -4,9 +4,9 @@
     <jun-icon
       v-for="index in counts" 
       :key="index" 
-      :class="[index<=nowCount?'jun-rate-active':'jun-rate-default']"
-      type="icon-collection_fill"
-      color='#e9e9e9' 
+      :style="index<=nowCount?activeStyles:defaultStyles"
+      :type="icon"
+      color='#e9e9e9'
       @mouseover.native="overItem(index)"
       @mouseout.native="outItem"
       @click.native="selectItem(index)">
@@ -22,10 +22,31 @@ export default {
       type: Number,
       default: 0
     },
+    //数量
     counts: {
       type: Number,
       default: 5
     },
+    //图标类别，参见Icon
+    icon: {
+      type: String,
+      default: 'icon-collection_fill'
+    },
+    //是否可以清除
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    //未选中的背景颜色
+    styleColorDefault: {
+      type: String,
+      default: '#e9e9e9'
+    },
+    //选中时的背景颜色
+    styleColorActive: {
+      type: String,
+      default: '#fd9726'
+    }
   },
   data () {
     return {
@@ -36,11 +57,30 @@ export default {
 
   components: {},
 
-  computed: {},
+  computed: {
+    defaultStyles: function(){
+      let style = {};
+      if(this.styleColorDefault){
+        style.color = this.styleColorDefault + ' !important'
+      }
+      return style;
+    },
+    activeStyles: function(){
+      let style = {};
+      if(this.styleColorDefault){
+        style.color = this.styleColorActive + ' !important'
+      }
+      return style;
+    }
+  },
 
   methods: {
     selectItem: function(index){
-      this.currentCount = index
+      if(this.clearable && this.currentCount == index) {
+        this.currentCount = 0
+      } else {
+        this.currentCount = index
+      }
       this.$emit('input', this.currentCount)
       this.$emit('change', this.currentCount)
     },
