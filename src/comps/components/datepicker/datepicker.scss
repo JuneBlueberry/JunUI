@@ -4,6 +4,7 @@
   .datepicker-input{
     width: 160px;
     height: 28px;
+    text-align: center;
     border: 1px solid #d7d8d9;
 
     &:hover{
@@ -17,11 +18,43 @@
   }
 
   .datepicker-warpper{
-    width: 280px;
-    height: 280px;
     position: absolute;
     z-index: 9999;
-    box-shadow: 0 0 10px 1px rgba(0,0,0,.15);
+    box-shadow: 0 0 10px 1px #00000026;
+
+    .datepicker-mian{
+
+      table{
+        border-collapse: collapse;
+        width: 100%;
+
+        tr th, tr td{
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-weight: 400;
+          font-size: 14px;
+          border: 1px solid #c6c6c640;
+        }
+
+        tr th{
+          color: #00000073;
+        }
+
+        tr td{
+          color: #000000e6;
+          cursor: pointer;
+
+          &:hover{
+            background-color: #e0e0e066;
+          }
+        }
+
+        .date-exceed{
+          color: #0000001a;
+        }
+      }
+    }
   }
 
   .datepickerDiv-enter-active {
