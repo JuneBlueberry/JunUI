@@ -194,13 +194,16 @@
       </jun-alert>
       <jun-alert class="mar-row-top" type="danger" leftBorder>asdasdasd</jun-alert>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-rate v-model="selectVal4"></jun-rate>
       <jun-rate icon="icon-collection"></jun-rate>
       <jun-rate icon="icon-emoji_fill" clearable></jun-rate>
       <jun-rate icon="icon-delete_fill"></jun-rate>
       <jun-rate icon="icon-delete_fill" style-color-default="#333333" style-color-active="red"></jun-rate>
       <jun-rate icon="icon-collection" :counts="8"></jun-rate>
+    </div> -->
+    <div>
+      <jun-datepicker></jun-datepicker>
     </div>
   </div>
 </template>

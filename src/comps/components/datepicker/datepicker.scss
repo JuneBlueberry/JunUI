@@ -1,0 +1,41 @@
+.jun-datepicker-div{
+  display: inline-block;
+
+  .datepicker-input{
+    width: 160px;
+    height: 28px;
+    border: 1px solid #d7d8d9;
+
+    &:hover{
+      border: 1px solid #00c1de;
+      cursor: pointer;
+    }
+
+    &:focus{
+      border: 1px solid #00c1de;
+    }
+  }
+
+  .datepicker-warpper{
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    z-index: 9999;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.15);
+  }
+
+  .datepickerDiv-enter-active {
+    transition: opacity .5s;
+  }
+
+  .datepickerDiv-leave-active{
+    transition: opacity .1s;
+  }
+
+  .datepickerDiv-enter, .datepickerDiv-leave-to {
+    opacity: 0;
+  }
+  .datepickerDiv-leave ,.datepickerDiv-enter-to {
+    opacity: 1;
+  }
+}
