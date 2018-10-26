@@ -22,6 +22,35 @@
     z-index: 9999;
     box-shadow: 0 0 10px 1px #00000026;
 
+    .datepicker-header{
+      color: #00000040 !important;
+
+      .header-lefticon, .header-righticon, .header-doublelefticon, .header-doublerighticon{
+        padding: 10px 2px;
+        font-size: 20px;
+        
+        &:hover{
+          cursor: pointer;
+          color: #000000cc !important;
+        }
+      }
+      .header-lefticon, .header-doublelefticon{
+        float: left;
+      }
+      .header-righticon, .header-doublerighticon{
+        float: right;
+      }
+
+      .header-date{
+        display: inline-block;
+        line-height: 40px;
+
+        &:hover{
+          color: #000000cc !important;
+        }
+      }
+    }
+
     .datepicker-mian{
 
       table{
@@ -53,6 +82,48 @@
         .date-exceed{
           color: #0000001a;
         }
+
+        .date-today{
+          background-color: #e0e0e099;
+        }
+
+        .date-selectday{
+          position: relative;
+
+          &:after{
+            content: "\2713";
+            font-size: 30px;
+            color: #00c1de;
+            position: absolute;
+            top: 8px;
+            bottom: 0;
+            left: 8px;
+            right: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    .datepicker-footer{
+      height: 40px;
+      line-height: 40px;
+      color: #00000040 !important;
+
+      .footer-lefticon, .footer-righticon{
+        font-size: 14px;
+        padding: 0 6px;
+        
+        &:hover{
+          cursor: pointer;
+          color: #000000cc !important;
+        }
+      }
+      .footer-lefticon{
+        float: left;
+      }
+      .footer-righticon{
+        float: right;
       }
     }
   }

@@ -4,16 +4,19 @@
     <input 
       :class="['datepicker-input']"
       readonly="readonly"
-      v-model="selectDate"
-      @click="isDatepickerDivShow=true"/>
+      v-model="selectValue"
+      @click="onClickDatepicker"/>
     
     <transition name="datepickerDiv">
       <div 
         class="datepicker-warpper"
         v-if="isDatepickerDivShow">
         <div class="datepicker-header">
-          <jun-button @click="onLastMonth">上个月</jun-button>
-          <jun-button @click="onNextMonth">下个月</jun-button>
+          <jun-icon @click.native="onLastYear" type='icon-doubleleft' color='#c6c6c680' class="header-doublelefticon"></jun-icon>
+          <jun-icon @click.native="onLastMonth" type='icon-return' color='#c6c6c680' class="header-lefticon"></jun-icon>
+          <div class="header-date">{{currentYear}}/{{currentMonth}}</div>
+          <jun-icon @click.native="onNextYear" type='icon-doubleright' color='#c6c6c680' class="header-doublerighticon"></jun-icon>
+          <jun-icon @click.native="onNextMonth" type='icon-enter' color='#c6c6c680' class="header-righticon"></jun-icon>
         </div>
         <div class="datepicker-mian">
           <table>
@@ -33,7 +36,7 @@
                 <td 
                   v-for="(itemson, index) in item" 
                   :key="index" 
-                  :class="itemson.exceed?'date-exceed':''"
+                  :class="itemson.exceed==true?'date-exceed':itemson.exceed=='date-today'?'date-today':itemson.exceed=='date-selectday'?'date-selectday':''"
                   @click="selectDay(itemson.year, itemson.month, itemson.day)">
                   {{itemson.day}}
                 </td>
@@ -41,7 +44,10 @@
             </tbody>
           </table>
         </div>
-        <div class="datepicker-footer"></div>
+        <div class="datepicker-footer">
+          <span @click="onClearDate" class="footer-lefticon">清空</span>
+          <span @click="oncancelDate" class="footer-righticon">取消</span>
+        </div>
       </div>
     </transition>
   </div>
@@ -53,12 +59,18 @@ export default {
   props: {},
   data () {
     return {
-      selectDate: '',
-
       dateArray: [],       //天数数组
 
-      nowDate: 0,         //今天
+      selectValue: '',    //选择的值
+      selectDate: 0,     //选择的天
+      selectYear: 0,     //选择的年
+      selectMonth: 0,     //选择的月
 
+      nowDate: 0,         //今天
+      nowYear: 0,         //今天的年
+      nowMonth: 0,        //今天的月
+
+      currentDate: 0,     //今天
       currentMonth: 0,    //本月
       currentYear: 0,     //本年
       currentAllDay: 0,   //本月一共多少天
@@ -83,25 +95,38 @@ export default {
 
   mounted: function(){
       var date = new Date()
-      this.nowDate = date.getDate()
 
-      this.currentMonth = date.getMonth() + 1
-      this.currentYear = date.getFullYear()
+      this.nowDate = this.currentDate = date.getDate()
+      this.nowMonth = this.currentMonth = date.getMonth() + 1
+      this.nowYear = this.currentYear = date.getFullYear()
 
-      this.setDates(this.currentYear, this.currentMonth)
+      
   },
 
   methods: {
     selectDay: function(year, month, day){
-      this.selectDate = year + '-' + month + '-' + day
+      this.currentDate = day
+      this.selectDate = day
+      this.selectMonth = month
+      this.selectYear = year
+      this.selectValue = year + '-' + month + '-' + day
+      this.isDatepickerDivShow = false
     },
 
+    //
+    onClickDatepicker: function(){
+      if(this.isDatepickerDivShow){
+        this.isDatepickerDivShow = !this.isDatepickerDivShow
+      }else{
+        this.isDatepickerDivShow = !this.isDatepickerDivShow
+        this.setDates(this.currentYear, this.currentMonth)
+      }
+    },
     //设置时间
     setDates: function(year, month){
       var date=new Date()
 
       this.currentAllDay = this.getDaysInOneMonth(year, month)
-      console.log(this.currentAllDay)
 
       this.lastMonth = month-1
       this.lastYear = year
@@ -120,6 +145,7 @@ export default {
       this.getDateList()
     },
 
+    //上一个月
     onLastMonth: function(){
       if(this.currentMonth-1 > 0){
         this.currentMonth = this.currentMonth - 1
@@ -130,6 +156,7 @@ export default {
       this.setDates(this.currentYear, this.currentMonth)
     },
 
+    //下一个月
     onNextMonth: function(){
       if(this.currentMonth+1 < 13){
         this.currentMonth = this.currentMonth + 1
@@ -138,6 +165,32 @@ export default {
         this.currentYear = this.currentYear + 1
       }
       this.setDates(this.currentYear, this.currentMonth)
+    },
+
+    //上一年
+    onLastYear: function(){
+      this.currentYear = this.currentYear - 1
+      this.setDates(this.currentYear, this.currentMonth)
+    },
+
+    //下一年
+    onNextYear: function(){
+      this.currentYear = this.currentYear + 1
+      this.setDates(this.currentYear, this.currentMonth)
+    },
+
+    //取消
+    oncancelDate: function(){
+      this.isDatepickerDivShow = false
+    },
+
+    //清空选择数据
+    onClearDate: function(){
+      this.selectDate = 0
+      this.selectMonth = 0
+      this.selectYear = 0
+      this.selectValue = ''
+      this.getDateList()
     },
 
     //获取表格日期list
@@ -151,12 +204,22 @@ export default {
           exceed: true
         })
       }
+      console.log(this.currentDate)
       for(let i=1; i<=this.currentAllDay; i++){
+        let dayClass = false
+        if (this.selectYear == this.currentYear && this.selectMonth == this.currentMonth && this.selectDate == i){
+          dayClass = 'date-selectday'
+        }
+        else if(this.nowYear == this.currentYear && this.nowMonth == this.currentMonth && this.nowDate == i)
+        {
+          dayClass = 'date-today'
+        }
+
         dateArr.push({          
           year: this.currentYear,
           month: this.currentMonth,
           day: i,
-          exceed: false
+          exceed: dayClass
         })
       }
       for(let i=1; i<=42-this.currentAllDay-this.lastExceedDay; i++){
@@ -167,7 +230,6 @@ export default {
           exceed: true
         })
       }
-      console.log(dateArr)
       this.setDateList(dateArr)
     },
 
