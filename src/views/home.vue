@@ -215,7 +215,8 @@ export default {
       selectVal: '111',
       selectVal2: true,
       selectVal3: ['前端工程师'],
-      selectVal4: 2
+      selectVal4: 2,
+      selectVal5: '2018-08-15ss'
     }
   },
   methods: {
