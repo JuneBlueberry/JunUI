@@ -202,8 +202,11 @@
       <jun-rate icon="icon-delete_fill" style-color-default="#333333" style-color-active="red"></jun-rate>
       <jun-rate icon="icon-collection" :counts="8"></jun-rate>
     </div> -->
+    <!-- <div>
+      <jun-datepicker v-model="selectVal5"></jun-datepicker>
+    </div> -->
     <div>
-      <jun-datepicker></jun-datepicker>
+      <jun-page></jun-page>
     </div>
   </div>
 </template>
@@ -216,7 +219,7 @@ export default {
       selectVal2: true,
       selectVal3: ['前端工程师'],
       selectVal4: 2,
-      selectVal5: '2018-08-15ss'
+      selectVal5: ''
     }
   },
   methods: {
@@ -231,7 +234,7 @@ export default {
     },
     selectItem: function(){
       console.log(222)
-    }
+    },
   },
   watch: {
     selectVal: function(val){
@@ -244,6 +247,9 @@ export default {
       console.log(val)
     },
     selectVal4: function(val){
+      console.log(val)
+    },
+    selectVal5: function(val){
       console.log(val)
     }
   }

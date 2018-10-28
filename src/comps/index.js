@@ -7,6 +7,7 @@ import { DatePicker } from './components/datepicker/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
+import { Page } from './components/page/index'
 import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Switch } from './components/switch/index'
@@ -22,6 +23,7 @@ const components = {
   FlexCol,
   Input,
   Icon,
+  Page,
   RadioGroup,
   Radio,
   Rate,

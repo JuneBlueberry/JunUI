@@ -167,6 +167,9 @@ export default {
       this.selectYear = year
       this.selectValue = year + '-' + month + '-' + day
       this.isDatepickerDivShow = false
+
+      this.$emit('input', this.selectValue)
+      this.$emit('change', this.selectValue)
     },
 
     //选择月份
@@ -306,7 +309,6 @@ export default {
           exceed: true
         })
       }
-      console.log(this.currentDate)
       for(let i=1; i<=this.currentAllDay; i++){
         let dayClass = false
         if (this.selectYear == this.currentYear && this.selectMonth == this.currentMonth && this.selectDate == i){

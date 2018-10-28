@@ -1,0 +1,42 @@
+.jun-page-div{
+    display: inline-block;
+
+    .page-mian-warpper{
+
+        ul{
+            li{
+                float: left;
+
+                &>span{
+                    height: 24px;
+                    padding: 6px 10px;
+                    line-height: 24px;
+                    text-align: center;
+                    border-left: 1px solid #cccccc;
+                    border-top: 1px solid #cccccc;
+                    border-bottom: 1px solid #cccccc;
+
+                    &:hover{
+                        color: #ffffff;
+                        background-color: #0099cc;
+                        border-top: 1px solid #0099cc;
+                        border-bottom: 1px solid #0099cc;
+                    }
+                }
+
+                .page-active{
+                    color: #ffffff;
+                    background-color: #0099cc;
+                    border-top: 1px solid #0099cc;
+                    border-bottom: 1px solid #0099cc;
+                }
+            }
+
+            li:last-child{
+                &>span{
+                    border: 1px solid #cccccc;
+                }
+            }
+        }
+    }
+}
