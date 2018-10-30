@@ -41,8 +41,8 @@
         <jun-button type="warning" size="mini">警告按钮</jun-button>
         <jun-button type="error" size="mini">危险按钮</jun-button>
       </div>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <div class="mar-top">
         <jun-flex-row class="mar-row-top">
           <jun-flex-col :span="24"><div class="col-light">100%</div></jun-flex-col>
@@ -87,8 +87,8 @@
           <jun-flex-col :span="2"><div class="col-light">2/24</div></jun-flex-col>
         </jun-flex-row>
       </div>
-    </div> -->
-    <!-- <div style="width: 70%">
+    </div>
+    <div style="width: 70%">
       <jun-input class="mar-row-top" v-model="selectVal" prepend append @on-prepend="prependClick">
         <template slot="prepend">
           <i>帐号</i>
@@ -115,8 +115,8 @@
         </jun-flex-col>
       </jun-flex-row>
       <jun-input class="mar-row-top" placeholder="haha" @change="changeVal" disabled></jun-input>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <div>
         <jun-icon type="icon-accessory"></jun-icon>
         <jun-icon type="icon-activity"></jun-icon>
@@ -144,8 +144,8 @@
         <jun-icon type="icon-addition" color="#888888"></jun-icon>
         <jun-icon type="icon-addpeople_fill" color="#999999"></jun-icon>
       </div>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-radio size="small">前端工程师</jun-radio>
       <jun-radio>后端工程师</jun-radio>
       <jun-radio disabled>算法工程师</jun-radio>
@@ -153,8 +153,8 @@
       <jun-radio color="green">算法工程师</jun-radio>
       <jun-radio color="yellow">算法工程师</jun-radio>
       <jun-radio size="big">全栈工程师</jun-radio>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-radio-group v-model="selectVal">
         <jun-radio label="前端工程师">前端工程师</jun-radio>
         <jun-radio label="后端工程师">后端工程师</jun-radio>
@@ -169,8 +169,8 @@
         <jun-checkbox label="后端工程师" color="red"></jun-checkbox>
         <jun-checkbox label="全栈工程师" color="yellow"></jun-checkbox>
       </jun-checkbox-group>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-switch></jun-switch>
       <jun-switch checked></jun-switch>
       <br/><br/>
@@ -179,11 +179,11 @@
       <br/><br/>
       <jun-switch :type="3"></jun-switch>
       <jun-switch :type="3" checked></jun-switch>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-select></jun-select>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-alert class="mar-row-top" leftBorder clearable>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="success" leftBorder>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="info" border leftBorder>asdasdasd</jun-alert>
@@ -193,16 +193,16 @@
         <p>千万人空间哦通过豆腐干士大夫</p>
       </jun-alert>
       <jun-alert class="mar-row-top" type="danger" leftBorder>asdasdasd</jun-alert>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-rate v-model="selectVal4"></jun-rate>
       <jun-rate icon="icon-collection"></jun-rate>
       <jun-rate icon="icon-emoji_fill" clearable></jun-rate>
       <jun-rate icon="icon-delete_fill"></jun-rate>
       <jun-rate icon="icon-delete_fill" style-color-default="#333333" style-color-active="red"></jun-rate>
       <jun-rate icon="icon-collection" :counts="8"></jun-rate>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-datepicker v-model="selectVal5"></jun-datepicker>
     </div> -->
     <div>
