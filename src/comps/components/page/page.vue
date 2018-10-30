@@ -8,7 +8,8 @@
               <li
                 @click="lastPage"><span><jun-icon type='icon-return' :size='14'></jun-icon></span></li>
               <li 
-                v-for="(i, index) in pageList"
+                v-for="i in pageList"
+                :key="i"
                 @click="changePage(i)">
                 <span :class="i==data_pageCurrent?'page-active':''">{{i}}</span>
               </li>
@@ -28,7 +29,7 @@
     props: {
       total: {
         type: Number,
-        default: 100
+        default: 58
       },
       pageCurrent: {
         type: Number,
@@ -54,9 +55,8 @@
         data_pageCurrent: this.pageCurrent,
         
         pageList: [],
-        startPage: 1,
-        endPage: 0
-
+        currentRow: 1,
+        totalRow: 0,
       }
     },
 
@@ -69,44 +69,58 @@
 
     methods: {
       changePage: function(i){
+        if(this.data_pageCurrent != i){
           this.data_pageCurrent = i
+        }
       },
       nextPage: function(){
         if(this.data_pageCurrent < this.data_pageTotal){
-          this.data_pageCurrent = this.data_pageCurrent + 1
-          if(this.showMaxPage + this.startPage <= this.data_pageCurrent){
-            this.startPage = this.data_pageCurrent
+          if(this.data_pageCurrent % this.showMaxPage == 0){
+            this.currentRow = this.currentRow + 1
           }
+          this.data_pageCurrent = this.data_pageCurrent + 1
         }
       },
       lastPage: function(){
         if(this.data_pageCurrent > 1 ){
+          if(this.data_pageCurrent % this.showMaxPage == 1){
+            this.currentRow = this.currentRow - 1
+          }
           this.data_pageCurrent = this.data_pageCurrent - 1
         }
       },
       getPageList: function(){
         this.pageList = []
-        if(this.showMaxPage >= this.data_pageTotal){
-          for(let i=1; i<=this.data_pageTotal; i++){
-            this.pageList.push(i)
+        if(this.currentRow == this.totalRow){
+          let counts = (this.data_pageTotal%this.showMaxPage==0)?this.showMaxPage:(this.data_pageTotal%this.showMaxPage)
+          for(let i=1; i<=counts; i++){
+            this.pageList.push((this.currentRow-1)*this.showMaxPage+i)
           }
         }else{
-          for(let i=this.startPage; i<=this.startPage+this.showMaxPage; i++){
-            this.pageList.push(i)
+          for(let i=1; i<=this.showMaxPage; i++){
+            this.pageList.push((this.currentRow-1)*this.showMaxPage+i)
           }
         }
       },
 
       updatePageTotal: function(){
-        this.data_pageTotal = (this.data_total%this.pageSize==0) ? (this.data_total/this.pageSize) : (this.data_total/this.pageSize)+1
+        this.data_pageTotal = Math.ceil(this.data_total/this.data_pageSize)
+        this.totalRow = Math.ceil(this.data_pageTotal/this.showMaxPage)
+        if(this.currentRow > this.totalRow){
+          this.currentRow = this.totalRow
+        }
       }
     },
 
     watch: {
-      data_total: function(){
-        console.log(111)
+      data_pageCurrent: function(page){
+        console.log(page)
+        this.$emit('change', page)
       },
-      startPage: function(){
+      data_total: function(){
+        updatePageTotal()
+      },
+      currentRow: function(){
         this.getPageList()
       }
     }
