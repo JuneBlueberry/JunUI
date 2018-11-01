@@ -7,7 +7,7 @@
           v-for="(item,index) in tabList"
           :key="index"
           @click="onClickTab(item.name)" 
-          :class="['tabs-head-item', item.name==currentName?'active':'']">{{item.label}}</div>
+          :class="['tabs-head-item', 'tabs-color-'+color, item.name==currentName?'active':'']">{{item.label}}</div>
       </div>
     </div>
     <div class="tabs-main-warpper">
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { findComponentsDownward } from '../../../utils/assist'
+import { findComponentsDownward, oneOf } from '../../../utils/assist'
 
 export default {
   name: 'jun-tabs',
@@ -25,16 +25,19 @@ export default {
     value: {
       type: String,
       default: 'tab1'
+    },
+    color: {
+      type: String,
+      validator: function(value){
+        return oneOf(value, ['blue','green','red','yellow'])
+      },
+      default: 'blue'
     }
   },
   data () {
     return {
       currentName: this.value,
-      tabList: [
-        {name: 'tab1', label: '标签一'},
-        {name: 'tab2', label: '标签二'},
-        {name: 'tab3', label: '标签三'}
-      ]
+      tabList: []
     };
   },
 
@@ -42,12 +45,16 @@ export default {
 
   computed: {},
 
+  mounted: function(){
+    this.updateTabName()
+  },
+
   methods: {
     onClickTab: function(tab){
       this.currentName = tab
     },
 
-    getTabList: function(){
+    updateTabName: function(){
       let tabList = []
       let value = this.currentName
       const Tabs = findComponentsDownward(this, 'jun-tabs-item')
@@ -57,7 +64,7 @@ export default {
           _tab.name = tab.name
           _tab.label = tab.label
           tabList.push(_tab)
-          tab.name = value
+          tab.currentName = value
         })
       }
       this.tabList = tabList
@@ -66,8 +73,12 @@ export default {
 
   watch: {
     currentName: {
-      handler: 'getTabList',
-      immediate: true
+      handler: function(val){
+        this.updateTabName()
+
+        this.$emit('input', val)
+        this.$emit('change', val)
+      }
     }
   }
 }

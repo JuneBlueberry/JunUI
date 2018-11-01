@@ -209,7 +209,7 @@
       <jun-page></jun-page>
     </div> -->
     <div>
-      <jun-tabs>
+      <jun-tabs v-model="selectVal6" @change="changeVal">
         <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
         <jun-tabs-item name="tab2" label="便签2">22222</jun-tabs-item>
         <jun-tabs-item name="tab3" label="便签3">33333</jun-tabs-item>
@@ -226,7 +226,8 @@ export default {
       selectVal2: true,
       selectVal3: ['前端工程师'],
       selectVal4: 2,
-      selectVal5: ''
+      selectVal5: '',
+      selectVal6: 'tab2'
     }
   },
   methods: {
@@ -257,6 +258,9 @@ export default {
       console.log(val)
     },
     selectVal5: function(val){
+      console.log(val)
+    },
+    selectVal6: function(val){
       console.log(val)
     }
   }

@@ -22,6 +22,10 @@ export default {
 
   computed: {},
 
+  mounted: function(){
+    this.updateValue()
+  },
+
   methods: {
     updateValue: function() {
       const CheckBoxs = findComponentsDownward(this, "jun-checkbox");
@@ -53,7 +57,6 @@ export default {
   watch: {
     currentModel: {
       handler: 'updateValue',
-      immediate: true
     }
   }
 };

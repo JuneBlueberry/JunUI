@@ -27,6 +27,10 @@ export default {
 
   computed: {},
 
+  mounted: function(){
+    this.updateValue()
+  },
+
   methods: {
     updateValue: function(){
       let value = this.currentValue
@@ -51,7 +55,6 @@ export default {
   watch: {
     value: {
       handler: 'updateValue',
-      immediate: true
     }
   }
 }

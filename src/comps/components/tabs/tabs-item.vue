@@ -1,6 +1,6 @@
 <!-- JunChen 2018-11-01 便签tabs-item组件 -->
 <template>
-  <div>
+  <div v-show="name==currentName">
     <slot></slot>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
   },
   data () {
     return {
+      currentName: ''
     };
   },
 
