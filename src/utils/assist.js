@@ -13,12 +13,13 @@ export function oneOf (value, validList) {
 // Find components downward
 function findComponentsDownward (context, componentName, components = []) {
   const childrens = context.$children
-
+  console.log(childrens)
+  console.log(childrens.length)
   if (childrens.length) {
     childrens.forEach(child => {
       const name = child.$options.name
       const childs = child.$children
-
+      console.log(name)
       if (name === componentName) components.push(child)
       if (childs.length) {
         const findChilds = findComponentsDownward(child, componentName, components)

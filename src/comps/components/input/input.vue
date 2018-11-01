@@ -104,9 +104,11 @@ export default {
     value: function(val){
       this.currentValue = val
     },
-    currentValue: function(val){
-      this.$emit('input', val)
-      this.$emit('change', val)
+    currentValue: {
+      handler: function(val){
+        this.$emit('input', val)
+        this.$emit('change', val)
+      }
     }
   }
 }

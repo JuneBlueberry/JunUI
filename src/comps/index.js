@@ -12,6 +12,7 @@ import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Switch } from './components/switch/index'
 import { Select } from './components/select/index'
+import { Tabs, TabsItem } from './components/tabs/index'
 
 const components = {
   Alert,
@@ -28,7 +29,9 @@ const components = {
   Radio,
   Rate,
   Switch,
-  Select
+  Select,
+  Tabs,
+  TabsItem
 }
 
 const install = function (Vue) {

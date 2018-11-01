@@ -4,9 +4,13 @@
       <div class="page-left-warpper"></div>
       <div class="page-mian-warpper">
           <ul>
-              <li><span><jun-icon type='icon-doubleleft' :size='14'></jun-icon></span></li>
               <li
-                @click="lastPage"><span><jun-icon type='icon-return' :size='14'></jun-icon></span></li>
+                @click="lastBigPage">
+                <span><jun-icon type='icon-doubleleft' :size='14'></jun-icon></span></li>
+              <li
+                @click="lastPage">
+                <span><jun-icon type='icon-return' :size='14'></jun-icon></span>
+              </li>
               <li 
                 v-for="i in pageList"
                 :key="i"
@@ -14,8 +18,13 @@
                 <span :class="i==data_pageCurrent?'page-active':''">{{i}}</span>
               </li>
               <li
-                @click="nextPage"><span><jun-icon type='icon-enter' :size='14'></jun-icon></span></li>
-              <li><span><jun-icon type='icon-doubleright' :size='14'></jun-icon></span></li>
+                @click="nextPage">
+                <span><jun-icon type='icon-enter' :size='14'></jun-icon></span>
+              </li>
+              <li
+                @click="nextBigPage">
+                <span><jun-icon type='icon-doubleright' :size='14'></jun-icon></span>
+              </li>
           </ul>
       </div>
       <div class="page-right-warpper"></div>
@@ -62,11 +71,6 @@
 
     components: {},
 
-    mounted: function(){
-      this.updatePageTotal()
-      this.getPageList()
-    },
-
     methods: {
       changePage: function(i){
         if(this.data_pageCurrent != i){
@@ -81,12 +85,38 @@
           this.data_pageCurrent = this.data_pageCurrent + 1
         }
       },
+      nextBigPage: function(){
+        if(this.data_pageCurrent == this.data_pageTotal){
+          return
+        }
+        if(this.currentRow == this.totalRow){
+          this.data_pageCurrent = this.data_pageTotal
+        }else{
+          this.currentRow = this.currentRow + 1
+          if(this.data_pageCurrent + this.showMaxPage > this.data_pageTotal){
+            this.data_pageCurrent = this.data_pageTotal
+          }else{
+            this.data_pageCurrent = this.data_pageCurrent + this.showMaxPage
+          }
+        }
+      },
       lastPage: function(){
         if(this.data_pageCurrent > 1 ){
           if(this.data_pageCurrent % this.showMaxPage == 1){
             this.currentRow = this.currentRow - 1
           }
           this.data_pageCurrent = this.data_pageCurrent - 1
+        }
+      },
+      lastBigPage: function(){
+        if(this.data_pageCurrent == 1){
+          return
+        }
+        if(this.currentRow == 1){
+          this.data_pageCurrent = 1
+        }else{
+          this.currentRow = this.currentRow - 1
+          this.data_pageCurrent = this.data_pageCurrent - this.showMaxPage
         }
       },
       getPageList: function(){
@@ -113,15 +143,18 @@
     },
 
     watch: {
-      data_pageCurrent: function(page){
-        console.log(page)
-        this.$emit('change', page)
+      data_pageCurrent: {
+        handler: function(page){
+          this.$emit('change', page)
+        }
       },
-      data_total: function(){
-        updatePageTotal()
+      data_total: {
+        handler: 'updatePageTotal',
+        immediate: true
       },
-      currentRow: function(){
-        this.getPageList()
+      currentRow: {
+        handler: 'getPageList',
+        immediate: true
       }
     }
   }

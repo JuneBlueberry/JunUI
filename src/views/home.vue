@@ -205,8 +205,15 @@
     <div>
       <jun-datepicker v-model="selectVal5"></jun-datepicker>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-page></jun-page>
+    </div> -->
+    <div>
+      <jun-tabs>
+        <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
+        <jun-tabs-item name="tab2" label="便签2">22222</jun-tabs-item>
+        <jun-tabs-item name="tab3" label="便签3">33333</jun-tabs-item>
+      </jun-tabs>
     </div>
   </div>
 </template>
