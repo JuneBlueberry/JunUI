@@ -9,9 +9,12 @@
           @click="onClickTab(item.name)" 
           :class="['tabs-head-item', 'tabs-color-'+color, item.name==currentName?'active':'']">{{item.label}}</div>
       </div>
+      <div class="tabs-head-right">
+        <slot name="tabs-rigth-div"></slot>
+      </div>
     </div>
     <div class="tabs-main-warpper">
-      <slot></slot>
+      <slot @create="create"></slot>
     </div>
   </div>
 </template>
@@ -68,6 +71,10 @@ export default {
         })
       }
       this.tabList = tabList
+    },
+
+    create: function(val){
+      console.log(val)
     }
   },
 

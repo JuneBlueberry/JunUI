@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { findComponentUpward } from '../../../utils/assist'
 export default {
   name: 'jun-tabs-item',
   props: {
@@ -25,6 +26,13 @@ export default {
   components: {},
 
   computed: {},
+
+  mounted: function(){
+    const Tabs = findComponentUpward(this, 'jun-tabs')
+    if(Tabs.length > 0){
+      Tabs.updateTabName()
+    }
+  },
 
   methods: {}
 }

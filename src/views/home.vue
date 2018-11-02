@@ -215,6 +215,14 @@
         <jun-tabs-item name="tab3" label="便签3">33333</jun-tabs-item>
       </jun-tabs>
     </div>
+    <div>
+      <jun-tabs v-model="selectVal6" @change="changeVal">
+        <template slot="tabs-rigth-div">
+          <jun-button type="success" style="float:right" @click="addTab">添加</jun-button>
+        </template>
+        <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
+      </jun-tabs>
+    </div>
   </div>
 </template>
 
@@ -227,7 +235,12 @@ export default {
       selectVal3: ['前端工程师'],
       selectVal4: 2,
       selectVal5: '',
-      selectVal6: 'tab2'
+      selectVal6: 'tab2',
+      selectVal7: [
+        {name:'tab1', label: '便签1'},
+        {name:'tab2', label: '便签2'},
+        {name:'tab3', label: '便签3'}
+      ]
     }
   },
   methods: {
@@ -243,6 +256,9 @@ export default {
     selectItem: function(){
       console.log(222)
     },
+    addTab: function(){
+       this.selectVal7.push({name:'tab', label: '便签'})
+    }
   },
   watch: {
     selectVal: function(val){
@@ -261,6 +277,9 @@ export default {
       console.log(val)
     },
     selectVal6: function(val){
+      console.log(val)
+    },
+    selectVal7: function(val){
       console.log(val)
     }
   }
