@@ -29,7 +29,7 @@ export default {
 
   mounted: function(){
     const Tabs = findComponentUpward(this, 'jun-tabs')
-    if(Tabs.length > 0){
+    if(Tabs != undefined){
       Tabs.updateTabName()
     }
   },

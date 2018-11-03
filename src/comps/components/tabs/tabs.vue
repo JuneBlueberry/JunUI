@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="tabs-main-warpper">
-      <slot @create="create"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -72,10 +72,6 @@ export default {
       }
       this.tabList = tabList
     },
-
-    create: function(val){
-      console.log(val)
-    }
   },
 
   watch: {
