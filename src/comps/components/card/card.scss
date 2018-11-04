@@ -1,0 +1,27 @@
+.jun-card-div{
+
+  .card-main{
+		padding: 16px 16px;
+		background: #ffffff;
+		box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  }
+
+  .card-main.card-type-highlight{
+		border: 1px solid #f2f2f2;
+		box-shadow: none;
+
+		&:hover{
+			border: 1px solid #00c1de;
+			box-shadow: 0 0 20px rgba(0,198,226,.5);
+		}
+	}
+	
+	.card-main.card-type-zoom{
+		border: 1px solid #f2f2f2;
+		box-shadow: none;
+
+		&:hover{
+			transform: scale(1.03);
+		}
+  }
+}

@@ -208,7 +208,7 @@
     <!-- <div>
       <jun-page></jun-page>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-tabs v-model="selectVal6" @change="changeVal">
         <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
         <jun-tabs-item name="tab2" label="便签2">22222</jun-tabs-item>
@@ -222,6 +222,17 @@
         </template>
         <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
       </jun-tabs>
+    </div> -->
+    <div>
+      <jun-card style="width:60%;margin: 20px auto">
+        <p>111</p>
+        <p>222</p>
+      </jun-card>
+      <jun-card style="width:60%;margin: 20px auto" type='highlight'>
+        <p>111</p>
+        <p>222</p>
+      </jun-card>
+      <jun-card style="width:60%;margin: 20px auto" type='zoom'>卡片1</jun-card>
     </div>
   </div>
 </template>

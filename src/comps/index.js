@@ -2,6 +2,7 @@ import './styles/index.scss'
 
 import { Alert } from './components/alert/index'
 import { Button } from './components/button/index'
+import { Card } from './components/card/index'
 import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
 import { DatePicker } from './components/datepicker/index'
 import { FlexRow, FlexCol } from './components/flex/index'
@@ -17,6 +18,7 @@ import { Tabs, TabsItem } from './components/tabs/index'
 const components = {
   Alert,
   Button,
+  Card,
   CheckBoxGroup,
   CheckBox,
   DatePicker,
