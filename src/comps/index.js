@@ -13,6 +13,7 @@ import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Switch } from './components/switch/index'
 import { Select } from './components/select/index'
+import { Table } from './components/table/index'
 import { Tabs, TabsItem } from './components/tabs/index'
 
 const components = {
@@ -32,6 +33,7 @@ const components = {
   Rate,
   Switch,
   Select,
+  Table,
   Tabs,
   TabsItem
 }
