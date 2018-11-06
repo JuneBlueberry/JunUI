@@ -223,7 +223,7 @@
         <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
       </jun-tabs>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-card style="width:60%;margin: 20px auto">
         <p>111</p>
         <p>222</p>
@@ -233,6 +233,9 @@
         <p>222</p>
       </jun-card>
       <jun-card style="width:60%;margin: 20px auto" type='zoom'>卡片1</jun-card>
+    </div> -->
+    <div style="width: 90%; margin: 0 auto;">
+      <jun-table border></jun-table>
     </div>
   </div>
 </template>
