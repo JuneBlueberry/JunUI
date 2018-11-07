@@ -109,7 +109,6 @@ export default {
       }else if(typeof this.selectMaxHeight == 'string' && this.selectMaxHeight !== ''){
         style.maxHeight = this.selectMaxHeight
       }
-      console.log(style)
       return style;
     },
   },

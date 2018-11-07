@@ -235,7 +235,7 @@
       <jun-card style="width:60%;margin: 20px auto" type='zoom'>卡片1</jun-card>
     </div> -->
     <div style="width: 90%; margin: 0 auto;">
-      <jun-table border stripe>
+      <jun-table border stripe height="250px">
         <span slot='mob' slot-scope="item">{{item.row.mob.substring(0,3) + '****' + item.row.mob.substring(7,4)}}</span>
         <span slot="caozuo" slot-scope="item">
           <jun-button size="small" type="primary">增加</jun-button>
