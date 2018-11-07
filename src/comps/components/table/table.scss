@@ -7,6 +7,16 @@
     text-align: center;
     border: 1px solid #e9edf2;
 
+    tr th{
+      background-color: #f5f6fb;
+    }
+
+    tr{
+      &:hover{
+        background-color: #f9f9fa;
+      }
+    }
+
     tr th, tr td{
       border-bottom: 1px solid #e9edf2;
       font-size: 14px;
@@ -19,17 +29,14 @@
       padding: 12px 0;
     }
 
-
-
-    tr{
-      &:hover{
-        background-color: #f9f9fa;
-      }
+    .tr-active{
+      background-color: #f9f9fa;
     }
 
-    tr th{
+    tr:nth-child(2n).tr-stripe{
       background-color: #f5f6fb;
     }
+
   }
 
   .table-main.table-main-border{
