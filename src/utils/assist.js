@@ -74,3 +74,27 @@ function findComponentUpward (context, componentName, componentNames) {
   return parent
 }
 export {findComponentUpward}
+
+
+//Get clientWidth
+function getClientWidth (min, max, domid) {
+  let width
+  if(domid != undefined){
+    width = document.getElementsByClassName(domid)[0].clientWidth
+  }else{
+    width = document.body.clientWidth
+  }
+  
+  if(min != undefined && min != '' && min > 0){
+    if(width < min){
+      return min
+    }
+  }
+  if(max != undefined && max != '' && max > 0){
+    if(width > max){
+      return max
+    }
+  }
+  return width
+}
+export {getClientWidth}

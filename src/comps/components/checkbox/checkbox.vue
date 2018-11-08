@@ -26,6 +26,7 @@ export default {
   name: 'jun-checkbox',
   props: {
     value: [String, Number, Boolean],
+    param: [String, Number, Boolean, Array, Object],
     size: {
       type: String,
       default: ''
@@ -74,13 +75,18 @@ export default {
           label: this.label
         })
       }else{
+        this.$emit('change', checked, this.param)
         this.$emit('input', checked)
-        this.$emit('change', checked)
       }
     },
   },
 
   watch: {
+    value: {
+      handler: function(value){
+        this.currentValue = value
+      }
+    }
   }
 }
 </script>

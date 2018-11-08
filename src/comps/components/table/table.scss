@@ -1,5 +1,6 @@
 .jun-table-div{
   width: 100%;
+  overflow-x: auto;
 
   .table-warpper{
     width: 100%;
@@ -32,6 +33,10 @@
       .bodyer-td{
         padding: 8px 0;
       }
+    }
+
+    .header-th-checkbox, .bodyer-td-checkbox{
+      width: 60px;
     }
 
     .tr-active{
