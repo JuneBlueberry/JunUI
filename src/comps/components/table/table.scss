@@ -1,12 +1,21 @@
 .jun-table-div{
   width: 100%;
-  overflow-x: auto;
+  position: relative;
 
   .table-warpper{
     width: 100%;
     text-align: center;
     border: 1px solid #e9edf2;
     font-size: 14px;
+
+    .table-header-warpper{
+      overflow: hidden;
+    }
+
+    .table-bodyer-warpper{
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
 
     .table-header, .table-bodyer{
       width: 100%;
@@ -50,7 +59,47 @@
     .header-th-border, .bodyer-td-border{
       border-right: 1px solid #e9edf2;
     }
+
+    // 右侧
+    .table-right-warpper{
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,.12);
+  
+      .table-header-warpper, .table-bodyer-warpper{
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+      }
+
+      .table-bodyer-warpper{
+        top: 48px;
+        overflow-y: auto;
+      }
+
+      .header-th, .bodyer-td{
+        visibility: hidden;
+        padding: 6px 0;
+        text-align: center;
+  
+        &:last-child{
+          visibility: visible;
+          background-color: #ffffff;
+        }
+      }
+
+      .bodyer-td{
+        padding: 8px 0;
+      }
+      
+    }
+
   }
+
+
 
   .table-warpper-border{
     border-right: none;

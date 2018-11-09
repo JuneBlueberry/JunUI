@@ -1,10 +1,15 @@
 <!-- JunChen 2018-11-05 Table组件 -->
 <template>
   <div :class="['jun-table-div']">
-    <div 
+    <!-- 表主体 -->
+    <div
       :class="['table-warpper', {'table-warpper-border': border}]"
-      :style="tableStyle">
-      <div class="table-header-warpper">
+      :style="tableStyle"
+      ref='ref_height'>
+      <!-- 表头 -->
+      <div 
+        class="table-header-warpper" 
+        ref="ref_scrollHeaderX">
         <table class="table-header">
           <thead>
             <tr class="header-tr">
@@ -19,6 +24,7 @@
                 v-for="(item, index) in header" :key="index">
                 <span>{{item.label}}</span>
               </th>
+              <td :style="{width: rightStyle.width}"></td>
               <th
                 v-if="height!=undefined && height!=''" 
                 class="header-th-rigth"></th>
@@ -26,9 +32,12 @@
           </thead>
         </table>
       </div>
+      <!-- 表身数据 -->
       <div 
         class="table-bodyer-warpper"
-        :style="bodyerStyle">
+        :style="bodyerStyle"
+        ref="ref_scrollBodyerY"
+        @scroll="scrollHeaderX">
         <table class="table-bodyer">
           <tbody>
             <tr
@@ -48,12 +57,63 @@
                   <span>{{item[itemson.key]}}</span>
                 </slot>
               </td>
-            </tr>
-            <tr v-if="false">
-              <td colspan="3"></td>
+              <td :style="{width: rightStyle.width}"></td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <!-- 表右侧 -->
+      <div 
+        :class="['table-right-warpper', {'table-warpper-border': border}]"
+        :style="rightStyle">
+        <div class="table-header-warpper">
+          <table class="table-header">
+            <thead>
+              <tr class="header-tr">
+                <th 
+                  v-if="checkbox"
+                  :class="['header-th','header-th-checkbox', {'header-th-border': border}]">
+                  <jun-checkbox @change="SelectAllCheckBox"></jun-checkbox>
+                </th>
+                <th 
+                  :class="['header-th', {'header-th-border': border}]"
+                  :style="{width: item.width==undefined?'':item.width+'px'}"
+                  v-for="(item, index) in header" :key="index">
+                  <span>{{item.label}}</span>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div 
+          class="table-bodyer-warpper"
+          :style="bodyerStyle"
+          @scroll="scrollRightBodyerY">
+          <table class="table-bodyer">
+            <tbody>
+              <tr
+                v-for="(item, index) in bodyer" :key="index"
+                :class="['bodyer-tr',{'tr-active': index==activeRow,'tr-stripe': stripe}]">
+                <td 
+                  v-if="checkbox"
+                  :class="['bodyer-td', 'bodyer-td-checkbox', {'bodyer-td-border': border}]">
+                  <jun-checkbox @change="SelectCheckBox" :param="item" :value="defaultSelect"></jun-checkbox>
+                </td>
+                <td 
+                  :class="['bodyer-td', {'bodyer-td-border': border}]"
+                  :style="{width: itemson.width==undefined?'':itemson.width+'px'}"
+                  v-for="(itemson, index) in header" :key="index">
+                  <slot :name="itemson.key" :row="item">
+                    <span>{{item[itemson.key]}}</span>
+                  </slot>
+                </td>
+              </tr>
+              <tr v-if="false">
+                <td colspan="3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -70,10 +130,10 @@ export default {
       default: function(){
         return [
           {label: '姓名', key: 'name', width: 90},
-          {label: '年龄', key: 'age'},
-          {label: '性别', key: 'sex'},
-          {label: '手机号', key: 'mob'},
-          {label: '操作', key: 'caozuo'}
+          {label: '年龄', key: 'age', width: 300},
+          {label: '性别', key: 'sex',width: 300},
+          {label: '手机号', key: 'mob',width: 300},
+          {label: '操作', key: 'caozuo', width: 120}
         ]
       }
     },
@@ -144,8 +204,17 @@ export default {
       bodyer: this.bodyerData,
       activeRow: -1,
       checkBoxList: [],
+      rightStyle: {
+        width: 0,
+        height: 0
+      },
+
       defaultSelect: false
     };
+  },
+
+  mounted: function(){
+    this.setTableHeight()
   },
 
   components: {},
@@ -155,10 +224,8 @@ export default {
       let style = {}
       if(typeof this.height == 'number'){
         style.height = this.height + 'px'
-        style.overflowY = 'scroll'
       }else if(typeof this.height == 'string' && this.height !== ''){
         style.height = this.height
-        style.overflowY = 'scroll'
       }
       return style
     },
@@ -171,7 +238,7 @@ export default {
         style.maxWidth = this.maxWidth + "px"
       }
       return style
-    }
+    },
   },
 
   methods: {
@@ -199,6 +266,23 @@ export default {
     },
     selectRow: function(index){
       this.activeRow = index == this.activeRow ? -1 : index
+    },
+    scrollHeaderX: function(e){
+      this.$refs.ref_scrollHeaderX.scrollLeft = e.target.scrollLeft
+    },
+    scrollRightBodyerY: function(e){
+      this.$refs.ref_scrollBodyerY.scrollTop = e.target.scrollTop
+    },
+    setTableHeight: function(){
+      let height = this.$refs.ref_height.clientHeight
+      if(height > 0){
+        this.rightStyle.height = height + 'px'
+      }
+      if(this.bodyer[this.bodyer.length-1].width != undefined){
+        this.rightStyle.width = this.bodyer[this.bodyer.length-1].width + 'px'
+      }else{
+        this.rightStyle.width = '120px'
+      }
     }
   }
 }
