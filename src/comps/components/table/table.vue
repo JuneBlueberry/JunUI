@@ -5,11 +5,11 @@
     <div
       :class="['table-warpper', {'table-warpper-border': border}]"
       :style="tableStyle"
-      ref='ref_height'>
+      ref='ref_table'>
       <!-- 表头 -->
       <div 
         class="table-header-warpper" 
-        ref="ref_scrollHeaderX">
+        ref="ref_table_header">
         <table class="table-header">
           <thead>
             <tr class="header-tr">
@@ -19,16 +19,13 @@
                 <jun-checkbox @change="SelectAllCheckBox"></jun-checkbox>
               </th>
               <th 
-                :class="['header-th', {'header-th-border': border}]"
+                :class="['header-th', {'header-th-border': border, 'fixed-right': fixedRight}]"
                 :style="{width: item.width==undefined?'':item.width+'px'}"
                 v-for="(item, index) in header" :key="index">
                 <span>{{item.label}}</span>
               </th>
               <th
-                v-if="fixedRight"
-               :style="{width: rightStyle.width}"></th>
-              <th
-                v-if="height!=undefined && height!=''" 
+                v-if="tableData.isHeightScroll" 
                 class="header-th-rigth"></th>
             </tr>
           </thead>
@@ -38,7 +35,7 @@
       <div 
         class="table-bodyer-warpper"
         :style="bodyerStyle"
-        ref="ref_scrollBodyerY"
+        ref="ref_table_bodyer"
         @scroll="scrollHeaderX">
         <table class="table-bodyer">
           <tbody>
@@ -52,16 +49,13 @@
                 <jun-checkbox @change="SelectCheckBox" :param="item" :value="defaultSelect"></jun-checkbox>
               </td>
               <td 
-                :class="['bodyer-td', {'bodyer-td-border': border}]"
+                :class="['bodyer-td', {'bodyer-td-border': border, 'fixed-right': fixedRight}]"
                 :style="{width: itemson.width==undefined?'':itemson.width+'px'}"
                 v-for="(itemson, index) in header" :key="index">
                 <slot :name="itemson.key" :row="item">
                   <span>{{item[itemson.key]}}</span>
                 </slot>
               </td>
-              <td
-                v-if="fixedRight" 
-                :style="{width: rightStyle.width}"></td>
             </tr>
           </tbody>
         </table>
@@ -75,38 +69,41 @@
           <table class="table-header">
             <thead>
               <tr class="header-tr">
-                <th 
+                <!-- <th 
                   v-if="checkbox"
                   :class="['header-th','header-th-checkbox', {'header-th-border': border}]">
                   <jun-checkbox @change="SelectAllCheckBox"></jun-checkbox>
-                </th>
+                </th> -->
                 <th 
                   :class="['header-th', {'header-th-border': border}]"
-                  :style="{width: item.width==undefined?'':item.width+'px'}"
+                  :style="{width: item.width==undefined?'120px':item.width+'px'}"
                   v-for="(item, index) in header" :key="index">
                   <span>{{item.label}}</span>
                 </th>
+                <th
+                v-if="tableData.isHeightScroll" 
+                class="header-th-rigth"></th>
               </tr>
             </thead>
           </table>
         </div>
         <div 
-          class="table-bodyer-warpper"
-          :style="bodyerStyle"
-          @scroll="scrollRightBodyerY">
+          :class="['table-bodyer-warpper']"
+          :style="[bodyerStyle, {top: tableData.headerHeight+'px'}]"
+          ref="ref_table_fixed_bodyer">
           <table class="table-bodyer">
             <tbody>
               <tr
                 v-for="(item, index) in bodyer" :key="index"
                 :class="['bodyer-tr',{'tr-active': index==activeRow,'tr-stripe': stripe}]">
-                <td 
+                <!-- <td 
                   v-if="checkbox"
                   :class="['bodyer-td', 'bodyer-td-checkbox', {'bodyer-td-border': border}]">
                   <jun-checkbox @change="SelectCheckBox" :param="item" :value="defaultSelect"></jun-checkbox>
-                </td>
+                </td> -->
                 <td 
                   :class="['bodyer-td', {'bodyer-td-border': border}]"
-                  :style="{width: itemson.width==undefined?'':itemson.width+'px'}"
+                  :style="{width: itemson.width==undefined?'120px':itemson.width+'px'}"
                   v-for="(itemson, index) in header" :key="index">
                   <slot :name="itemson.key" :row="item">
                     <span>{{item[itemson.key]}}</span>
@@ -134,10 +131,10 @@ export default {
       type: Array,
       default: function(){
         return [
-          {label: '姓名', key: 'name', width: 90},
-          {label: '年龄', key: 'age', width: 300},
-          {label: '性别', key: 'sex',width: 300},
-          {label: '手机号', key: 'mob',width: 300},
+          {label: '姓名', key: 'name'},
+          {label: '年龄', key: 'age'},
+          {label: '性别', key: 'sex'},
+          {label: '手机号', key: 'mob'},
           {label: '操作', key: 'caozuo', width: 120}
         ]
       }
@@ -146,7 +143,7 @@ export default {
       type: Array,
       default: function(){
         return [
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
+          {name: 'abnerabnerabnerabnerabnerabnerabnerabnerabner', age: 23, sex: '男', mob: '17621467103'},
           {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
           {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
           {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
@@ -198,13 +195,19 @@ export default {
       activeRow: -1,
       checkBoxList: [],
       defaultSelect: false,
+      clientHeight: 0,
 
       tableData: {
+        tableWidth: 0,
+        tableHeight: 0,
         headerWidth: 0,
         headerHeight: 0,
         bodyerWidth: 0,
         bodyerHeight: 0,
+        bodyerActualHeight: 0,
+        bodyerActualWidth: 0,
         isHeightScroll: false,
+        isWidthScoll: false
       },
 
       rightStyle: {
@@ -215,7 +218,10 @@ export default {
   },
 
   mounted: function(){
+    this.getTableData()
     this.setTableHeight()
+
+    //window.onresize = this.temp()
   },
 
   components: {},
@@ -269,13 +275,11 @@ export default {
       this.activeRow = index == this.activeRow ? -1 : index
     },
     scrollHeaderX: function(e){
-      this.$refs.ref_scrollHeaderX.scrollLeft = e.target.scrollLeft
-    },
-    scrollRightBodyerY: function(e){
-      this.$refs.ref_scrollBodyerY.scrollTop = e.target.scrollTop
+      this.$refs.ref_table_header.scrollLeft = e.target.scrollLeft
+      this.$refs.ref_table_fixed_bodyer.scrollTop = e.target.scrollTop
     },
     setTableHeight: function(){
-      let height = this.$refs.ref_height.clientHeight
+      let height = this.tableData.isWidthScoll ? this.tableData.tableHeight - 17 : this.tableData.tableHeight
       if(height > 0){
         this.rightStyle.height = height + 'px'
       }
@@ -284,17 +288,37 @@ export default {
       }else{
         this.rightStyle.width = '120px'
       }
+      if(this.tableData.isHeightScroll){
+        this.rightStyle.right = '17px'
+      }
     },
     getTableData: function(){
-      //this.tableData.headerWidth = ref_scrollHeaderX
+      this.tableData.tableWidth = this.$refs.ref_table.clientWidth
+      this.tableData.tableHeight = this.$refs.ref_table.clientHeight
+      this.tableData.headerWidth = this.$refs.ref_table_header.clientWidth
+      this.tableData.headerHeight = this.$refs.ref_table_header.clientHeight
+      this.tableData.bodyerWidth = this.$refs.ref_table_bodyer.clientWidth
+      this.tableData.bodyerHeight = this.$refs.ref_table_bodyer.clientHeight
+      this.tableData.bodyerActualHeight = this.$refs.ref_table_bodyer.getElementsByClassName('table-bodyer')[0].clientHeight
+      this.tableData.bodyerActualWidth = this.$refs.ref_table_bodyer.getElementsByClassName('table-bodyer')[0].clientWidth
       if(this.height != undefined && this.height != ''){
-
+        this.tableData.isHeightScroll = this.height < this.tableData.bodyerActualHeight ? true : false
       }
+      if(this.tableData.bodyerActualWidth > this.tableData.bodyerWidth){
+        this.tableData.isWidthScoll = true
+      }
+    },
+    temp: function() {
+        this.clientHeight = document.documentElement.clientHeight
     }
   },
 
   watch: {
-    
+    clientHeight: {
+      handler: function(value){
+        console.log(value)
+      }
+    }
   }
 }
 </script>

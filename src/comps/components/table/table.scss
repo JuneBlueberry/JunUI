@@ -33,6 +33,11 @@
         width: 17px;
         background-color: #f5f6fb;
       }
+      .header-th.fixed-right:nth-last-child(2){
+        span{
+          visibility: hidden;
+        }
+      }
     }
     .bodyer-tr  {
       &:hover{
@@ -41,6 +46,10 @@
 
       .bodyer-td{
         padding: 8px 0;
+        border-bottom: 1px solid #e9edf2;
+      }
+      .bodyer-td.fixed-right:last-child{
+        visibility: hidden;
       }
     }
 
@@ -84,22 +93,26 @@
         visibility: hidden;
         padding: 6px 0;
         text-align: center;
-  
-        &:last-child{
+      }
+
+      .header-th{
+        &:nth-last-child(2){
           visibility: visible;
-          background-color: #ffffff;
+          border-right: none;
         }
       }
 
       .bodyer-td{
         padding: 8px 0;
+
+        &:last-child{
+          visibility: visible;
+          background-color: #ffffff;
+        }
       }
       
     }
-
   }
-
-
 
   .table-warpper-border{
     border-right: none;
