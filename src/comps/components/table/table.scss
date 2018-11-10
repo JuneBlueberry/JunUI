@@ -14,7 +14,7 @@
 
     .table-bodyer-warpper{
       overflow-x: auto;
-      overflow-y: hidden;
+      overflow-y: auto;
     }
 
     .table-header, .table-bodyer{
@@ -77,7 +77,7 @@
 
       .table-bodyer-warpper{
         top: 48px;
-        overflow-y: auto;
+        overflow-y: hidden;
       }
 
       .header-th, .bodyer-td{

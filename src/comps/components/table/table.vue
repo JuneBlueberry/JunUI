@@ -24,7 +24,9 @@
                 v-for="(item, index) in header" :key="index">
                 <span>{{item.label}}</span>
               </th>
-              <td :style="{width: rightStyle.width}"></td>
+              <th
+                v-if="fixedRight"
+               :style="{width: rightStyle.width}"></th>
               <th
                 v-if="height!=undefined && height!=''" 
                 class="header-th-rigth"></th>
@@ -57,13 +59,16 @@
                   <span>{{item[itemson.key]}}</span>
                 </slot>
               </td>
-              <td :style="{width: rightStyle.width}"></td>
+              <td
+                v-if="fixedRight" 
+                :style="{width: rightStyle.width}"></td>
             </tr>
           </tbody>
         </table>
       </div>
       <!-- 表右侧 -->
       <div 
+        v-if="fixedRight"
         :class="['table-right-warpper', {'table-warpper-border': border}]"
         :style="rightStyle">
         <div class="table-header-warpper">
@@ -155,22 +160,6 @@ export default {
           {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
           {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
           {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
         ]
       }
     },
@@ -196,6 +185,10 @@ export default {
     maxWidth: {
       type: Number,
       default: 0,
+    },
+    fixedRight: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -204,12 +197,20 @@ export default {
       bodyer: this.bodyerData,
       activeRow: -1,
       checkBoxList: [],
+      defaultSelect: false,
+
+      tableData: {
+        headerWidth: 0,
+        headerHeight: 0,
+        bodyerWidth: 0,
+        bodyerHeight: 0,
+        isHeightScroll: false,
+      },
+
       rightStyle: {
         width: 0,
         height: 0
       },
-
-      defaultSelect: false
     };
   },
 
@@ -283,7 +284,17 @@ export default {
       }else{
         this.rightStyle.width = '120px'
       }
+    },
+    getTableData: function(){
+      //this.tableData.headerWidth = ref_scrollHeaderX
+      if(this.height != undefined && this.height != ''){
+
+      }
     }
+  },
+
+  watch: {
+    
   }
 }
 </script>
