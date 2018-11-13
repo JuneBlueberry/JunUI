@@ -276,7 +276,9 @@ export default {
     },
     scrollHeaderX: function(e){
       this.$refs.ref_table_header.scrollLeft = e.target.scrollLeft
-      this.$refs.ref_table_fixed_bodyer.scrollTop = e.target.scrollTop
+      if(this.fixedRight){
+        this.$refs.ref_table_fixed_bodyer.scrollTop = e.target.scrollTop
+      }
     },
     setTableHeight: function(){
       let height = this.tableData.isWidthScoll ? this.tableData.tableHeight - 17 : this.tableData.tableHeight

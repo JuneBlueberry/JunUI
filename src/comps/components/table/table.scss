@@ -45,7 +45,8 @@
       }
 
       .bodyer-td{
-        padding: 8px 0;
+        padding: 8px 6px;
+        word-break: break-all;
         border-bottom: 1px solid #e9edf2;
       }
       .bodyer-td.fixed-right:last-child{
@@ -103,7 +104,8 @@
       }
 
       .bodyer-td{
-        padding: 8px 0;
+        padding: 8px 6px;
+        word-break: break-all;
 
         &:last-child{
           visibility: visible;
