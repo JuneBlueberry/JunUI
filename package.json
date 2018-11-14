@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "a ui of vue",
   "author": "JuneBlueberry <812391718@qq.com>",
-  "private": true,
-  "mian": "package/junvui.min.js",
+  "private": false,
+  "mian": "package/junui.min.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuneBlueberry/JunUI"
+  },
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

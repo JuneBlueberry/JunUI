@@ -3,12 +3,12 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        'junvui': './src/comps/index.js'
+        'junui': './src/comps/index.js'
     },
     output: {
         path: path.resolve(__dirname, '../package'),
         publicPath: '/package/',
-        library: 'junvui',
+        library: 'junui',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./package.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractScss = new ExtractTextPlugin('/junvui.min.css')
+const extractScss = new ExtractTextPlugin('/junui.min.css')
 
 module.exports = merge(baseWebpackConfig, {
     output: {

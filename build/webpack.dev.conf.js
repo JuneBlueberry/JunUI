@@ -55,7 +55,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      title: 'junui - 基于vue2的PC端UI组件库'
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

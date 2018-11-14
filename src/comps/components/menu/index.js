@@ -1,4 +1,4 @@
-import { Menu } from './mune.vue'
+import Menu from './menu.vue'
 
 export {
   Menu
