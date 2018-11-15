@@ -1,0 +1,122 @@
+.jun-table-div{
+  width: 100%;
+  position: relative;
+
+  .table-warpper{
+    width: 100%;
+    text-align: center;
+    border: 1px solid #e9edf2;
+    font-size: 14px;
+
+    .table-header-warpper{
+      overflow: hidden;
+    }
+
+    .table-bodyer-warpper{
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+
+    .table-header, .table-bodyer{
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .header-tr {
+      .header-th{
+        background-color: #f5f6fb;
+        border-bottom: 1px solid #e9edf2;
+        padding: 6px 0;
+      }
+      .header-th-rigth{
+        width: 17px;
+        background-color: #f5f6fb;
+      }
+      .header-th.fixed-right:nth-last-child(2){
+        span{
+          visibility: hidden;
+        }
+      }
+    }
+    .bodyer-tr  {
+      &:hover{
+        background-color: #f9f9fa;
+      }
+
+      .bodyer-td{
+        padding: 8px 6px;
+        word-break: break-all;
+        border-bottom: 1px solid #e9edf2;
+      }
+      .bodyer-td.fixed-right:last-child{
+        visibility: hidden;
+      }
+    }
+
+    .header-th-checkbox, .bodyer-td-checkbox{
+      width: 60px;
+    }
+
+    .tr-active{
+      background-color: #f9f9fa;
+    }
+
+    tr:nth-child(2n).tr-stripe{
+      background-color: #f5f6fb;
+    }
+
+    .header-th-border, .bodyer-td-border{
+      border-right: 1px solid #e9edf2;
+    }
+
+    // 右侧
+    .table-right-warpper{
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,.12);
+  
+      .table-header-warpper, .table-bodyer-warpper{
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+      }
+
+      .table-bodyer-warpper{
+        top: 48px;
+        overflow-y: hidden;
+      }
+
+      .header-th, .bodyer-td{
+        visibility: hidden;
+        padding: 6px 0;
+        text-align: center;
+      }
+
+      .header-th{
+        &:nth-last-child(2){
+          visibility: visible;
+          border-right: none;
+        }
+      }
+
+      .bodyer-td{
+        padding: 8px 6px;
+        word-break: break-all;
+
+        &:last-child{
+          visibility: visible;
+          background-color: #ffffff;
+        }
+      }
+      
+    }
+  }
+
+  .table-warpper-border{
+    border-right: none;
+  }
+}

@@ -1,15 +1,25 @@
 {
   "name": "junui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "a ui of vue",
   "author": "JuneBlueberry <812391718@qq.com>",
   "private": false,
-  "mian": "package/junui.min.js",
+  "main": "package/junui.min.js",
   "license": "MIT",
+  "files": [
+    "package"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/JuneBlueberry/JunUI"
   },
+  "bugs": {
+    "url": "https://github.com/JuneBlueberry/JunUI/issues",
+    "email" : "812391718@qq.com"
+  },
+  "keywords": [
+    "vueui"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

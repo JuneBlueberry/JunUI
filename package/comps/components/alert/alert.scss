@@ -1,0 +1,62 @@
+.jun-alert-div{
+  position: relative;
+  display: block;
+  height: auto;
+  padding: 10px 20px;
+  text-align: left;
+  border: none;
+
+  .jun-alert-close{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+
+    &:hover{
+      .jun-icon{
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+
+.jun-alert-div.is-border{
+  border-width: 1px;
+  border-style: solid;
+}
+
+//alert类型
+.jun-alert-div.jun-alert-type-primary{
+  color: #0099cc;
+  background-color: #d9edf7;
+  border-color: #acdbf3;
+}
+.jun-alert-div.jun-alert-type-success{
+  color: #009900;
+  background-color: #f2ffea;
+  border-color: #c7ddb9;
+}
+.jun-alert-div.jun-alert-type-info{
+  color: #555555;
+  background-color: #f9f9f9;
+  border-color: #dddddd;
+}
+.jun-alert-div.jun-alert-type-warning{
+  color: #f68300;
+  background-color: #fcf8e2;
+  border-color: #edd28a;
+}
+.jun-alert-div.jun-alert-type-danger{
+  color: #ee2117;
+  background-color: #fff6f2;
+  border-color: #f1acac;
+}
+
+.jun-alert-div.is-left-border{
+  border-left-width: 5px;
+  border-left-style: solid;
+}

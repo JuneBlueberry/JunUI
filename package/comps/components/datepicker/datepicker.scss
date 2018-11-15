@@ -1,0 +1,175 @@
+.jun-datepicker-div{
+  display: inline-block;
+
+  .datepicker-input{
+    width: 160px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #d7d8d9;
+
+    &:hover{
+      border: 1px solid #00c1de;
+      cursor: pointer;
+    }
+
+    &:focus{
+      border: 1px solid #00c1de;
+    }
+  }
+
+  .datepicker-warpper{
+    position: absolute;
+    z-index: 9999;
+    box-shadow: 0 0 10px 1px #00000026;
+
+    .datepicker-header{
+      color: #00000040 !important;
+
+      .header-lefticon, .header-righticon, .header-doublelefticon, .header-doublerighticon{
+        padding: 10px 2px;
+        font-size: 20px;
+        
+        &:hover{
+          cursor: pointer;
+          color: #000000cc !important;
+        }
+      }
+      .header-lefticon, .header-doublelefticon{
+        float: left;
+      }
+      .header-righticon, .header-doublerighticon{
+        float: right;
+      }
+
+      .header-date{
+        display: inline-block;
+        line-height: 40px;
+
+        .header-date-year, .header-date-month{
+          &:hover{
+            color: #000000cc !important;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .datepicker-mian{
+
+      .datepicker-days{
+        table{
+          border-collapse: collapse;
+          width: 280px;
+          height: 288px;
+
+          tr th, tr td{
+            line-height: 40px;
+            font-weight: 400;
+            font-size: 14px;
+            border: 1px solid #c6c6c640;
+          }
+
+          tr th{
+            color: #00000073;
+          }
+
+          tr td{
+            color: #000000e6;
+            cursor: pointer;
+
+            &:hover{
+              background-color: #e0e0e066;
+            }
+          }
+
+          .date-exceed{
+            color: #0000001a;
+          }
+
+          .date-today{
+            background-color: #e0e0e099;
+          }
+
+          .date-selectday{
+            position: relative;
+
+            &:after{
+              content: "\2713";
+              font-size: 30px;
+              color: #00c1de;
+              position: absolute;
+              top: 8px;
+              bottom: 0;
+              left: 8px;
+              right: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
+
+      .datepicker-years, .datepicker-months{
+
+        table{
+          border-collapse: collapse;
+          width: 280px;
+          height: 288px;
+
+          tr td{
+            padding: 10px;
+            line-height: 40px;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 10px;
+            color: #000000e6;
+            cursor: pointer;
+            border: 1px solid #c6c6c640;
+          }
+
+          td{
+            &:hover{
+              background-color: #e0e0e066;
+            }
+          }
+        }
+      }
+    }
+
+    .datepicker-footer{
+      height: 40px;
+      line-height: 40px;
+      color: #00000040 !important;
+
+      .footer-lefticon, .footer-righticon{
+        font-size: 14px;
+        padding: 0 6px;
+        
+        &:hover{
+          cursor: pointer;
+          color: #000000cc !important;
+        }
+      }
+      .footer-lefticon{
+        float: left;
+      }
+      .footer-righticon{
+        float: right;
+      }
+    }
+  }
+
+  .datepickerDiv-enter-active {
+    transition: opacity .5s;
+  }
+
+  .datepickerDiv-leave-active{
+    transition: opacity .1s;
+  }
+
+  .datepickerDiv-enter, .datepickerDiv-leave-to {
+    opacity: 0;
+  }
+  .datepickerDiv-leave ,.datepickerDiv-enter-to {
+    opacity: 1;
+  }
+}
