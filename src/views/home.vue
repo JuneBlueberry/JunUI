@@ -223,17 +223,6 @@
         <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
       </jun-tabs>
     </div> -->
-    <!-- <div>
-      <jun-card style="width:60%;margin: 20px auto">
-        <p>111</p>
-        <p>222</p>
-      </jun-card>
-      <jun-card style="width:60%;margin: 20px auto" type='highlight'>
-        <p>111</p>
-        <p>222</p>
-      </jun-card>
-      <jun-card style="width:60%;margin: 20px auto" type='zoom'>卡片1</jun-card>
-    </div> -->
     <!-- <div style="width: 90%; margin: 0 auto;">
       <jun-table border :height="250">
         <span slot='mob' slot-scope="item">{{item.row.mob.substring(0,3) + '****' + item.row.mob.substring(7,4)}}</span>
@@ -242,6 +231,41 @@
         </span>
       </jun-table>
     </div> -->
+    <div>
+      <jun-card style="width:60%;margin: 20px auto">
+        <p>111</p>
+        <p>222</p>
+      </jun-card>
+      <jun-card style="width:60%;margin: 20px auto" type='hoverlight'>
+        <p>111</p>
+        <p>222</p>
+      </jun-card>
+      <jun-card style="width:60%;margin: 20px auto" type='zoom'>卡片1</jun-card>
+      <jun-card style="width:60%;margin: 20px auto" type='border'>
+        <p>111</p>
+        <p>222</p>
+      </jun-card>
+      <jun-card width="300px" hidden type='border' style="width:60%;margin: 20px auto">
+        <template slot="title">
+          <h4>我是一个标题</h4>
+        </template>
+        <p>111</p>
+        <p>222</p>
+        <template slot="footer">
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+          <p>hahah</p>
+        </template>
+      </jun-card>
+    </div>
   </div>
 </template>
 
