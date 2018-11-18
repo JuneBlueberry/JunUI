@@ -21,9 +21,18 @@
 			}
 
 			.footer-open{
+				cursor: pointer;
 				border-top: 1px solid #e8eaec;
 				text-align: center;
 				padding: 10px;
+
+				&:hover{
+					color: #00c1de;
+				}
+			}
+
+			.footer-open-topborder{
+				border-top: none;
 			}
 
 			.footer-enter-active, .footer-leave-active {

@@ -19,7 +19,13 @@
                 </div>
             </div>
            </transition>
-          <div class="footer-open" v-if="hidden" @click="isOpen=!isOpen">1111</div>
+          <div 
+            :class="['footer-open', {'footer-open-topborder': !isOpen}]"
+            v-if="hidden"
+            @click="isOpen=!isOpen">
+            <span>{{isOpen?'点击收起':'点击展开'}}</span>
+            <jun-icon :type="isOpen?'icon-packup':'icon-unfold'" size="20px"></jun-icon>
+          </div>
         </div>
       </div>
   </div>

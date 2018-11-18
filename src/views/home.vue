@@ -245,7 +245,7 @@
         <p>111</p>
         <p>222</p>
       </jun-card>
-      <jun-card width="300px" hidden type='border' style="width:60%;margin: 20px auto">
+      <jun-card width="300px" hidden type='hoverlight' style="width:60%;margin: 20px auto">
         <template slot="title">
           <h4>我是一个标题</h4>
         </template>
