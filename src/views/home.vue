@@ -231,7 +231,7 @@
         </span>
       </jun-table>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-card style="width:60%;margin: 20px auto">
         <p>111</p>
         <p>222</p>
@@ -265,6 +265,10 @@
           <p>hahah</p>
         </template>
       </jun-card>
+    </div> -->
+    <div>
+      <jun-menu theme="dark"></jun-menu>
+      <jun-menu></jun-menu>
     </div>
   </div>
 </template>
