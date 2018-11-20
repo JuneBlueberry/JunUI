@@ -10,6 +10,7 @@ import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
 import { Page } from './components/page/index'
+import { Progress } from './components/progress/index'
 import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Switch } from './components/switch/index'
@@ -30,6 +31,7 @@ const components = {
   Icon,
   Menu,
   Page,
+  Progress,
   RadioGroup,
   Radio,
   Rate,

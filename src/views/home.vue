@@ -266,9 +266,19 @@
         </template>
       </jun-card>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-menu theme="dark"></jun-menu>
       <jun-menu></jun-menu>
+    </div> -->
+    <div>
+      <div style="width: 60%; margin: 0 auto;">
+        <jun-progress class="mar-row-top" :percentage="selectVal8" @click.native="selectItem3"></jun-progress>
+        <jun-progress class="mar-row-top" :percentage="20"></jun-progress>
+        <jun-progress class="mar-row-top" :percentage="40" type="success" color="#999999"></jun-progress>
+        <jun-progress class="mar-row-top" :percentage="60"  type="info"></jun-progress>
+        <jun-progress class="mar-row-top" :percentage="80" type="warning"></jun-progress>
+        <jun-progress class="mar-row-top" :percentage="90" type="error" inside borderRound></jun-progress>
+      </div>
     </div>
   </div>
 </template>
@@ -287,7 +297,8 @@ export default {
         {name:'tab1', label: '便签1'},
         {name:'tab2', label: '便签2'},
         {name:'tab3', label: '便签3'}
-      ]
+      ],
+      selectVal8: 0,
     }
   },
   methods: {
@@ -309,6 +320,13 @@ export default {
     selectItem2: function(value){
       console.log(value)
     },
+    selectItem3: function(){
+      var that = this
+      
+      setInterval(() => {
+        that.selectVal8 += 10
+      }, 300);
+    }
   },
   watch: {
     selectVal: function(val){
