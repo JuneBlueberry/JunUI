@@ -9,6 +9,7 @@ import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
+import { LoadingBar } from './components/loadingbar/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
 import { RadioGroup, Radio } from './components/radio/index'
@@ -30,6 +31,7 @@ const components = {
   Input,
   Icon,
   Menu,
+  LoadingBar,
   Page,
   Progress,
   RadioGroup,
