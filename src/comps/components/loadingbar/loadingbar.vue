@@ -16,6 +16,9 @@
       percentage: {
         type: Number
       },
+      type: {
+        type: String
+      }
     },
     data () {
       return {
