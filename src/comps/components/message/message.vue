@@ -1,8 +1,8 @@
 <!-- By Abner 2018-11-27 message组件 -->
 <template>
-  <div class="jun-message-div">
+  <div class="jun-message-div" :style="{top: top}">
     <div class="message-warpper">
-      <span class="message-title">这是一条消息</span>
+      <div class="message-title" @click="haha">这是一条消息</div>
     </div>
   </div>
 </template>
@@ -12,13 +12,19 @@
     name: 'jun-message',
     props: {},
     data () {
-      return {}
+      return {
+        top: '0px'
+      }
     },
 
     components: {},
 
     computed: {},
 
-    methods: {}
+    methods: {
+      haha: function(){
+        this.top = '30px'
+      }
+    }
   }
 </script>
