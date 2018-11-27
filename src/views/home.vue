@@ -280,8 +280,11 @@
         <jun-progress class="mar-row-top" :percentage="90" type="error" inside borderRound></jun-progress>
       </div>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-loadingbar :percentage="selectVal8" @click.native="selectItem3"></jun-loadingbar>
+    </div> -->
+    <div>
+      <jun-message></jun-message>
     </div>
   </div>
 </template>

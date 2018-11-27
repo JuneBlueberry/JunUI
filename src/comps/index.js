@@ -3,12 +3,13 @@ import './styles/index.scss'
 import { Alert } from './components/alert/index'
 import { Button } from './components/button/index'
 import { Card } from './components/card/index'
-import { CheckBoxGroup,CheckBox } from './components/checkbox/index'
+import { CheckBoxGroup, CheckBox } from './components/checkbox/index'
 import { DatePicker } from './components/datepicker/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
+import { Message } from './components/message/index'
 import { LoadingBar } from './components/loadingbar/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
@@ -31,6 +32,7 @@ const components = {
   Input,
   Icon,
   Menu,
+  Message,
   LoadingBar,
   Page,
   Progress,
