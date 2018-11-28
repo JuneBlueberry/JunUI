@@ -1,10 +1,12 @@
 <!-- By Abner 2018-11-27 message组件 -->
 <template>
-  <div class="jun-message-div" :style="{top: top}">
-    <div class="message-warpper">
-      <div class="message-title" @click="haha">这是一条消息</div>
+  <transition name="jun-message">
+    <div v-show="visible" class="jun-message-div">
+        <div class="message-warpper">
+          <div class="message-title">这是一条消息</div>
+        </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -13,7 +15,7 @@
     props: {},
     data () {
       return {
-        top: '0px'
+        visible: false
       }
     },
 
@@ -21,9 +23,16 @@
 
     computed: {},
 
+    mounted: function(){
+      this.visible = true
+      this.close()
+    },
+
     methods: {
-      haha: function(){
-        this.top = '30px'
+      close: function(){
+        setTimeout(()=>{
+          this.visible = false;
+        },2000)
       }
     }
   }

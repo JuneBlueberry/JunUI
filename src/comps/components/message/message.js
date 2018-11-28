@@ -6,16 +6,17 @@ let MessageConstructor = Vue.extend(Main)
 let instance
 let instances = []
 
-const Message = function(options){
+const Message = function (options) {
   instance = new MessageConstructor({
     data: options
   })
+  console.log(instance.$mount().$el)
   instance.vm = instance.$mount()
-  document.body.appendChild(instance.vm.$el);
-  instances.push(instance);
+  document.body.appendChild(instance.vm.$el)
+  instances.push(instance)
 }
 
-Message.close = function(){
+Message.close = function () {
   instances.splice(0, 1)
 }
 
