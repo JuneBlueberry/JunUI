@@ -284,7 +284,7 @@
       <jun-loadingbar :percentage="selectVal8" @click.native="selectItem3"></jun-loadingbar>
     </div> -->
     <div>
-      <jun-message></jun-message>
+      <jun-button @click="clickMessage1">Message</jun-button>
     </div>
   </div>
 </template>
@@ -333,6 +333,14 @@ export default {
       setInterval(() => {
         that.selectVal8 += 1
       }, 100);
+    },
+    clickMessage1: function(){
+      console.log(this)
+      var that = this
+      this.$message()
+      setTimeout(function(){
+        that.$message.close()
+      }, 1500)
     }
   },
   watch: {

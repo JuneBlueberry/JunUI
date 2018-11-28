@@ -32,7 +32,6 @@ const components = {
   Input,
   Icon,
   Menu,
-  Message,
   LoadingBar,
   Page,
   Progress,
@@ -54,6 +53,8 @@ const install = function (Vue) {
   Object.keys(components).forEach(key => {
     Vue.component(components[key].name, components[key])
   })
+
+  Vue.prototype.$message = Message;
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
