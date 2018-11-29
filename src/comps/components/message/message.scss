@@ -5,18 +5,62 @@
   top: 20px;
 
   .message-warpper{
-    padding: 8px;
+    padding: 0px;
     text-align: center;
 
-    .message-title{
+    .message-main{
       display: inline-block;
+      position: relative;
       pointer-events: all;
-      padding: 8px 16px;
+      padding: 8px 12px;
       box-shadow: 0 1px 6px rgba(0,0,0,.2);
       background: #fff;
-      position: relative;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .message-icon{
+      margin-left: 20px;
+      font-weight: 400;
+    }
+
+    .message-main.message-type-primary{
+      box-shadow: 0 1px 6px #acdbf3;
+
+      .message-content{
+        color: #0099cc;
+      }
+    }
+    .message-main.message-type-success{
+      box-shadow: 0 1px 6px #c7ddb9;
+
+      .message-content{
+        color: #4db118;
+      }
+    }
+    .message-main.message-type-info{
+      box-shadow: 0 1px 6px #dddddd;
+
+      .message-content{
+        color: #909399;
+      }
+    }
+    .message-main.message-type-warning{
+      box-shadow: 0 1px 6px #edd28a;
+
+      .message-content{
+        color: #e79302;
+      }
+    }
+    .message-main.message-type-danger{
+      box-shadow: 0 1px 6px #f1acac;
+
+      .message-content{
+        color: #f25721;
+      }
     }
   }
+
 }
 
 .jun-message-enter-active, .jun-message-leave-active {

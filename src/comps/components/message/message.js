@@ -10,10 +10,12 @@ const Message = function (options) {
   instance = new MessageConstructor({
     data: options
   })
-  console.log(instance.$mount().$el)
   instance.vm = instance.$mount()
   document.body.appendChild(instance.vm.$el)
   instance.vm.visible = true
+  if (instance.vm.onShow != null) {
+    instance.vm.onShow()
+  }
   instances.push(instance)
 }
 

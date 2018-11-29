@@ -1,0 +1,61 @@
+.jun-sidebar-div{
+
+  .sidebar-mask{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #37373799;
+  }
+
+  .sidebar-warpper{
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+  }
+
+  .sidebar-mask-enter, .sidebar-mask-leave-to{
+    opacity: 0;
+  }
+  .sidebar-mask-enter-active, .sidebar-mask-leave-active{
+    transition: opacity .3s;
+  }
+
+  .sidebar-warpper-enter-active, {
+    animation: ivuMoveRightIn 0.5s;
+  }
+  .sidebar-warpper-leave-active{
+    animation: ivuMoveRightOut 0.5s;
+  }
+
+  @keyframes ivuMoveRightIn {
+    0% {
+        transform-origin: 0 0;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform-origin: 0 0;
+        transform: translateX(0%);
+        opacity: 1;
+    }
+  }
+
+  @keyframes ivuMoveRightOut {
+    0% {
+        transform-origin: 0 0;
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: 0 0;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+  }
+}

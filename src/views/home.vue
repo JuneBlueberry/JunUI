@@ -283,8 +283,16 @@
     <!-- <div>
       <jun-loadingbar :percentage="selectVal8" @click.native="selectItem3"></jun-loadingbar>
     </div> -->
+    <!-- <div>
+      <jun-button @click="clickMessage('primary')">Message常用</jun-button>
+      <jun-button @click="clickMessage('success')">Message成功</jun-button>
+      <jun-button @click="clickMessage('info')">Message信息</jun-button>
+      <jun-button @click="clickMessage('warning')">Message警告</jun-button>
+      <jun-button @click="clickMessage('danger')">Message失败</jun-button>
+    </div> -->
     <div>
-      <jun-button @click="clickMessage1">Message</jun-button>
+      <jun-button @click="selectVal9 = true">侧边栏</jun-button>
+      <jun-sidebar v-model="selectVal9"></jun-sidebar>
     </div>
   </div>
 </template>
@@ -305,6 +313,7 @@ export default {
         {name:'tab3', label: '便签3'}
       ],
       selectVal8: 10,
+      selectVal9: false
     }
   },
   methods: {
@@ -334,9 +343,14 @@ export default {
         that.selectVal8 += 1
       }, 100);
     },
-    clickMessage1: function(){
+    clickMessage: function(val){
       var that = this
-      this.$message()
+      this.$message({
+        message: '这是一条测试的信息，这是一条测试的信息，这是一条测试的信息',
+        type: val,
+        onClose: function(){console.log("close")},
+        onShow: function(){console.log("show")}
+        })
     }
   },
   watch: {

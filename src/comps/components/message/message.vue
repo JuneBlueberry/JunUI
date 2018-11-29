@@ -3,7 +3,14 @@
   <transition name="jun-message">
     <div v-show="visible" class="jun-message-div">
         <div class="message-warpper">
-          <div class="message-title">这是一条消息</div>
+          <div 
+            :class="['message-main', 'message-type-' + type]">
+            <span class="message-content">{{message}}</span>
+            <jun-icon 
+              v-if="clearable"
+              class="message-icon"  type="icon-close" :size="20" color="#afafaf"
+              @click.native="closeMessage"></jun-icon>
+            </div>
         </div>
     </div>
   </transition>
@@ -16,7 +23,12 @@
     data () {
       return {
         visible: false,
+        message: '这是一条消息',
         duration: 3000,
+        type: '',
+        clearable: false,
+        onClose: null,
+        onShow: null,
 
         closed: false
       }
@@ -27,7 +39,6 @@
     computed: {},
 
     mounted: function(){
-      console.log(111)
       this.close()
     },
 
@@ -41,9 +52,14 @@
           }, this.duration)
         }
       },
-
+      closeMessage: function(){
+        this.closed = true
+      },
       destroyElement: function(){
         this.$el.removeEventListener('transitionend', this.destroyElement)
+        if(this.onClose != null){
+          this.onClose()
+        }
         this.$destroy(true)
         this.$el.parentNode.removeChild(this.$el)
       }

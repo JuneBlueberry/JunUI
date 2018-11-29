@@ -15,8 +15,9 @@ import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
 import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
-import { Switch } from './components/switch/index'
 import { Select } from './components/select/index'
+import { Sidebar } from './components/sidebar/index'
+import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tabs, TabsItem } from './components/tabs/index'
 
@@ -38,8 +39,9 @@ const components = {
   RadioGroup,
   Radio,
   Rate,
-  Switch,
   Select,
+  Sidebar,
+  Switch,
   Table,
   Tabs,
   TabsItem
@@ -54,7 +56,7 @@ const install = function (Vue) {
     Vue.component(components[key].name, components[key])
   })
 
-  Vue.prototype.$message = Message;
+  Vue.prototype.$message = Message
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
