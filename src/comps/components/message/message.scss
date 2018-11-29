@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   left: 0px;
-  top: 30px;
+  top: 20px;
 
   .message-warpper{
     padding: 8px;
@@ -20,8 +20,9 @@
 }
 
 .jun-message-enter-active, .jun-message-leave-active {
-  transition: top .5s;
+  transition: all .5s;
 }
 .jun-message-enter, .jun-message-leave-to {
   top: -60px;
+  opacity: 0;
 }

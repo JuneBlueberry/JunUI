@@ -15,7 +15,10 @@
     props: {},
     data () {
       return {
-        visible: false
+        visible: false,
+        duration: 3000,
+
+        closed: false
       }
     },
 
@@ -24,15 +27,34 @@
     computed: {},
 
     mounted: function(){
-      this.visible = true
+      console.log(111)
       this.close()
     },
 
     methods: {
       close: function(){
-        setTimeout(()=>{
-          this.visible = false;
-        },2000)
+        if(this.duration > 0){
+          setTimeout(()=>{
+            if(!this.closed){
+              this.closed = true
+            }
+          }, this.duration)
+        }
+      },
+
+      destroyElement: function(){
+        this.$el.removeEventListener('transitionend', this.destroyElement)
+        this.$destroy(true)
+        this.$el.parentNode.removeChild(this.$el)
+      }
+    },
+
+    watch: {
+      closed: function(newValue){
+        if(newValue){
+          this.visible = false
+          this.$el.addEventListener('transitionend', this.destroyElement)
+        }
       }
     }
   }

@@ -13,6 +13,7 @@ const Message = function (options) {
   console.log(instance.$mount().$el)
   instance.vm = instance.$mount()
   document.body.appendChild(instance.vm.$el)
+  instance.vm.visible = true
   instances.push(instance)
 }
 

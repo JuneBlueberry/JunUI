@@ -335,12 +335,8 @@ export default {
       }, 100);
     },
     clickMessage1: function(){
-      console.log(this)
       var that = this
       this.$message()
-      setTimeout(function(){
-        that.$message.close()
-      }, 1500)
     }
   },
   watch: {
