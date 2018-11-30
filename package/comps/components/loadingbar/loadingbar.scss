@@ -1,0 +1,20 @@
+.jun-loadingbar-div{
+  
+  .loadingbar-warpper{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 2px;
+    z-index: 9999;
+    background-color: #ffffff;
+    left: 0;
+
+    .loadingbar-action{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background-color: #0099cc;
+    }
+  }
+}

@@ -47,8 +47,9 @@
   }
 
   .select-options{
-    position: relative;
-    z-index: 99;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
     max-height: 250px;
     margin-top: 4px;
     border-color: transparent;
@@ -142,5 +143,4 @@
     opacity: 1;
     margin-top: 4px;
   }
-
 }

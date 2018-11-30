@@ -1,6 +1,7 @@
 @import "./mixin.scss";
 @import "./global.scss";
 @import "./icon.scss";
+@import "./animation.scss";
 
 @import "../components/alert/alert.scss";
 @import "../components/button/button.scss";
@@ -10,10 +11,14 @@
 @import "../components/flex/flex.scss";
 @import "../components/input/input.scss";
 @import "../components/icon/icon.scss";
+@import "../components/loadingbar/loadingbar.scss";
 @import "../components/menu/menu.scss";
+@import "../components/message/message.scss";
 @import "../components/page/page.scss";
+@import "../components/progress/progress.scss";
 @import "../components/radio/radio.scss";
 @import "../components/rate/rate.scss";
+@import "../components/sidebar/sidebar.scss";
 @import "../components/switch/switch.scss";
 @import "../components/select/select.scss";
 @import "../components/table/table.scss";

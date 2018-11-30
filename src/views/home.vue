@@ -179,11 +179,11 @@
       <br/><br/>
       <jun-switch :type="3"></jun-switch>
       <jun-switch :type="3" checked></jun-switch>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <jun-select></jun-select>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <jun-alert class="mar-row-top" leftBorder clearable>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="success" leftBorder>asdasdasd</jun-alert>
       <jun-alert class="mar-row-top" type="info" border leftBorder>asdasdasd</jun-alert>
@@ -290,9 +290,20 @@
       <jun-button @click="clickMessage('warning')">Message警告</jun-button>
       <jun-button @click="clickMessage('danger')">Message失败</jun-button>
     </div> -->
+    <!-- <div>
+      <jun-button @click="selectVal9 = true">侧边栏-右边</jun-button>
+      <jun-button @click="selectVal10 = true">侧边栏-左边</jun-button>
+      <jun-button @click="selectVal11 = true">侧边栏-上边</jun-button>
+      <jun-button @click="selectVal12 = true">侧边栏-下边</jun-button>
+      <jun-sidebar v-model="selectVal9" length="50vw">
+        <jun-button @click="selectVal9 = false">侧边栏-右边</jun-button>
+      </jun-sidebar>
+      <jun-sidebar v-model="selectVal10" length="50vw" direction="left"></jun-sidebar>
+      <jun-sidebar v-model="selectVal11" length="50vh" direction="top"></jun-sidebar>
+      <jun-sidebar v-model="selectVal12" length="50vh" direction="bottom"></jun-sidebar>
+    </div> -->
     <div>
-      <jun-button @click="selectVal9 = true">侧边栏</jun-button>
-      <jun-sidebar v-model="selectVal9"></jun-sidebar>
+      <jun-dialog></jun-dialog>
     </div>
   </div>
 </template>
@@ -313,7 +324,10 @@ export default {
         {name:'tab3', label: '便签3'}
       ],
       selectVal8: 10,
-      selectVal9: false
+      selectVal9: false,
+      selectVal10: false,
+      selectVal11: false,
+      selectVal12: false
     }
   },
   methods: {
