@@ -208,7 +208,7 @@
     <!-- <div>
       <jun-page></jun-page>
     </div> -->
-    <!-- <div>
+    <div>
       <jun-tabs v-model="selectVal6" @change="changeVal">
         <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
         <jun-tabs-item name="tab2" label="便签2">22222</jun-tabs-item>
@@ -222,7 +222,7 @@
         </template>
         <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
       </jun-tabs>
-    </div> -->
+    </div>
     <!-- <div style="width: 90%; margin: 0 auto;">
       <jun-table border :height="250">
         <span slot='mob' slot-scope="item">{{item.row.mob.substring(0,3) + '****' + item.row.mob.substring(7,4)}}</span>
@@ -303,7 +303,8 @@
       <jun-sidebar v-model="selectVal12" length="50vh" direction="bottom"></jun-sidebar>
     </div> -->
     <div>
-      <jun-dialog></jun-dialog>
+      <jun-button @click="selectVal13 = true">dialog</jun-button>
+      <jun-dialog v-model="selectVal13"></jun-dialog>
     </div>
   </div>
 </template>
@@ -327,7 +328,8 @@ export default {
       selectVal9: false,
       selectVal10: false,
       selectVal11: false,
-      selectVal12: false
+      selectVal12: false,
+      selectVal13: false,
     }
   },
   methods: {
