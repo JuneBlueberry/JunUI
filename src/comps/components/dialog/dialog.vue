@@ -3,8 +3,19 @@
   <div class="jun-dialog-div">
     <div v-if="visible" class="dialog-mask"></div>
     <transition name="dialog-warpper">
-      <div v-if="visible" class="dialog-warpper" @click="visible=false">
-        <div class="dialog-main"></div>
+      <div v-if="visible" class="dialog-warpper" @click="btnMaskClosable">
+        <div class="dialog-content" @click.stop>
+          <div class="dialog-header">
+            <span>标题</span>
+            <jun-icon 
+              class="dialog-icon" type="icon-close" :size="20" color="#afafaf"
+              @click.native="btnCancel"></jun-icon>
+          </div>
+          <div class="dialog-main"></div>
+          <div class="dialog-footer">
+            <jun-button class="btn-confirm" type="primary" @click="btnConfirm">确定</jun-button>
+          </div>
+        </div>
       </div>
     </transition>
   </div>
@@ -15,6 +26,10 @@ export default {
   name: 'jun-dialog',
   props: {
     value: {
+      type: Boolean,
+      default: false
+    },
+    maskClosable: {
       type: Boolean,
       default: false
     }
@@ -29,7 +44,20 @@ export default {
 
   computed: {},
 
-  methods: {},
+  methods: {
+    btnMaskClosable: function(){
+      if(!this.maskClosable){
+        this.visible = true
+      }
+    },
+    btnCancel: function(){
+      this.$emit('on-cancel')
+      this.visible = false
+    },
+    btnConfirm: function(){
+      this.$emit('on-confirm')
+    }
+  },
 
   watch: {
     value: {
