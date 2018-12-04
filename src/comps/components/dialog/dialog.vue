@@ -1,4 +1,5 @@
 <!-- JunChen 2018-11-30 对话框Dialog组件 -->
+import func from './vue-temp/vue-editor-bridge';
 <template>
   <div class="jun-dialog-div">
     <div v-if="visible" class="dialog-mask"></div>
@@ -6,12 +7,26 @@
       <div v-if="visible" class="dialog-warpper" @click="btnMaskClosable">
         <div class="dialog-content" @click.stop>
           <div class="dialog-header">
-            <span>标题</span>
+            <span>{{title}}</span>
             <jun-icon 
               class="dialog-icon" type="icon-close" :size="20" color="#afafaf"
               @click.native="btnCancel"></jun-icon>
           </div>
-          <div class="dialog-main"></div>
+          <div class="dialog-main">
+            <slot name="main">
+              <div class="main-default">
+                <div class="main-left" v-if="type!=undefined">
+                  <jun-icon v-if="type=='info'" type="icon-emoji_fill" :size="24" color="#0099cc"></jun-icon>
+                  <jun-icon v-else-if="type=='success'" type="icon-success_fill" :size="24" color="#4db118"></jun-icon>
+                  <jun-icon v-else-if="type=='warning'" type="icon-prompt_fill" :size="24" color="#e79302"></jun-icon>
+                  <jun-icon v-else-if="type=='error'" type="icon-delete_fill" :size="24" color="#f25721"></jun-icon>
+                </div>
+                <div class="main-right">
+                  <span>{{message}}</span>
+                </div>
+              </div>
+            </slot>
+          </div>
           <div class="dialog-footer">
             <jun-button class="btn-confirm" type="primary" @click="btnConfirm">确定</jun-button>
           </div>
@@ -32,6 +47,17 @@ export default {
     maskClosable: {
       type: Boolean,
       default: false
+    },
+    title: {
+      type: String,
+      default: '标题'
+    },
+    message: {
+      type: String,
+      default: '这是一个文案'
+    },
+    type: {
+      type: String
     }
   },
   data () {
@@ -46,8 +72,8 @@ export default {
 
   methods: {
     btnMaskClosable: function(){
-      if(!this.maskClosable){
-        this.visible = true
+      if(this.maskClosable){
+        this.visible = false
       }
     },
     btnCancel: function(){
