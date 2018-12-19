@@ -21,6 +21,7 @@ import { Sidebar } from './components/sidebar/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tabs, TabsItem } from './components/tabs/index'
+import { Tooltip } from './components/tooltip/index'
 
 const components = {
   Alert,
@@ -46,7 +47,8 @@ const components = {
   Switch,
   Table,
   Tabs,
-  TabsItem
+  TabsItem,
+  Tooltip
 }
 
 const install = function (Vue) {

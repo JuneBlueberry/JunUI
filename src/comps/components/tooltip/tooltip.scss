@@ -1,0 +1,32 @@
+.jun-tooltip-div{
+  position: relative;
+  display: inline-block;
+
+  .tooltip-warpper{
+
+    .warpper-arrow{
+      border-width: 6px 6px 0;
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -8px;
+      left: 10px;
+      border-style:solid;
+      border-color:#000 transparent transparent;
+    }
+
+    .warpper-msg{
+      position: absolute;
+      width: 100px;
+      height: 24px;
+      top: -32px;
+      left: 0;
+      color: #ffffff;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 24px;
+      background-color: black;
+    }
+  }
+
+}
