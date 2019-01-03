@@ -22,10 +22,6 @@ export default {
   props: {
     msg: {
       type: String
-    },
-    placement: {
-      type: String,
-      default: 'top'
     }
   },
   data () {

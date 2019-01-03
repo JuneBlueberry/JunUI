@@ -69,7 +69,13 @@
     },
 
     methods: {
-
+      getTarget: function(node) {
+          if (node === void 0) {
+              node = document.body
+          }
+          if (node === true) { return document.body }
+          return node instanceof window.Node ? node : document.querySelector(node)
+      }
     },
 
     watch: {

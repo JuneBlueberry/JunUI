@@ -43,7 +43,7 @@
     animation: junFadeOut .5s;
   }
 
-  .right-sidebar-warpper-enter-active, {
+  .right-sidebar-warpper-enter-active{
     animation: junMoveRightIn 0.5s;
   }
   .right-sidebar-warpper-leave-active{
@@ -57,14 +57,14 @@
     animation: junMoveLeftOut 0.5s;
   }
 
-  .top-sidebar-warpper-enter-active, {
+  .top-sidebar-warpper-enter-active{
     animation: junMoveTopIn 0.5s;
   }
   .top-sidebar-warpper-leave-active{
     animation: junMoveTopOut 0.5s;
   }
 
-  .bottom-sidebar-warpper-enter-active, {
+  .bottom-sidebar-warpper-enter-active{
     animation: junMoveBottomIn 0.5s;
   }
   .bottom-sidebar-warpper-leave-active{

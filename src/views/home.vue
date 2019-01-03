@@ -306,8 +306,8 @@
       <jun-button @click="selectVal13 = true">dialog</jun-button>
       <jun-dialog v-model="selectVal13"></jun-dialog>
     </div> -->
-    <div>
-      <jun-tooltip>
+    <div style="margin-left: 10px">
+      <jun-tooltip msg="哈哈">
         <jun-button>Tooltip</jun-button>
       </jun-tooltip>
     </div>

@@ -1,0 +1,79 @@
+.jun-dialog-div{
+
+  .dialog-mask, .dialog-warpper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff50;
+  }
+
+  .dialog-warpper{
+    z-index: 1000;
+
+    .dialog-content{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 600px;
+      margin: 0 auto;
+      margin-top: 30px;
+      z-index: 1001;
+      border: 1px solid #0000004d;
+      box-shadow: 0px 5px 10px #00000080;
+      background-color: #ffffff;
+
+      .dialog-header{
+        padding: 16px;
+        border-bottom: 1px solid #e5e5e5;
+
+        .dialog-icon{
+          float: right;
+
+          &:hover{
+            color: #333333 !important;
+          }
+        }
+      }
+
+      .dialog-main{
+        flex: 1;
+        padding: 16px;
+
+        .main-default{
+          display: flex;
+
+          .main-left{
+            width: 30px;
+          }
+          .main-right{
+            flex: 1;
+          }
+        }
+        
+      }
+
+      .dialog-footer{
+        padding: 16px;
+        border-top: 1px solid #e5e5e5;
+
+        .btn-confirm, .btn-cancel{
+          float: right;
+        }
+        .btn-cancel{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .dialog-warpper-enter-active{
+    animation: junMoveTopIn .5s;
+  }
+  .dialog-warpper-leave-active{
+    animation: junMoveTopOut .5s;
+  }
+
+}

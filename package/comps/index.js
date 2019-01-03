@@ -5,6 +5,7 @@ import { Button } from './components/button/index'
 import { Card } from './components/card/index'
 import { CheckBoxGroup, CheckBox } from './components/checkbox/index'
 import { DatePicker } from './components/datepicker/index'
+import { Dialog } from './components/dialog/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
@@ -20,6 +21,7 @@ import { Sidebar } from './components/sidebar/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tabs, TabsItem } from './components/tabs/index'
+import { Tooltip } from './components/tooltip/index'
 
 const components = {
   Alert,
@@ -28,6 +30,7 @@ const components = {
   CheckBoxGroup,
   CheckBox,
   DatePicker,
+  Dialog,
   FlexRow,
   FlexCol,
   Input,
@@ -44,7 +47,8 @@ const components = {
   Switch,
   Table,
   Tabs,
-  TabsItem
+  TabsItem,
+  Tooltip
 }
 
 const install = function (Vue) {
