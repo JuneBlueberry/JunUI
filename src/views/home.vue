@@ -307,8 +307,17 @@
       <jun-dialog v-model="selectVal13"></jun-dialog>
     </div> -->
     <div style="margin-left: 10px">
-      <jun-tooltip msg="哈哈">
-        <jun-button>Tooltip</jun-button>
+      <jun-tooltip msg="哈哈-Top">
+        <jun-button>Tooltip-Top</jun-button>
+      </jun-tooltip>
+      <jun-tooltip msg="哈哈-Right" placement="right">
+        <jun-button>Tooltip-Right</jun-button>
+      </jun-tooltip>
+      <jun-tooltip msg="哈哈-Left" placement="left">
+        <jun-button>Tooltip-Left</jun-button>
+      </jun-tooltip>
+      <jun-tooltip msg="哈哈-Bottom" placement="bottom">
+        <jun-button>Tooltip-Bottom</jun-button>
       </jun-tooltip>
     </div>
   </div>

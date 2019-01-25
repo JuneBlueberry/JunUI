@@ -7,6 +7,7 @@
     .warpper-arrow{
       border-width: 6px 6px 0;
       position: absolute;
+      z-index: 9999;
       width: 0;
       height: 0;
       top: -8px;
@@ -17,8 +18,10 @@
 
     .warpper-msg{
       position: absolute;
-      width: 100px;
+      z-index: 9999;
+      width: max-content;
       height: 28px;
+      padding: 0px 6px;
       top: -34px;
       left: 0;
       color: #ffffff;
