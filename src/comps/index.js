@@ -11,6 +11,7 @@ import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
 import { Message } from './components/message/index'
+import { Loading } from './components/loading/index'
 import { LoadingBar } from './components/loadingbar/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
@@ -36,6 +37,7 @@ const components = {
   Input,
   Icon,
   Menu,
+  Loading,
   LoadingBar,
   Page,
   Progress,
