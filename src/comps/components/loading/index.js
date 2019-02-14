@@ -1,4 +1,4 @@
-import { Loading } from './loading.vue'
+import Loading from './loading.vue'
 
 export{
   Loading
