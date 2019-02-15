@@ -321,10 +321,20 @@
       </jun-tooltip>
     </div> -->
     <div>
-      <jun-tooltip msg="哈哈-Top">
-        <jun-button>Tooltip-Top</jun-button>
-      </jun-tooltip>
-      <jun-loading></jun-loading>
+      <jun-flex-row>
+        <jun-flex-col :span="12">
+          <jun-loading></jun-loading>
+          <h1>11111</h1>
+        </jun-flex-col>
+        <jun-flex-col :span="6">
+          <jun-loading></jun-loading>
+          <h1>11111</h1>
+        </jun-flex-col>
+        <jun-flex-col :span="6">
+          <jun-loading></jun-loading>
+          <h1>11111</h1>
+        </jun-flex-col>
+      </jun-flex-row>
     </div>
   </div>
 </template>

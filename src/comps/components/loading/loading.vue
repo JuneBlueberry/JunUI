@@ -1,8 +1,9 @@
 <!-- JunChen 2019-01-29 Loading加载组件 -->
 <template>
-  <div class="jun-loading-div">
+  <div class="jun-loading-div" v-if="loadingShow">
     <template v-if="type=='spinner'">
       <div class="spinner spinner-pulse loading-warpper"></div>
+      <span>加载中</span>
     </template>
     <template v-else-if="type=='double_bounce'">
       <div class="double-bounce loading-warpper">
@@ -48,16 +49,36 @@
         <div class="sk-cube sk-cube9"></div>
       </div>
     </template>
+    <div class="loading-msg" v-if="loadingMsgShow">
+      <span>{{loadingMsg}}</span>
+    </div>
   </div>
 </template>
 
 <script>
+import { oneOf } from '../../../utils/assist';
+
 export default {
   name: 'jun-loading',
   props: {
     type: {
       type: String,
-      default: 'cube_grid'
+      validator(value) {
+        return oneOf(value, ['spinner','double_bounce','wave','fading_circle','cube_grid'])
+      },
+      default: 'fading_circle'
+    },
+    loadingShow: {
+      type: Boolean,
+      default: true
+    },
+    loadingMsgShow: {
+      type: Boolean,
+      default: false
+    },
+    loadingMsg: {
+      type: String,
+      default: 'Loading...'
     }
   },
   data () {
