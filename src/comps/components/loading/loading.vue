@@ -1,6 +1,8 @@
 <!-- JunChen 2019-01-29 Loading加载组件 -->
 <template>
-  <div class="jun-loading-div" v-if="loadingShow">
+  <div 
+    :class="['jun-loading-div', {'jun-loading-div-isPlugin': isPlugin}]" 
+    v-if="visible">
     <template v-if="type=='spinner'">
       <div class="spinner spinner-pulse loading-warpper"></div>
       <span>加载中</span>
@@ -49,8 +51,8 @@
         <div class="sk-cube sk-cube9"></div>
       </div>
     </template>
-    <div class="loading-msg" v-if="loadingMsgShow">
-      <span>{{loadingMsg}}</span>
+    <div class="loading-msg" v-if="(message!=''&&message!=undefined) || (_message!=''&&_message!=undefined)">
+      <span>{{message || _message}}</span>
     </div>
   </div>
 </template>
@@ -68,21 +70,19 @@ export default {
       },
       default: 'fading_circle'
     },
-    loadingShow: {
-      type: Boolean,
-      default: true
-    },
-    loadingMsgShow: {
+    visible: {
       type: Boolean,
       default: false
     },
-    loadingMsg: {
+    _message: {
       type: String,
-      default: 'Loading...'
-    }
+      default: ''
+    },
   },
   data () {
     return {
+      message: '',
+      isPlugin: false
     };
   },
 

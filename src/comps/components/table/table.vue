@@ -143,20 +143,6 @@ export default {
       type: Array,
       default: function(){
         return [
-          {name: 'abnerabnerabnerabnerabnerabnerabnerabnerabner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', sex: '男', age: 23, mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
-          {name: 'abner', age: 23, sex: '男', mob: '17621467103'},
         ]
       }
     },
@@ -229,10 +215,17 @@ export default {
   computed: {
     bodyerStyle: function(){
       let style = {}
-      if(typeof this.height == 'number'){
-        style.height = this.height + 'px'
-      }else if(typeof this.height == 'string' && this.height !== ''){
-        style.height = this.height
+      console.log(this.height)
+      if(this.height != undefined){
+        if(typeof this.height == 'number'){
+          style.height = this.height + 'px'
+        }else if(typeof this.height == 'string' && this.height !== ''){
+          style.height = this.height
+        }
+      }else{
+        if(this.bodyer.length <= 0){
+          style.height = '60px'
+        }
       }
       return style
     },
@@ -285,10 +278,12 @@ export default {
       if(height > 0){
         this.rightStyle.height = height + 'px'
       }
-      if(this.bodyer[this.bodyer.length-1].width != undefined){
-        this.rightStyle.width = this.bodyer[this.bodyer.length-1].width + 'px'
-      }else{
-        this.rightStyle.width = '120px'
+      if(this.bodyer.length > 0){
+        if(this.bodyer[this.bodyer.length-1].width != undefined){
+          this.rightStyle.width = this.bodyer[this.bodyer.length-1].width + 'px'
+        }else{
+          this.rightStyle.width = '120px'
+        }
       }
       if(this.tableData.isHeightScroll){
         this.rightStyle.right = '17px'

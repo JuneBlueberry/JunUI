@@ -10,8 +10,8 @@ import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
-import { Message } from './components/message/index'
-import { Loading } from './components/loading/index'
+import { $Message } from './components/message/index'
+import { Loading, $Loading } from './components/loading/index'
 import { LoadingBar } from './components/loadingbar/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
@@ -62,7 +62,8 @@ const install = function (Vue) {
     Vue.component(components[key].name, components[key])
   })
 
-  Vue.prototype.$message = Message
+  Vue.prototype.$message = $Message
+  Vue.prototype.$loading = $Loading
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
