@@ -7,9 +7,8 @@ let instance
 let instances = []
 
 const Loading = function (options) {
-  instance = new LoadingConstructor({
-    data: options
-  })
+  instance = new LoadingConstructor({})
+  Object.assign(instance, options)
   instance.vm = instance.$mount()
   document.body.appendChild(instance.vm.$el)
   instance.vm.isPlugin = true

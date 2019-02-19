@@ -59,6 +59,7 @@
             </tr>
           </tbody>
         </table>
+        <span class="table-bodye-null" v-if="isNull">暂无数据</span>
       </div>
       <!-- 表右侧 -->
       <div 
@@ -142,8 +143,7 @@ export default {
     bodyerData: {
       type: Array,
       default: function(){
-        return [
-        ]
+        return []
       }
     },
     height: {
@@ -200,6 +200,8 @@ export default {
         width: 0,
         height: 0
       },
+
+      isNull: this.bodyerData.length <= 0 ? true : false
     };
   },
 
@@ -215,7 +217,6 @@ export default {
   computed: {
     bodyerStyle: function(){
       let style = {}
-      console.log(this.height)
       if(this.height != undefined){
         if(typeof this.height == 'number'){
           style.height = this.height + 'px'
@@ -223,7 +224,7 @@ export default {
           style.height = this.height
         }
       }else{
-        if(this.bodyer.length <= 0){
+        if(this.isNull){
           style.height = '60px'
         }
       }

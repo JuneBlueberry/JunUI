@@ -51,8 +51,8 @@
         <div class="sk-cube sk-cube9"></div>
       </div>
     </template>
-    <div class="loading-msg" v-if="(message!=''&&message!=undefined) || (_message!=''&&_message!=undefined)">
-      <span>{{message || _message}}</span>
+    <div class="loading-msg" v-if="message!=''&&message!=undefined">
+      <span>{{message}}</span>
     </div>
   </div>
 </template>
@@ -74,14 +74,13 @@ export default {
       type: Boolean,
       default: false
     },
-    _message: {
+    message: {
       type: String,
       default: ''
     },
   },
   data () {
     return {
-      message: '',
       isPlugin: false
     };
   },

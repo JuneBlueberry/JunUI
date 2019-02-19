@@ -223,14 +223,14 @@
         <jun-tabs-item v-for="(item,index) in selectVal7" :name="item.name" :label="item.label" :key="index">111</jun-tabs-item>
       </jun-tabs>
     </div> -->
-    <div style="width: 90%; margin: 0 auto;">
+    <!-- <div style="width: 90%; margin: 0 auto;">
       <jun-table border >
         <span slot='mob' slot-scope="item">{{item.row.mob.substring(0,3) + '****' + item.row.mob.substring(7,4)}}</span>
         <span slot="caozuo" slot-scope="item">
           <jun-button size="small" type="primary">增加</jun-button>
         </span>
       </jun-table>
-    </div>
+    </div> -->
     <!-- <div>
       <jun-card style="width:60%;margin: 20px auto">
         <p>111</p>
@@ -304,6 +304,7 @@
     </div> -->
     <!-- <div>
       <jun-button @click="selectVal13 = true">dialog</jun-button>
+      <jun-button @click="clickDialog">dialog-plugs</jun-button>
       <jun-dialog v-model="selectVal13"></jun-dialog>
     </div> -->
     <!-- <div style="margin-left: 10px">
@@ -320,11 +321,11 @@
         <jun-button>Tooltip-Bottom</jun-button>
       </jun-tooltip>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-button @click="clickLoading">Loading</jun-button>
-      <!-- <jun-flex-row>
+      <jun-flex-row>
         <jun-flex-col :span="12">
-          <jun-loading></jun-loading>
+          <jun-loading :visible="true"></jun-loading>
           <h1>11111</h1>
         </jun-flex-col>
         <jun-flex-col :span="6">
@@ -335,7 +336,21 @@
           <jun-loading></jun-loading>
           <h1>11111</h1>
         </jun-flex-col>
-      </jun-flex-row> -->
+      </jun-flex-row>
+    </div> -->
+    <div style="width:80%; margin: auto">
+      <jun-collapse>
+        <jun-collapse-item>
+          <p>111</p>
+          <p>111</p>
+          <p>111</p>
+          <p>111</p>
+          <p>111</p>
+        </jun-collapse-item>
+        <jun-collapse-item>222</jun-collapse-item>
+        <jun-collapse-item>333</jun-collapse-item>
+        <jun-collapse-item>444</jun-collapse-item>
+      </jun-collapse>
     </div>
   </div>
 </template>
@@ -408,6 +423,18 @@ export default {
       })
       setTimeout(() => {
         that.$loading.close();
+      }, 3000);
+      
+    },
+    clickDialog: function(val){
+      var that = this
+      this.$dialog({
+        message: '111',
+        onClose: function(){console.log("close")},
+        onShow: function(){console.log("show")}
+      })
+      setTimeout(() => {
+        that.$dialog.close();
       }, 3000);
       
     }

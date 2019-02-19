@@ -1,5 +1,4 @@
 <!-- JunChen 2018-11-30 对话框Dialog组件 -->
-import func from './vue-temp/vue-editor-bridge';
 <template>
   <div class="jun-dialog-div">
     <div v-if="visible" class="dialog-mask"></div>

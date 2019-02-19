@@ -4,8 +4,9 @@ import { Alert } from './components/alert/index'
 import { Button } from './components/button/index'
 import { Card } from './components/card/index'
 import { CheckBoxGroup, CheckBox } from './components/checkbox/index'
+import { Collapse, CollapseItem } from './components/collapse/index'
 import { DatePicker } from './components/datepicker/index'
-import { Dialog } from './components/dialog/index'
+import { Dialog, $Dialog } from './components/dialog/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
 import { Icon } from './components/icon/index'
@@ -30,6 +31,8 @@ const components = {
   Card,
   CheckBoxGroup,
   CheckBox,
+  Collapse,
+  CollapseItem,
   DatePicker,
   Dialog,
   FlexRow,
@@ -62,6 +65,7 @@ const install = function (Vue) {
     Vue.component(components[key].name, components[key])
   })
 
+  Vue.prototype.$dialog = $Dialog
   Vue.prototype.$message = $Message
   Vue.prototype.$loading = $Loading
 }
