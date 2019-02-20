@@ -339,17 +339,35 @@
       </jun-flex-row>
     </div> -->
     <div style="width:80%; margin: auto">
-      <jun-collapse>
-        <jun-collapse-item>
-          <p>111</p>
-          <p>111</p>
-          <p>111</p>
-          <p>111</p>
-          <p>111</p>
+      <jun-collapse @change="change1">
+        <jun-collapse-item label="一.AAA" name='1111'>
+          <p>111111111</p>
+          <p>111111111</p>
+          <p>111111111</p>
+          <p>111111111</p>
+          <p>111111111</p>
         </jun-collapse-item>
-        <jun-collapse-item>222</jun-collapse-item>
-        <jun-collapse-item>333</jun-collapse-item>
-        <jun-collapse-item>444</jun-collapse-item>
+        <jun-collapse-item label="一.BBB" name='2222'>
+          <p>222222222</p>
+          <p>222222222</p>
+          <p>222222222</p>
+          <p>222222222</p>
+          <p>222222222</p>
+        </jun-collapse-item>
+        <jun-collapse-item label="一.CCC" name='3333'>
+          <p>3333333333</p>
+          <p>3333333333</p>
+          <p>3333333333</p>
+          <p>3333333333</p>
+          <p>3333333333</p>
+        </jun-collapse-item>
+        <jun-collapse-item label="一.DDD" name='4444'>
+          <p>444444444</p>
+          <p>444444444</p>
+          <p>444444444</p>
+          <p>444444444</p>
+          <p>444444444</p>
+        </jun-collapse-item>
       </jun-collapse>
     </div>
   </div>
@@ -437,6 +455,9 @@ export default {
         that.$dialog.close();
       }, 3000);
       
+    },
+    change1: function(val){
+      console.log(val)
     }
   },
   watch: {
@@ -460,7 +481,7 @@ export default {
     },
     selectVal7: function(val){
       console.log(val)
-    }
+    },
   }
 }
 </script>

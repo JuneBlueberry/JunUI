@@ -36,17 +36,22 @@
     }
   }
 
+  .collapse-item-title-isopen{
+    border-bottom: none;
+  }
+
   .collapse-item-content{
+    position: relative;
     display: block;
     width: 100%;
     padding: 10px;
   }
-  
-  .content-warpper-enter-active{
-    animation: junHeightToBottom 1.5s;
-  }
-  .content-warpper-leave-active{
-    animation: junHeightToTop 0.5s;
-  }
+
+  // .content-warpper-enter-active{
+  //   animation: junHeightToBottom 1s;
+  // }
+  // .content-warpper-leave-active{
+  //   animation: junHeightToTop 0.5s;
+  // }
 
 }

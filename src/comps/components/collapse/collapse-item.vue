@@ -2,7 +2,7 @@
 <template>
   <div class="jun-collapse-item-div">
     <div 
-      :class="['collapse-item-title']"
+      :class="['collapse-item-title', { 'collapse-item-title-isopen': !isOpen }]"
       @click="handleClick">
       <span>{{label}}</span>
       <jun-icon 
@@ -22,11 +22,13 @@
 </template>
 
 <script>
+import { findComponentUpward } from '../../../utils/assist';
 export default {
   name: 'jun-collapse-item',
   props: {
     name: {
-      type: String
+      type: String,
+      default: ''
     },
     label: {
       type: String
@@ -34,7 +36,9 @@ export default {
   },
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      currentName: this.name || Math.random().toString(),
+      parent: findComponentUpward(this, 'jun-collapse'),
     };
   },
 
@@ -45,6 +49,13 @@ export default {
   methods: {
     handleClick: function(){
       this.isOpen = !this.isOpen
+      this.parent.change({
+        isOpen: this.isOpen,
+        name : this.name,
+        currentName: this.currentName,
+        el: this
+      })
+      this.$emit('change', this.isOpen?'open':'close')
     }
   }
 }
