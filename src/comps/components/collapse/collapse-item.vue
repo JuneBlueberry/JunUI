@@ -5,6 +5,7 @@
       :class="['collapse-item-title', { 'collapse-item-title-isopen': !isOpen }]"
       @click="handleClick">
       <span>{{label}}</span>
+      
       <jun-icon 
         class="collapse-item-icon" 
         :type="isOpen?'icon-packup':'icon-unfold'" 
