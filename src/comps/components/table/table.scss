@@ -24,6 +24,8 @@
 
     .table-header, .table-bodyer{
       width: 100%;
+      display: table !important;
+      margin: 0;
       table-layout: fixed;
       border-collapse: collapse;
     }

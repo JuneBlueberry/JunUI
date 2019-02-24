@@ -15,10 +15,17 @@
     .table-bodyer-warpper{
       overflow-x: auto;
       overflow-y: auto;
+
+      .table-bodye-null{
+        line-height: 60px;
+        color: #9e9e9e;
+      }
     }
 
     .table-header, .table-bodyer{
       width: 100%;
+      display: table !important;
+      margin: 0;
       table-layout: fixed;
       border-collapse: collapse;
     }

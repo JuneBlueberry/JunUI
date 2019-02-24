@@ -132,11 +132,11 @@ export default {
       type: Array,
       default: function(){
         return [
-          {label: '姓名', key: 'name'},
-          {label: '年龄', key: 'age'},
-          {label: '性别', key: 'sex'},
-          {label: '手机号', key: 'mob'},
-          {label: '操作', key: 'caozuo', width: 120}
+          // {label: '姓名', key: 'name'},
+          // {label: '年龄', key: 'age'},
+          // {label: '性别', key: 'sex'},
+          // {label: '手机号', key: 'mob'},
+          // {label: '操作', key: 'caozuo', width: 120}
         ]
       }
     },

@@ -1,26 +1,25 @@
 import Vue from 'vue'
-import Main from './dialog.vue'
+import Main from './loading.vue'
 
-let DialogConstructor = Vue.extend(Main)
+let LoadingConstructor = Vue.extend(Main)
 
 let instance
 let instances = []
 
-const Dialog = function (options) {
-  instance = new DialogConstructor({
-    
-  })
+const Loading = function (options) {
+  instance = new LoadingConstructor({})
   Object.assign(instance, options)
   instance.vm = instance.$mount()
-  instance.visible = true
   document.body.appendChild(instance.vm.$el)
+  instance.vm.isPlugin = true
+  instance.vm.visible = true
   if (instance.vm.onShow != null && instance != undefined) {
     instance.vm.onShow()
   }
   instances.push(instance)
 }
 
-Dialog.close = function () {
+Loading.close = function () {
   instances.forEach(function(item, index){
     if(item.vm.onClose != null && instance != undefined){
       instance.vm.onClose()
@@ -30,4 +29,4 @@ Dialog.close = function () {
   instances = []
 }
 
-export default Dialog
+export default Loading
