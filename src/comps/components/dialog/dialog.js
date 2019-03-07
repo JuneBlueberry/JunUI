@@ -24,8 +24,11 @@ Dialog.close = function () {
   instances.forEach(function(item, index){
     if(item.vm.onClose != null && instance != undefined){
       instance.vm.onClose()
+      instance.vm.visible = false
     }
-    item.$el.parentNode.removeChild(item.$el)
+    setTimeout(function(){
+      item.$el.parentNode.removeChild(item.$el)
+    }, 1000)
   })
   instances = []
 }
