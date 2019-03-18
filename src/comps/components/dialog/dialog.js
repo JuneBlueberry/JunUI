@@ -13,6 +13,7 @@ const Dialog = function (options) {
   Object.assign(instance, options)
   instance.vm = instance.$mount()
   instance.visible = true
+  instance.isPlug = true
   document.body.appendChild(instance.vm.$el)
   if (instance.vm.onShow != null && instance != undefined) {
     instance.vm.onShow()

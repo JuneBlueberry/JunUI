@@ -1,0 +1,27 @@
+.jun-breadcrumb-div{
+
+  .jun-breadcrumb-item-div{
+    display: inline-block;
+
+    .breadcrumb-item-title{
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .breadcrumb-item-title.is-active{
+      font-weight: 700;
+    }
+
+    .breadcrumb-item-title.is-hover{
+      &:hover{
+        color: #999999;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+

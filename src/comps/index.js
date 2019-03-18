@@ -1,6 +1,7 @@
 import './styles/index.scss'
 
 import { Alert } from './components/alert/index'
+import { Breadcrumb, BreadcrumbItem } from './components/breadcrumb/index'
 import { Button } from './components/button/index'
 import { Card } from './components/card/index'
 import { CheckBoxGroup, CheckBox } from './components/checkbox/index'
@@ -27,6 +28,8 @@ import { Tooltip } from './components/tooltip/index'
 
 const components = {
   Alert,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   Card,
   CheckBoxGroup,

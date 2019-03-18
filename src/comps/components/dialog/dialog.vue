@@ -61,7 +61,9 @@ export default {
   },
   data () {
     return {
-      visible: false
+      visible: false,
+
+      isPlug: false
     };
   },
 
@@ -79,10 +81,11 @@ export default {
       var that = this
       this.$emit('on-cancel')
       this.visible = false
-      setTimeout(function(){
-        console.log(that.$el.parentNode)
-        that.$el.parentNode.removeChild(that.$el)
-      }, 1000)
+      if(this.isPlug){
+        setTimeout(function(){
+          that.$el.parentNode.removeChild(that.$el)
+        }, 1000)
+      }
     },
     btnConfirm: function(){
       this.$emit('on-confirm')
