@@ -370,12 +370,15 @@
         </jun-collapse-item>
       </jun-collapse>
     </div> -->
-    <div>
-      <jun-breadcrumb>
-        <jun-breadcrumb-item active></jun-breadcrumb-item>
-        <jun-breadcrumb-item></jun-breadcrumb-item>
-        <jun-breadcrumb-item></jun-breadcrumb-item>
+    <!-- <div>
+      <jun-breadcrumb v-model="selectVal14">
+        <jun-breadcrumb-item active label="桌面"></jun-breadcrumb-item>
+        <jun-breadcrumb-item label="菜单1"></jun-breadcrumb-item>
+        <jun-breadcrumb-item label="子菜单1"></jun-breadcrumb-item>
       </jun-breadcrumb>
+    </div> -->
+    <div class="mar-auto">
+      <jun-input-number></jun-input-number>
     </div>
   </div>
 </template>
@@ -401,6 +404,7 @@ export default {
       selectVal11: false,
       selectVal12: false,
       selectVal13: false,
+      selectVal14: '桌面'
     }
   },
   methods: {
@@ -489,12 +493,16 @@ export default {
     selectVal7: function(val){
       console.log(val)
     },
+    selectVal14: function(val){
+      console.log(val)
+    }
   }
 }
 </script>
 
 <style scoped>
   .mar-top{margin-top: 20px;}
+  .mar-auto{text-align: center;}
   .mar-row-top{margin-top: 10px;}
   .col-light{background-color: #cccccc;padding: 6px 0}
   .col-dark{background-color: #999999;padding: 6px 0}

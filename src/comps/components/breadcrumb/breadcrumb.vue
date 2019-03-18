@@ -10,9 +10,14 @@ import { findComponentsDownward } from '../../../utils/assist';
 
 export default {
   name: 'jun-breadcrumb',
-  props: {},
+  props: {
+    value: {
+      type: String
+    }
+  },
   data () {
     return {
+      currentValue: this.value
     };
   },
 
@@ -25,11 +30,24 @@ export default {
   },
 
   methods: {
-    updateBreadcrumb: function(val) {
+    updateBreadcrumb: function() {
       const breadcrumbs = findComponentsDownward(this, "jun-breadcrumb-item")
       if (breadcrumbs.length > 2) {
         breadcrumbs[breadcrumbs.length-1].disabled = false
       }
+      breadcrumbs.forEach(breadcrumb => {
+        if(breadcrumb.label === this.currentValue){
+          breadcrumb.isActive = true
+        }else{
+          breadcrumb.isActive = false
+        }
+      });
+    },
+
+    updateVal: function(val){
+      this.currentValue = val
+      this.updateBreadcrumb()
+      this.$emit('input', this.currentValue)
     }
   }
 }

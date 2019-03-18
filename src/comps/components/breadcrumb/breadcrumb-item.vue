@@ -2,13 +2,15 @@
 <template>
   <div class="jun-breadcrumb-item-div">
     <span 
-      :class="['breadcrumb-item-title', {'is-active': active, 'is-hover': !active}]"
-      @click="handleClick">桌面</span>
+      :class="['breadcrumb-item-title', {'is-active': isActive, 'is-hover': !isActive}]"
+      @click="handleClick">{{label}}</span>
     <jun-icon v-if="disabled" type="icon-doubleright" :size="18" color="#dddddd"></jun-icon>
   </div>
 </template>
 
 <script>
+import { oneOf, findComponentUpward } from '../../../utils/assist';
+
 export default {
   name: 'jun-breadcrumb-item',
   props: {
@@ -19,11 +21,17 @@ export default {
     link: {
       type: String,
       default: '#'
+    },
+    label: {
+      type: String,
+      default: '#'
     }
   },
   data () {
     return {
-      disabled: true
+      disabled: true,
+      isActive: this.active,
+      parent: findComponentUpward(this, 'jun-breadcrumb'),
     };
   },
 
@@ -33,6 +41,7 @@ export default {
 
   methods: {
     handleClick: function(){
+      this.parent.updateVal(this.label)
       window.location.href = this.link
     }
   }

@@ -10,6 +10,7 @@ import { DatePicker } from './components/datepicker/index'
 import { Dialog, $Dialog } from './components/dialog/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
+import { InputNumber } from './components/inputnumber/inputnumber'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
 import { $Message } from './components/message/index'
@@ -41,6 +42,7 @@ const components = {
   FlexRow,
   FlexCol,
   Input,
+  InputNumber,
   Icon,
   Menu,
   Loading,

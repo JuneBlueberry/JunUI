@@ -1,0 +1,38 @@
+.jun-inputnumber-div{
+  display: inline-block;
+  width: 160px;
+
+  .jun-inputnumber-warpper{
+    width: 100%;
+
+    .jun-btn-left, .jun-btn-right{
+      display: block;
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      top: 0;
+      z-index: 99;
+      cursor: pointer;
+      background-color: #f5f7fa;
+    }
+
+    .jun-btn-left{
+      left: 0;
+      border: 1px solid #dcdfe6;
+    }
+
+    .jun-btn-right{
+      right: 0;
+      border: 1px solid #dcdfe6;
+    }
+  
+    .jun-inputnumber{
+      width: 100%;
+      height: 36px;
+      padding: 0 38px;
+      line-height: 36px;
+      text-align: center;
+      border: 1px solid #dcdfe6;
+    }
+  }
+}

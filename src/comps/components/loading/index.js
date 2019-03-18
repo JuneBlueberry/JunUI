@@ -1,7 +1,7 @@
 import Loading from './loading.vue'
 import $Loading from './loading.js'
 
-export{
+export {
   Loading,
   $Loading
 }
