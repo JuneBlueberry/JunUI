@@ -377,8 +377,11 @@
         <jun-breadcrumb-item label="子菜单1"></jun-breadcrumb-item>
       </jun-breadcrumb>
     </div> -->
+    <!-- <div class="mar-auto">
+      <jun-input-number v-model="selectVal15"></jun-input-number>
+    </div> -->
     <div class="mar-auto">
-      <jun-input-number></jun-input-number>
+      <jun-timepicker></jun-timepicker>
     </div>
   </div>
 </template>
@@ -404,7 +407,8 @@ export default {
       selectVal11: false,
       selectVal12: false,
       selectVal13: false,
-      selectVal14: '桌面'
+      selectVal14: '桌面',
+      selectVal15: '10'
     }
   },
   methods: {
@@ -495,7 +499,10 @@ export default {
     },
     selectVal14: function(val){
       console.log(val)
-    }
+    },
+    selectVal15: function(val){
+      console.log(val)
+    },
   }
 }
 </script>

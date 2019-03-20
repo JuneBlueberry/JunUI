@@ -10,7 +10,7 @@ import { DatePicker } from './components/datepicker/index'
 import { Dialog, $Dialog } from './components/dialog/index'
 import { FlexRow, FlexCol } from './components/flex/index'
 import { Input } from './components/input/index'
-import { InputNumber } from './components/inputnumber/inputnumber'
+import { InputNumber } from './components/inputnumber/index'
 import { Icon } from './components/icon/index'
 import { Menu } from './components/menu/index'
 import { $Message } from './components/message/index'
@@ -25,6 +25,7 @@ import { Sidebar } from './components/sidebar/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tabs, TabsItem } from './components/tabs/index'
+import { TimePicker } from './components/timepicker/index'
 import { Tooltip } from './components/tooltip/index'
 
 const components = {
@@ -58,6 +59,7 @@ const components = {
   Table,
   Tabs,
   TabsItem,
+  TimePicker,
   Tooltip
 }
 

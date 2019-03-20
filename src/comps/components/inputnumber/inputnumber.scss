@@ -5,6 +5,24 @@
   .jun-inputnumber-warpper{
     width: 100%;
 
+    &:hover{
+      .jun-btn-left, .jun-btn-right, .jun-inputnumber{
+        border: 1px solid #c0c4cc;
+      }
+    }
+
+    .is-disabled{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      opacity: 0.7;
+      cursor: not-allowed;
+      background-color: #f7f7f7;
+    }
+
     .jun-btn-left, .jun-btn-right{
       display: block;
       position: absolute;
@@ -14,25 +32,79 @@
       z-index: 99;
       cursor: pointer;
       background-color: #f5f7fa;
-    }
-
-    .jun-btn-left{
-      left: 0;
-      border: 1px solid #dcdfe6;
-    }
-
-    .jun-btn-right{
-      right: 0;
       border: 1px solid #dcdfe6;
     }
   
     .jun-inputnumber{
       width: 100%;
       height: 36px;
-      padding: 0 38px;
       line-height: 36px;
       text-align: center;
       border: 1px solid #dcdfe6;
+    }
+  }
+
+  .jun-warpper-leftright{
+    .jun-btn-left{
+      left: 0;
+    }
+
+    .jun-btn-right{
+      right: 0;
+    }
+  
+    .jun-inputnumber{
+      padding: 0 38px;
+    }
+  }
+
+  .jun-warpper-right{
+    .jun-btn-left{
+      right: 36px;
+    }
+
+    .jun-btn-right{
+      right: 0;
+    }
+  
+    .jun-inputnumber{
+      padding: 0 74px 0 0;
+    }
+  }
+
+  .jun-warpper-left{
+    .jun-btn-left{
+      left: 0;
+    }
+
+    .jun-btn-right{
+      left: 36px;
+    }
+  
+    .jun-inputnumber{
+      padding: 0 0 0 74px;
+    }
+  }
+
+  .jun-warpper-topdown{
+    .jun-btn-left{
+      right: 0;
+      top: 0px;
+      height: 18px;
+    }
+
+    .jun-btn-right{
+      right: 0px;
+      top: 18px;
+      height: 18px;
+    }
+  
+    .jun-inputnumber{
+      padding: 0 38px 0 0;
+    }
+
+    .jun-icon{
+      font-size: 16px;
     }
   }
 }
