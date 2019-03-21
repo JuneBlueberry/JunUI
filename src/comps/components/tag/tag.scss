@@ -1,0 +1,99 @@
+.jun-tag-div{
+  display: inline-block;
+
+  .tag-warpper{
+    display: flex;
+    width: 100%;
+    padding: 0 12px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #e8eaec;
+    background-color: #f7f7f7;
+    
+    cursor: pointer;
+    font-size: 12px;
+
+    &:hover{
+      opacity: 0.85;
+    }
+  }
+
+  .tag-msg{
+    flex: 1;
+  }
+
+  .tag-close{
+    width: 24px;
+  }
+
+  .tag-warpper.is-closable{
+    padding: 0 0 0 12px;
+
+    .tag-msg{
+      padding-right: 12px;
+    }
+  }
+
+  .tag-warpper.tag-type-primary{
+    background-color: #0099cc;
+    color: #ffffff;
+  }
+  .tag-warpper.tag-type-success{
+    background-color: #4db118;
+    color: #ffffff;
+  }
+  .tag-warpper.tag-type-info{
+    background-color: #909399;
+    color: #ffffff;
+  }
+  .tag-warpper.tag-type-warning{
+    background-color: #e79302;
+    color: #ffffff;
+  }
+  .tag-warpper.tag-type-danger{
+    background-color: #f25721;
+    color: #ffffff;
+  }
+
+  .tag-warpper.tag-type-primary.is-border{
+    border: 1px solid #0099cc;
+    background-color: #d9edf7;
+    color: #0099cc;
+  }
+  .tag-warpper.tag-type-success.is-border{
+    border: 1px solid #4db118;
+    background-color: #f2ffea;
+    color: #4db118;
+  }
+  .tag-warpper.tag-type-info.is-border{
+    border: 1px solid #909399;
+    background-color: #f9f9f9;
+    color: #909399;
+  }
+  .tag-warpper.tag-type-warning.is-border{
+    border: 1px solid #e79302;
+    background-color: #fcf8e2;
+    color: #e79302;
+  }
+  .tag-warpper.tag-type-danger.is-border{
+    border: 1px solid #f25721;
+    background-color: #fff6f2;
+    color: #f25721;
+  }
+
+  .tag-close.is-border.tag-type-primary{
+    border-left: 1px solid #0099cc;
+  }
+  .tag-close.is-border.tag-type-success{
+    border-left: 1px solid #4db118;
+  }
+  .tag-close.is-border.tag-type-info{
+    border-left: 1px solid #909399;
+  }
+  .tag-close.is-border.tag-type-warning{
+    border-left: 1px solid #e79302;
+  }
+  .tag-close.is-border.tag-type-danger{
+    border-left: 1px solid #f25721;
+  }
+}

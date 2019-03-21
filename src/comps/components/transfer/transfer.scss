@@ -1,0 +1,57 @@
+.jun-transfer-div{
+  display: inline-block;
+
+  .transfer-warpper{
+    display: block;
+    position: relative;
+
+    .transfer-left, .transfer-middle, .transfer-right{
+      display: inline-block;
+      height: 240px;
+    }
+
+    .transfer-left, .transfer-right{
+      width: 180px;
+      border: 1px solid #dcdee2;  
+
+      .transfer-title{
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+        text-align: left;
+        background-color: #ecedee;
+        border-bottom: 1px solid #dcdee2;
+
+        .title-checkbox{
+          float: left;
+        }
+        .title-num{
+          float: right;
+          margin-right: 6px;
+        }
+      }
+
+      .transfer-list{
+        width: 100%;
+        height: 200px;
+        overflow: auto;
+
+        .transfer-list-item{
+          display: block;
+          width: 100%;
+          height: 36px;
+          line-height: 36px;
+          text-align: left;
+        }
+
+        .title-checkbox{
+          float: left;
+        }
+      }
+    }
+
+    .transfer-middle{
+      width: 90px;
+    }
+  }
+}

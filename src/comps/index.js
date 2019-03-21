@@ -24,9 +24,11 @@ import { Select } from './components/select/index'
 import { Sidebar } from './components/sidebar/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
+import { Tag } from './components/tag/index'
 import { Tabs, TabsItem } from './components/tabs/index'
 import { TimePicker } from './components/timepicker/index'
 import { Tooltip } from './components/tooltip/index'
+import { Transfer } from './components/transfer/index'
 
 const components = {
   Alert,
@@ -59,8 +61,10 @@ const components = {
   Table,
   Tabs,
   TabsItem,
+  Tag,
   TimePicker,
-  Tooltip
+  Tooltip,
+  Transfer
 }
 
 const install = function (Vue) {

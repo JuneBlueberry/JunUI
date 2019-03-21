@@ -380,8 +380,41 @@
     <!-- <div class="mar-auto">
       <jun-input-number v-model="selectVal15"></jun-input-number>
     </div> -->
-    <div class="mar-auto">
+    <!-- <div class="mar-auto">
       <jun-timepicker></jun-timepicker>
+    </div> -->
+    <!-- <div class="mar-auto">
+      <div class="mar-top">
+        <jun-tag>标签1</jun-tag>
+        <jun-tag>标签1标签1</jun-tag>
+      </div>
+      <div class="mar-top">
+        <jun-tag type="default">标签1</jun-tag>
+        <jun-tag type="primary">标签2</jun-tag>
+        <jun-tag type="success">标签3</jun-tag>
+        <jun-tag type="info">标签4</jun-tag>
+        <jun-tag type="warning">标签5</jun-tag>
+        <jun-tag type="danger">标签6</jun-tag>
+      </div>
+      <div class="mar-top">
+        <jun-tag type="default" border>标签1</jun-tag>
+        <jun-tag type="primary" border>标签2</jun-tag>
+        <jun-tag type="success" border>标签3</jun-tag>
+        <jun-tag type="info" border>标签4</jun-tag>
+        <jun-tag type="warning" border>标签5</jun-tag>
+        <jun-tag type="danger" border>标签6</jun-tag>
+      </div>
+      <div class="mar-top">
+        <jun-tag type="default" border closable>标签1</jun-tag>
+        <jun-tag type="primary" border closable>标签2</jun-tag>
+        <jun-tag type="success" border closable>标签3</jun-tag>
+        <jun-tag type="info" border closable>标签4</jun-tag>
+        <jun-tag type="warning" border closable>标签5</jun-tag>
+        <jun-tag type="danger" border closable>标签6</jun-tag>
+      </div>
+    </div> -->
+    <div class="mar-auto">
+      <jun-transfer></jun-transfer>
     </div>
   </div>
 </template>
