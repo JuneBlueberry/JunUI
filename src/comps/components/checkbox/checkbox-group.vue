@@ -35,6 +35,8 @@ export default {
         if (this.currentModel.length > 0) {
           if (this.currentModel.indexOf(checkbox.label) >= 0) {
             checkbox.currentValue = true;
+          }else{
+            checkbox.currentValue = false;
           }
         }
       });
@@ -55,6 +57,11 @@ export default {
   },
 
   watch: {
+    value: {
+      handler: function(){
+        this.currentModel = this.value
+      },
+    },
     currentModel: {
       handler: 'updateValue',
     }

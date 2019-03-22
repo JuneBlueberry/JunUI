@@ -414,7 +414,7 @@
       </div>
     </div> -->
     <div class="mar-auto">
-      <jun-transfer></jun-transfer>
+      <jun-transfer :sourceData="selectVal16" @change="change2"></jun-transfer>
     </div>
   </div>
 </template>
@@ -441,7 +441,23 @@ export default {
       selectVal12: false,
       selectVal13: false,
       selectVal14: '桌面',
-      selectVal15: '10'
+      selectVal15: '10',
+      selectVal16: [
+        {key: 1, label: 'tranfer'},
+        {key: 2, label: 'tranfer'},
+        {key: 3, label: 'tranfer'},
+        {key: 4, label: 'tranfer'},
+        {key: 5, label: 'tranfer'},
+        {key: 6, label: 'tranfer'},
+        {key: 7, label: 'tranfer'},
+        {key: 8, label: 'tranfer'},
+        {key: 9, label: 'tranfer'},
+        {key: 10, label: 'tranfer'},
+        {key: 11, label: 'tranfer'},
+        {key: 12, label: 'tranfer'},
+        {key: 13, label: 'tranfer'},
+        {key: 14, label: 'tranfer'}
+      ]
     }
   },
   methods: {
@@ -506,6 +522,10 @@ export default {
     },
     change1: function(val){
       console.log(val)
+    },
+    change2: function(val1, val2){
+      console.log(val1)
+      console.log(val2)
     }
   },
   watch: {
