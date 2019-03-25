@@ -4,14 +4,14 @@
     <div class="transfer-warpper">
       <div class="transfer-left">
         <div class="transfer-title">
-          <jun-checkbox class="title-checkbox"></jun-checkbox>
+          <jun-checkbox class="title-checkbox" size="samll"></jun-checkbox>
           <span>源数据</span>
           <span class="title-num">1/11</span>
         </div>
         <div class="transfer-list">
           <jun-checkbox-group v-model="selectSourceValue" @change="handleChangeSourceVal">
             <label v-for="item in currentSourceList" :key="item.key" class="transfer-list-item">
-              <jun-checkbox class="title-checkbox" :label="item.key">
+              <jun-checkbox :label="item.key" size="samll">
                 <span></span>
               </jun-checkbox>
               <span>{{item.label + '-' + item.key}}</span>
@@ -31,14 +31,14 @@
       </div>
       <div class="transfer-right">
         <div class="transfer-title">
-          <jun-checkbox class="title-checkbox"></jun-checkbox>
+          <jun-checkbox class="title-checkbox" size="samll"></jun-checkbox>
           <span>目标数据</span>
           <span class="title-num">1/11</span>
         </div>
         <div class="transfer-list">
           <jun-checkbox-group v-model="selectTargetValue" @change="handleChangeTargetVal">
             <label v-for="item in currentTargetList" :key="item.key" class="transfer-list-item">
-              <jun-checkbox class="title-checkbox" :label="item.key">
+              <jun-checkbox :label="item.key" size="samll">
                 <span></span>
               </jun-checkbox>
               <span>{{item.label + '-' + item.key}}</span>
@@ -109,7 +109,9 @@ export default {
       this.isSourceActive = false
       that.$nextTick(function () {
         this.selectSourceValue = []
-        this.selectTargetValue = []
+        if(this.selectTargetValue.length == 0){
+          this.selectTargetValue = []
+        }
       })
       
     },
@@ -129,7 +131,9 @@ export default {
       }
       this.isTargetActive = false
       that.$nextTick(function () {
-        this.selectSourceValue = []
+        if(this.selectSourceValue.length == 0){
+          this.selectSourceValue = []
+        }
         this.selectTargetValue = []
       })
     }

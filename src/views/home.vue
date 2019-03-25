@@ -144,8 +144,8 @@
         <jun-icon type="icon-addition" color="#888888"></jun-icon>
         <jun-icon type="icon-addpeople_fill" color="#999999"></jun-icon>
       </div>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <jun-radio size="small">前端工程师</jun-radio>
       <jun-radio>后端工程师</jun-radio>
       <jun-radio disabled>算法工程师</jun-radio>
@@ -161,16 +161,22 @@
         <jun-radio label="全栈工程师">全栈工程师</jun-radio>
       </jun-radio-group>
       <jun-radio >全栈工程师</jun-radio>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <jun-checkbox v-model="selectVal2">前端工程师</jun-checkbox>
       <jun-checkbox-group v-model="selectVal3">
         <jun-checkbox label="前端工程师" color="green"></jun-checkbox>
         <jun-checkbox label="后端工程师" color="red"></jun-checkbox>
-        <jun-checkbox label="全栈工程师" color="yellow"></jun-checkbox>
+        <jun-checkbox label="全栈工程师" color="yellow" ></jun-checkbox>
       </jun-checkbox-group>
-    </div>
-    <div>
+      <jun-checkbox-group v-model="selectVal3">
+        <jun-checkbox label="前端工程师" color="green" size="big"></jun-checkbox>
+        <jun-checkbox label="前端工程师" color="green" size="medium"></jun-checkbox>
+        <jun-checkbox label="前端工程师" color="green" size="samll"></jun-checkbox>
+        <jun-checkbox label="前端工程师" color="green" size="mini"></jun-checkbox>
+      </jun-checkbox-group>
+    </div> -->
+    <!-- <div>
       <jun-switch></jun-switch>
       <jun-switch checked></jun-switch>
       <br/><br/>
