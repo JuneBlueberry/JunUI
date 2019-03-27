@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'iconfont';  /* project id 856845 */
-  src: url('//at.alicdn.com/t/font_856845_c1g1iz9kevr.eot');
-  src: url('//at.alicdn.com/t/font_856845_c1g1iz9kevr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_856845_c1g1iz9kevr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_856845_c1g1iz9kevr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_856845_c1g1iz9kevr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_856845_c12gk8yu89.eot');
+  src: url('//at.alicdn.com/t/font_856845_c12gk8yu89.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_856845_c12gk8yu89.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_856845_c12gk8yu89.woff') format('woff'),
+  url('//at.alicdn.com/t/font_856845_c12gk8yu89.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_856845_c12gk8yu89.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -14,6 +15,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-jianhaocu:before { content: "\e6ca"; }
 
 .icon-accessory:before { content: "\e6dd"; }
 

@@ -419,9 +419,9 @@
         <jun-tag type="danger" border closable>标签6</jun-tag>
       </div>
     </div> -->
-    <div class="mar-auto">
+    <!-- <div class="mar-auto">
       <jun-transfer :sourceData="selectVal16" @change="change2"></jun-transfer>
-    </div>
+    </div> -->
   </div>
 </template>
 

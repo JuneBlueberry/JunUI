@@ -13,6 +13,7 @@ const Dialog = function (options) {
   Object.assign(instance, options)
   instance.vm = instance.$mount()
   instance.visible = true
+  instance.isPlug = true
   document.body.appendChild(instance.vm.$el)
   if (instance.vm.onShow != null && instance != undefined) {
     instance.vm.onShow()
@@ -24,8 +25,11 @@ Dialog.close = function () {
   instances.forEach(function(item, index){
     if(item.vm.onClose != null && instance != undefined){
       instance.vm.onClose()
+      instance.vm.visible = false
     }
-    item.$el.parentNode.removeChild(item.$el)
+    setTimeout(function(){
+      item.$el.parentNode.removeChild(item.$el)
+    }, 1000)
   })
   instances = []
 }

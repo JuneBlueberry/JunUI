@@ -1,0 +1,69 @@
+.jun-timepicker-div{
+  display: inline-block;
+
+  .timepicker-input{
+    width: 160px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #d7d8d9;
+
+    &:hover{
+      border: 1px solid #00c1de;
+      cursor: pointer;
+    }
+
+    &:focus{
+      border: 1px solid #00c1de;
+    }
+  }
+
+  .timepicker-warpper{
+    width: 160px;
+    display: flex;
+    box-shadow: 0 0 10px 1px #00000026;
+
+    .times-item{
+      flex: 1;
+      height: 160px;
+      overflow: hidden;
+
+      &:hover{
+        overflow: auto;
+      }
+    }
+
+    .time-item{
+      display: block;
+      width: 100%;
+      height: 24px;
+      line-height: 24px;
+      padding-left: 15px;
+      text-align: left;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #f5f7fa;
+      }
+    }
+
+    .time-item.is-select{
+      background-color: #c1c1c1;
+    }
+  }
+
+  .timepickerDiv-enter-active {
+    transition: opacity .5s;
+  }
+
+  .datepickerDiv-leave-active{
+    transition: opacity .1s;
+  }
+
+  .timepickerDiv-enter, .timepickerDiv-leave-to {
+    opacity: 0;
+  }
+  .timepickerDiv-leave ,.timepickerDiv-enter-to {
+    opacity: 1;
+  }
+}

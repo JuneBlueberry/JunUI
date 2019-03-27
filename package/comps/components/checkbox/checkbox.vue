@@ -3,13 +3,13 @@
   <div class="jun-checkbox-div">
     <input
       v-if="group"
-      :class="[size!=''?'radio-size-'+size:'', color!=''?'radio-color-'+color:'', {'is-disabled': disabled}]"
+      :class="[size!=''?'checkbox-size-'+size:'', color!=''?'checkbox-color-'+color:'', {'is-disabled': disabled}]"
       type="checkbox"
       :checked="currentValue"
       @change="change">
     <input
       v-else
-      :class="[size!=''?'radio-size-'+size:'', color!=''?'radio-color-'+color:'', {'is-disabled': disabled}]"
+      :class="[size!=''?'checkbox-size-'+size:'', color!=''?'checkbox-color-'+color:'', {'is-disabled': disabled}]"
       type="checkbox"
       :checked="currentValue"
       @change="change">
@@ -29,7 +29,10 @@ export default {
     param: [String, Number, Boolean, Array, Object],
     size: {
       type: String,
-      default: ''
+      validator (value) {
+        return oneOf(value, ['big','medium','samll','mini'])
+      },
+      default: 'medium'
     },
     color: {
       type: String,
