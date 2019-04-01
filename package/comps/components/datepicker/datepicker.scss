@@ -21,8 +21,10 @@
     position: absolute;
     z-index: 9999;
     box-shadow: 0 0 10px 1px #00000026;
+    background-color: #ffffff;
 
     .datepicker-header{
+      text-align: center;
       color: #00000040 !important;
 
       .header-lefticon, .header-righticon, .header-doublelefticon, .header-doublerighticon{
@@ -58,9 +60,14 @@
 
       .datepicker-days{
         table{
+          display: table;
           border-collapse: collapse;
           width: 280px;
           height: 288px;
+
+          tr {
+            background: #ffffff;
+          }
 
           tr th, tr td{
             line-height: 40px;
@@ -68,6 +75,7 @@
             font-size: 14px;
             border: 1px solid #c6c6c640;
             text-align: center;
+            padding: 0;
           }
 
           tr th{
@@ -112,9 +120,14 @@
       .datepicker-years, .datepicker-months{
 
         table{
+          display: table;
           border-collapse: collapse;
           width: 280px;
           height: 288px;
+
+          tr {
+            background: #ffffff;
+          }
 
           tr td{
             padding: 10px;
@@ -125,6 +138,8 @@
             color: #000000e6;
             cursor: pointer;
             border: 1px solid #c6c6c640;
+            padding: 0;
+            text-align: center;
           }
 
           td{
