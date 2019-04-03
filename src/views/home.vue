@@ -207,9 +207,9 @@
       <jun-rate icon="icon-delete_fill"></jun-rate>
       <jun-rate icon="icon-delete_fill" style-color-default="#333333" style-color-active="red"></jun-rate>
       <jun-rate icon="icon-collection" :counts="8"></jun-rate>
-    </div>
-    <div>
-      <jun-datepicker v-model="selectVal5"></jun-datepicker>
+    </div> -->
+    <!-- <div>
+      <jun-datepicker v-model="selectVal5" type="daterange"></jun-datepicker>
     </div> -->
     <!-- <div>
       <jun-page></jun-page>
