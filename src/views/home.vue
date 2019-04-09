@@ -308,11 +308,11 @@
       <jun-sidebar v-model="selectVal11" length="50vh" direction="top"></jun-sidebar>
       <jun-sidebar v-model="selectVal12" length="50vh" direction="bottom"></jun-sidebar>
     </div> -->
-    <!-- <div>
+    <div>
       <jun-button @click="selectVal13 = true">dialog</jun-button>
       <jun-button @click="clickDialog">dialog-plugs</jun-button>
       <jun-dialog v-model="selectVal13"></jun-dialog>
-    </div> -->
+    </div>
     <!-- <div style="margin-left: 10px">
       <jun-tooltip msg="哈哈-Top">
         <jun-button>Tooltip-Top</jun-button>

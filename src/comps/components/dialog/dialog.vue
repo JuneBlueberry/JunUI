@@ -1,7 +1,9 @@
 <!-- JunChen 2018-11-30 对话框Dialog组件 -->
 <template>
   <div class="jun-dialog-div">
-    <div v-if="visible" class="dialog-mask"></div>
+    <transition name="dialog-mask">
+      <div v-if="visible" class="dialog-mask"></div>
+    </transition>
     <transition name="dialog-warpper">
       <div v-if="visible" class="dialog-warpper" @click="btnMaskClosable">
         <div class="dialog-content" @click.stop>
