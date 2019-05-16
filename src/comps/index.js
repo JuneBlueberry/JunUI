@@ -16,6 +16,7 @@ import { Menu } from './components/menu/index'
 import { $Message } from './components/message/index'
 import { Loading, $Loading } from './components/loading/index'
 import { LoadingBar } from './components/loadingbar/index'
+import { Notice, $Notice} from './components/notice/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
 import { RadioGroup, Radio } from './components/radio/index'
@@ -50,6 +51,7 @@ const components = {
   Menu,
   Loading,
   LoadingBar,
+  Notice,
   Page,
   Progress,
   RadioGroup,
@@ -79,6 +81,7 @@ const install = function (Vue) {
   Vue.prototype.$dialog = $Dialog
   Vue.prototype.$message = $Message
   Vue.prototype.$loading = $Loading
+  Vue.prototype.$notice = $Notice
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
