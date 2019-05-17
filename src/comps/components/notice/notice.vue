@@ -2,7 +2,7 @@
 <template>
   <div class="jun-notice-div">
     <div class="notice-warpper">
-
+      sss
     </div>
   </div>
 </template>
