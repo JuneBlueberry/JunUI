@@ -423,7 +423,11 @@
       <jun-transfer :sourceData="selectVal16" @change="change2"></jun-transfer>
     </div> -->
     <div>
-      <jun-notice></jun-notice>
+      <jun-button @click="clickNotice('primary')">Notice常用</jun-button>
+      <jun-button @click="clickNotice('success')">Message成功</jun-button>
+      <jun-button @click="clickNotice('info')">Message信息</jun-button>
+      <jun-button @click="clickNotice('warning')">Message警告</jun-button>
+      <jun-button @click="clickNotice('danger')">Message失败</jun-button>
     </div>
   </div>
 </template>
@@ -504,6 +508,16 @@ export default {
         onClose: function(){console.log("close")},
         onShow: function(){console.log("show")}
         })
+    },
+    clickNotice: function(val){
+      var that = this
+      this.$notice({
+        title: '常用提醒标题',
+        message: '这是一条测试的信息，这是一条测试的信息，这是一条测试的信息',
+        type: val,
+        onClose: function(){console.log("close")},
+        onShow: function(){console.log("show")}
+      })
     },
     clickLoading: function(val){
       var that = this

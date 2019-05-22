@@ -6,9 +6,40 @@
   z-index: 99;
 
   .notice-warpper{
-    padding: 10px 20px;
-    position: relative;
+    display: flex;
+    padding: 10px 18px;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
-  }
 
+    .notice-close-icon{
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
+
+    .notice-type{
+      width: 100px;
+
+      .notice-type-icon{
+        margin-top: 4px;
+      }
+    }
+
+    .notice-title{
+      flex: 1;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .notice-msg{
+      display: inline-block;
+      font-size: 14px;
+    }
+  }
+}
+
+.jun-notice-enter-active{
+  animation: junMoveRightIn .5s;
+}
+.jun-notice-leave-active{
+  animation: junMoveTopOut .5s;
 }
