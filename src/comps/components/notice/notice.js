@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Main from './notice.vue'
+import { findComponentUpward } from '../../../utils/assist'
 
 let NoticeConstructor = Vue.extend(Main)
 
@@ -11,7 +12,13 @@ const Notice = function (options) {
     data: options
   })
   instance.vm = instance.$mount()
-  document.body.appendChild(instance.vm.$el)
+  //判断是否已经有一个提醒框
+  let warpperDomHave = document.getElementById("jun-notice-divs")
+  if(warpperDomHave != undefined || warpperDomHave != null){
+    warpperDomHave.appendChild(instance.vm.$el.firstChild)
+  } else {
+    document.body.appendChild(instance.vm.$el)
+  }
   instance.vm.visible = true
   if (instance.vm.onShow != null) {
     instance.vm.onShow()

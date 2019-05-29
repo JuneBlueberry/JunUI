@@ -8,12 +8,13 @@
   .notice-warpper{
     display: flex;
     padding: 10px 18px;
+    margin-top: 10px;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
 
     .notice-close-icon{
       position: absolute;
-      right: 10px;
-      top: 15px;
+      right: 6px;
+      top: 6px;
     }
 
     .notice-type{

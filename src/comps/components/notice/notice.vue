@@ -1,9 +1,9 @@
 <!-- JunChen 2019-05-14 Notice组件-提醒 -->
 <template>
-  <transition name="jun-notice">
-    <div v-show="visible" class="jun-notice-div">
-      <div class="notice-warpper">
-        <jun-icon @click="closeNotice" class="notice-close-icon" type="icon-close" :size="17"></jun-icon>
+  <div id="jun-notice-divs" class="jun-notice-div">
+    <transition name="jun-notice">
+      <div v-show="visible" class="notice-warpper">
+        <jun-icon @click="closeNotice" class="notice-close-icon" type="icon-close" :size="20"></jun-icon>
         <div class="notice-type" v-if="type!='primary'">
           <jun-icon v-if="type=='info'" class="notice-type-icon" type="icon-prompt" color="#0099cc"></jun-icon>
           <jun-icon v-else-if="type=='success'" class="notice-type-icon" type="icon-success" color="#4db118"></jun-icon>
@@ -23,8 +23,8 @@
           </slot>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -67,12 +67,14 @@ export default {
     },
 
     destroyElement: function(){
+      console.log(111)
       this.$el.removeEventListener('transitionend', this.destroyElement)
       if(this.onClose != null){
         this.onClose()
       }
       this.$destroy(true)
-      this.$el.parentNode.removeChild(this.$el)
+      console.log(this.$el.parentNode)
+      this.$el.parentNode.removeChild(this.$el.firstChild)
     }
   },
 
@@ -80,7 +82,8 @@ export default {
     closed: function(newValue){
       if(newValue){
         this.visible = false
-        this.$el.addEventListener('transitionend', this.destroyElement)
+        console.log(this.$el.firstChild)
+        this.$el.firstChild.addEventListener('transitionend', this.destroyElement)
       }
     }
   }

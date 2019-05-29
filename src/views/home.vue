@@ -514,6 +514,7 @@ export default {
       this.$notice({
         title: '常用提醒标题',
         message: '这是一条测试的信息，这是一条测试的信息，这是一条测试的信息',
+        duration: 1000,
         type: val,
         onClose: function(){console.log("close")},
         onShow: function(){console.log("show")}
