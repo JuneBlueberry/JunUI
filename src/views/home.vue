@@ -424,10 +424,10 @@
     </div> -->
     <div>
       <jun-button @click="clickNotice('primary')">Notice常用</jun-button>
-      <jun-button @click="clickNotice('success')">Message成功</jun-button>
-      <jun-button @click="clickNotice('info')">Message信息</jun-button>
-      <jun-button @click="clickNotice('warning')">Message警告</jun-button>
-      <jun-button @click="clickNotice('danger')">Message失败</jun-button>
+      <jun-button @click="clickNotice('success')">Notice成功</jun-button>
+      <jun-button @click="clickNotice('info')">Notice信息</jun-button>
+      <jun-button @click="clickNotice('warning')">Notice警告</jun-button>
+      <jun-button @click="clickNotice('danger')">Notice失败</jun-button>
     </div>
   </div>
 </template>
@@ -514,7 +514,7 @@ export default {
       this.$notice({
         title: '常用提醒标题',
         message: '这是一条测试的信息，这是一条测试的信息，这是一条测试的信息',
-        duration: 1000,
+        duration: 3000,
         type: val,
         onClose: function(){console.log("close")},
         onShow: function(){console.log("show")}

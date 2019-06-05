@@ -1,9 +1,14 @@
-.jun-notice-div{
+#jun-notice-divs{
   position: fixed;
   top: 30px;
   right: 30px;
-  width: 300px;
   z-index: 99;
+}
+
+.jun-notice-div{
+  position: relative;
+  width: 300px;
+  background-color: #ffffff;
 
   .notice-warpper{
     display: flex;
