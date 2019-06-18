@@ -1,0 +1,38 @@
+.jun-steps-div{
+
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+
+  .steps-num{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #00c1de;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .steps-title{
+    padding: 0 12px 0 6px;
+    font-weight: bold;
+  }
+
+  .steps-line{
+    display: inline-block;
+    height: 100%;
+
+    span{
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #e3e8ee;
+    }
+  }
+
+}

@@ -422,12 +422,15 @@
     <!-- <div class="mar-auto">
       <jun-transfer :sourceData="selectVal16" @change="change2"></jun-transfer>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-button @click="clickNotice('primary')">Notice常用</jun-button>
       <jun-button @click="clickNotice('success')">Notice成功</jun-button>
       <jun-button @click="clickNotice('info')">Notice信息</jun-button>
       <jun-button @click="clickNotice('warning')">Notice警告</jun-button>
       <jun-button @click="clickNotice('danger')">Notice失败</jun-button>
+    </div> -->
+    <div class="mar-auto">
+      <jun-steps></jun-steps>
     </div>
   </div>
 </template>
