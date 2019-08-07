@@ -1,10 +1,10 @@
-.jun-steps-div{
+.jun-step-div{
 
   display: inline-block;
   height: 28px;
   line-height: 28px;
 
-  .steps-num{
+  .step-num{
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -15,24 +15,21 @@
     font-weight: bolder;
   }
 
-  .steps-title{
+  .step-title{
     padding: 0 12px 0 6px;
     font-weight: bold;
   }
 
-  .steps-line{
+  .step-line{
     display: inline-block;
-    height: 100%;
+    width: 120px;
+    height: auto;
 
     span{
-      position: absolute;
-      width: 120px;
       height: 1px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background-color: #e3e8ee;
+      width: 100%;
+      background-color: #00c1de;
     }
-  }
 
+  }
 }

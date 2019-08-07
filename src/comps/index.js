@@ -23,7 +23,7 @@ import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Select } from './components/select/index'
 import { Sidebar } from './components/sidebar/index'
-import { Steps } from './components/steps/index'
+import { Step, Steps } from './components/steps/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tag } from './components/tag/index'
@@ -60,6 +60,7 @@ const components = {
   Rate,
   Select,
   Sidebar,
+  Step,
   Steps,
   Switch,
   Table,

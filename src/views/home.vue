@@ -430,7 +430,9 @@
       <jun-button @click="clickNotice('danger')">Notice失败</jun-button>
     </div> -->
     <div class="mar-auto">
-      <jun-steps></jun-steps>
+      <jun-step></jun-step>
+      <jun-step></jun-step>
+      <jun-step></jun-step>
     </div>
   </div>
 </template>

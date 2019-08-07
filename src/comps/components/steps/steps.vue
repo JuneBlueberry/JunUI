@@ -1,12 +1,6 @@
-<!-- JunChen 2019-06-18 步骤条组件Steps -->
+<!-- JunChen 2019-08-05 -->
 <template>
-  <div class="jun-steps-div">
-    <span class="steps-num">1</span>
-    <span class="steps-title">步骤一</span>
-    <div class="steps-line">
-      <span></span>
-    </div>  
-  </div>
+  <div></div>
 </template>
 
 <script>
