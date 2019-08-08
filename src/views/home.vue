@@ -289,13 +289,13 @@
     <!-- <div>
       <jun-loadingbar :percentage="selectVal8" @click.native="selectItem3"></jun-loadingbar>
     </div> -->
-    <!-- <div>
+    <div>
       <jun-button @click="clickMessage('primary')">Message常用</jun-button>
       <jun-button @click="clickMessage('success')">Message成功</jun-button>
       <jun-button @click="clickMessage('info')">Message信息</jun-button>
       <jun-button @click="clickMessage('warning')">Message警告</jun-button>
       <jun-button @click="clickMessage('danger')">Message失败</jun-button>
-    </div> -->
+    </div>
     <!-- <div>
       <jun-button @click="selectVal9 = true">侧边栏-右边</jun-button>
       <jun-button @click="selectVal10 = true">侧边栏-左边</jun-button>
@@ -332,7 +332,6 @@
       <jun-flex-row>
         <jun-flex-col :span="12">
           <jun-loading :visible="true"></jun-loading>
-          <h1>11111</h1>
         </jun-flex-col>
         <jun-flex-col :span="6">
           <jun-loading></jun-loading>
@@ -429,11 +428,11 @@
       <jun-button @click="clickNotice('warning')">Notice警告</jun-button>
       <jun-button @click="clickNotice('danger')">Notice失败</jun-button>
     </div> -->
-    <div class="mar-auto">
+    <!-- <div class="mar-auto">
       <jun-step></jun-step>
       <jun-step></jun-step>
       <jun-step></jun-step>
-    </div>
+    </div> -->
   </div>
 </template>
 
