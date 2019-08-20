@@ -56,7 +56,7 @@
         this.closed = true
       },
       destroyElement: function(){
-        this.$el.removeEventListener('transitionend', this.destroyElement)
+        this.$el.removeEventListener('animationend', this.destroyElement)
         if(this.onClose != null){
           this.onClose()
         }
@@ -69,7 +69,7 @@
       closed: function(newValue){
         if(newValue){
           this.visible = false
-          this.$el.addEventListener('transitionend', this.destroyElement)
+          this.$el.addEventListener('animationend', this.destroyElement)
         }
       }
     }

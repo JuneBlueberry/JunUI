@@ -5,7 +5,6 @@
     v-if="visible">
     <template v-if="type=='spinner'">
       <div class="spinner spinner-pulse loading-warpper"></div>
-      <span>加载中</span>
     </template>
     <template v-else-if="type=='double_bounce'">
       <div class="double-bounce loading-warpper">

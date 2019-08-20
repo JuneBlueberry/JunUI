@@ -16,12 +16,14 @@ import { Menu } from './components/menu/index'
 import { $Message } from './components/message/index'
 import { Loading, $Loading } from './components/loading/index'
 import { LoadingBar } from './components/loadingbar/index'
+import { Notice, $Notice} from './components/notice/index'
 import { Page } from './components/page/index'
 import { Progress } from './components/progress/index'
 import { RadioGroup, Radio } from './components/radio/index'
 import { Rate } from './components/rate/index'
 import { Select } from './components/select/index'
 import { Sidebar } from './components/sidebar/index'
+import { Step, Steps } from './components/steps/index'
 import { Switch } from './components/switch/index'
 import { Table } from './components/table/index'
 import { Tag } from './components/tag/index'
@@ -50,6 +52,7 @@ const components = {
   Menu,
   Loading,
   LoadingBar,
+  Notice,
   Page,
   Progress,
   RadioGroup,
@@ -57,6 +60,8 @@ const components = {
   Rate,
   Select,
   Sidebar,
+  Step,
+  Steps,
   Switch,
   Table,
   Tabs,
@@ -79,6 +84,7 @@ const install = function (Vue) {
   Vue.prototype.$dialog = $Dialog
   Vue.prototype.$message = $Message
   Vue.prototype.$loading = $Loading
+  Vue.prototype.$notice = $Notice
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

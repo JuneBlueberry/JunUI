@@ -2,7 +2,8 @@
 <template>
   <i 
     :class="['jun-icon', 'iconfont', type]"
-    :style="styles"></i>
+    :style="styles"
+    @click="handleClick"></i>
 </template>
 
 <script>
@@ -40,6 +41,10 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    handleClick: function(event){
+      this.$emit('click', event)
+    }
+  }
 }
 </script>

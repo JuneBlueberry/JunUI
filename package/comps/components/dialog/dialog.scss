@@ -7,6 +7,9 @@
     z-index: 999;
     width: 100vw;
     height: 100vh;
+  }
+
+  .dialog-mask{
     background-color: #ffffff50;
   }
 
@@ -74,6 +77,13 @@
   }
   .dialog-warpper-leave-active{
     animation: junMoveTopOut .5s;
+  }
+
+  .dialog-mask-enter-active{
+    animation: junFadeIn .5s;
+  }
+  .dialog-mask-leave-active{
+    animation: junFadeOut .5s;
   }
 
 }
