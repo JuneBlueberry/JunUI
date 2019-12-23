@@ -1,6 +1,11 @@
 <!-- JunChen 2019-08-05 -->
 <template>
-  <div></div>
+  <div class="jun-steps-div">
+    <div class="steps-warpper">
+      <slot></slot>
+      <div class="steps-line"></div>
+    </div>
+  </div>
 </template>
 
 <script>
