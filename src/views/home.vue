@@ -430,9 +430,9 @@
     </div> -->
     <div class="mar-auto">
       <jun-steps>
-        <jun-step></jun-step>
-        <jun-step></jun-step>
-        <jun-step></jun-step>
+        <jun-step title="步骤1"></jun-step>
+        <jun-step title="步骤2"></jun-step>
+        <jun-step title="步骤3"></jun-step>
       </jun-steps>
     </div>
   </div>

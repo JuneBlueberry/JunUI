@@ -20,7 +20,7 @@
   display: inline-block;
   height: 28px;
   line-height: 28px;
-  margin: 0 20px;
+  margin: 0 100px;
 
   &:nth-child(1){
     margin-left: 0;
@@ -46,8 +46,14 @@
     }
   
     .step-title{
-      padding: 0 12px 0 6px;
+      padding-left: 6px;
       font-weight: bold;
+    }
+
+    .step-describe{
+      position: absolute;
+      top: 24px;
+      left: 48px;
     }
   }
 }

@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { findComponentsDownward } from '../../../utils/assist'
+
 export default {
   name: 'jun-steps',
   props: {},
@@ -17,10 +19,19 @@ export default {
     };
   },
 
-  components: {},
+  mounted: function(){
+    this.updateGutter()
+  },
 
-  computed: {},
-
-  methods: {}
+  methods: {
+    updateGutter: function() {
+      const Steps = findComponentsDownward(this, "jun-step")
+      if (Steps.length) {
+        Steps.forEach((child, index) => {
+          child.index = index + 1
+        })
+      }
+    }
+  }
 }
 </script>
