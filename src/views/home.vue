@@ -211,9 +211,9 @@
     <!-- <div>
       <jun-datepicker v-model="selectVal5" type="daterange"></jun-datepicker>
     </div> -->
-    <!-- <div>
+    <div>
       <jun-page></jun-page>
-    </div> -->
+    </div>
     <!-- <div>
       <jun-tabs v-model="selectVal6" @change="changeVal">
         <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
@@ -428,13 +428,13 @@
       <jun-button @click="clickNotice('warning')">Notice警告</jun-button>
       <jun-button @click="clickNotice('danger')">Notice失败</jun-button>
     </div> -->
-    <div class="mar-auto">
+    <!-- <div class="mar-auto">
       <jun-steps>
         <jun-step title="步骤1"></jun-step>
         <jun-step title="步骤2"></jun-step>
         <jun-step title="步骤3"></jun-step>
       </jun-steps>
-    </div>
+    </div> -->
   </div>
 </template>
 

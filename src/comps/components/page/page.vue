@@ -38,7 +38,7 @@
     props: {
       total: {
         type: Number,
-        default: 58
+        default: 0
       },
       pageCurrent: {
         type: Number,
@@ -121,6 +121,9 @@
       },
       getPageList: function(){
         this.pageList = []
+        if(this.data_total == 0){
+          return
+        }
         if(this.currentRow == this.totalRow){
           let counts = (this.data_pageTotal%this.showMaxPage==0)?this.showMaxPage:(this.data_pageTotal%this.showMaxPage)
           for(let i=1; i<=counts; i++){

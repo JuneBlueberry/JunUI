@@ -1,10 +1,10 @@
 <!-- JunChen 2019-06-18 步骤条组件Steps -->
 <template>
   <div class="jun-step-div">
-    <span class="step-num">1</span>
-    <span class="step-title">步骤一</span>
-    <div class="step-line">
-      <span class="step-line"></span>
+    <div class="step-item">
+      <span class="step-num">{{ index }}</span>
+      <span class="step-title">{{ title }}</span>
+      <span class="step-describe">{{ describe }}</span>
     </div>
   </div>
 </template>
@@ -12,9 +12,19 @@
 <script>
 export default {
   name: 'jun-step',
-  props: {},
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    describe: {
+      type: String,
+      default: 'hahahahahahahaha'
+    }
+  },
   data () {
     return {
+      index: 1
     };
   },
 
