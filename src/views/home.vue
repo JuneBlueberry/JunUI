@@ -87,8 +87,8 @@
           <jun-flex-col :span="2"><div class="col-light">2/24</div></jun-flex-col>
         </jun-flex-row>
       </div>
-    </div>
-    <div style="width: 70%">
+    </div> -->
+    <!-- <div style="width: 70%">
       <jun-input class="mar-row-top" v-model="selectVal" prepend append @on-prepend="prependClick">
         <template slot="prepend">
           <i>帐号</i>
@@ -115,8 +115,8 @@
         </jun-flex-col>
       </jun-flex-row>
       <jun-input class="mar-row-top" placeholder="haha" @change="changeVal" disabled></jun-input>
-    </div>
-    <div>
+    </div> -->
+    <!--<div>
       <div>
         <jun-icon type="icon-accessory"></jun-icon>
         <jun-icon type="icon-activity"></jun-icon>
@@ -145,7 +145,7 @@
         <jun-icon type="icon-addpeople_fill" color="#999999"></jun-icon>
       </div>
     </div> -->
-    <!-- <div>
+    <div>
       <jun-radio size="small">前端工程师</jun-radio>
       <jun-radio>后端工程师</jun-radio>
       <jun-radio disabled>算法工程师</jun-radio>
@@ -161,7 +161,7 @@
         <jun-radio label="全栈工程师">全栈工程师</jun-radio>
       </jun-radio-group>
       <jun-radio >全栈工程师</jun-radio>
-    </div> -->
+    </div>
     <!-- <div>
       <jun-checkbox v-model="selectVal2">前端工程师</jun-checkbox>
       <jun-checkbox-group v-model="selectVal3">
@@ -185,8 +185,8 @@
       <br/><br/>
       <jun-switch :type="3"></jun-switch>
       <jun-switch :type="3" checked></jun-switch>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <jun-select></jun-select>
     </div> -->
     <!-- <div>
@@ -211,9 +211,9 @@
     <!-- <div>
       <jun-datepicker v-model="selectVal5" type="daterange"></jun-datepicker>
     </div> -->
-    <div>
+    <!-- <div>
       <jun-page></jun-page>
-    </div>
+    </div> -->
     <!-- <div>
       <jun-tabs v-model="selectVal6" @change="changeVal">
         <jun-tabs-item name="tab1" label="便签1">11111</jun-tabs-item>
